@@ -729,15 +729,16 @@ document.getElementById('BSND').addEventListener('click',B_send);
 /* SCROLL DOTS */
 const SECS=['about','projects','skills','experience','education','ai','contact'];
 const dotsEl=document.getElementById('SDOTS');
-dotsEl.innerHTML=SECS.map(s=>`<button class="scroll-dot" data-sec="${s}" title="${s}" onclick="document.getElementById('${s}').scrollIntoView({behavior:'smooth'})"></button>`).join('');
+dotsEl.innerHTML=SECS.map(s=>`<button class="scroll-dot" data-sec="${s}" onclick="document.getElementById('${s}').scrollIntoView({behavior:'smooth'})"></button>`).join('');
 function updateDots(){
   let cur=SECS[0];
-  SECS.forEach(s=>{const el=document.getElementById(s);if(el&&window.scrollY>=el.offsetTop-300)cur=s});
+  SECS.forEach(s=>{const el=document.getElementById(s);if(el&&window.scrollY>=el.offsetTop-250)cur=s});
   document.querySelectorAll('.scroll-dot').forEach(d=>{
-    const isActive=d.dataset.sec===cur;
-    d.classList.toggle('active',isActive);
-    d.style.background=isActive?'#6366f1':'rgba(255,255,255,.15)';
-    d.style.height=isActive?'20px':'8px';
+    if(d.dataset.sec===cur){
+      d.style.cssText='background:#6366f1;height:18px;width:6px;border-radius:3px;transition:all .3s ease';
+    } else {
+      d.style.cssText='background:rgba(255,255,255,.2);height:6px;width:6px;border-radius:50%;transition:all .3s ease';
+    }
   });
 }
 window.addEventListener('scroll',updateDots,{passive:true});
