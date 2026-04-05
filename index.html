@@ -695,6 +695,95 @@ function doSearch(q){const r=document.getElementById('sresults');if(!q){r.innerH
 function goTo(sec){closeSearch();document.querySelector(sec)?.scrollIntoView({behavior:'smooth'});}
 document.getElementById('search-modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeSearch();});
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();openSearch();}if(e.key==='Escape')closeSearch();});
+
+/* ── AI SYSTEM PROMPT ── */
+const AI_CTX=`You are Aditya Gedam's personal AI portfolio assistant. Be concise, warm, and professional. Only answer questions about Aditya. Here is everything about him:
+
+PERSONAL: Name: Aditya Gedam. Role: Senior Lead Engineer. Company: SysCloud Technologies Pvt Ltd, Hyderabad, India. Email: gedamaditya@gmail.com. LinkedIn: linkedin.com/in/aditya-gedam-8260442b. GitHub: github.com/ady321. Career Goal: Technical Architect role.
+
+EDUCATION: M.Tech in Computer Science & Engineering, NIT Tiruchirappalli (2016–2018). Certifications: AWS for Beginners (Great Learning), Unix-Linux Shell Scripting, Full Stack Development (Coursera).
+
+EXPERIENCE (7+ years at SysCloud):
+- Senior Lead Engineer (2022–Present, Hyderabad): AWS KMS encryption (100% unauthorized access eliminated), Dynamic TTR (70% faster restore), Japan platform integrations (25% market expansion), AI/GPT onboarding (90%+ knowledge transfer), M365 Graph API, Unified Notification Platform (MDL 2.0 NestJS), SharePoint UB Graph Architecture.
+- Lead Software Engineer (2020–2022, Chennai): Box backup/restore, S3 Parquet migration ($50K+ savings), real-time sync (90% delay reduction), SharePoint/Teams Graph framework (50% code reduction).
+- Senior Software Engineer (2019–2021, Chennai): Google Workspace & M365 backup/restore, PostgreSQL 5x query optimization, SQS async queuing, 40% faster restore.
+- Software Engineer (Feb–Jul 2019, Chennai): SQS + O365 security scanner (70% faster response), S3 migration (60% cost cut), Graph API backup (75% faster recovery).
+- Graduate Trainee (Jun 2018–Jan 2019, Chennai): O365 training, foundational backup modules.
+
+PROJECTS: AWS KMS Encryption (100% access eliminated, 139+ keys), Japan Platform Integration (25% expansion), Box Backup & Restore (70% faster), Dynamic TTR (60% faster restore), AI Onboarding & Verification (90% transfer, Claude AI + GPT), Microsoft 365 & SharePoint (200+ tenants), PostgreSQL→Parquet/S3 Migration ($50K+ savings, <2s query), Unified Notification Platform (3 channels, MDL 2.0), SharePoint UB Graph Architecture (config-driven, AI-verified), Real-Time Sync Framework (90% delay reduction).
+
+SKILLS: PHP & Python (Expert, 7yrs), PostgreSQL/RDS (Expert, 7yrs), AWS KMS/S3/Lambda/SQS/ECS/Athena/DynamoDB (Advanced, 6yrs), TypeScript, NestJS, MS Graph API, Microservices, Docker, Claude AI, OpenAI GPT, AI Agents, LLM Integration, System Design, CI/CD, Agile, Technical Mentoring.
+
+AVAILABILITY: Open to Technical Architect and Senior Lead roles. Responds within 24 hours. Hyderabad, India (IST UTC+5:30).`;
+
+/* ── FLOATING BOT ── */
+let botOpen = false;
+
+function toggleBot() {
+  botOpen = !botOpen;
+  const panel = document.getElementById('BPANEL');
+  const label = document.getElementById('BLBL');
+  if (panel) panel.style.display = botOpen ? 'flex' : 'none';
+  if (label) label.style.display = botOpen ? 'none' : 'flex';
+}
+
+// Hide label after 5s
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const l = document.getElementById('BLBL');
+    if (!l) return;
+    l.style.transition = 'opacity .5s';
+    l.style.opacity = '0';
+    setTimeout(() => { if (l) l.style.display = 'none'; }, 500);
+  }, 5000);
+});
+
+function B_addMsg(text, role) {
+  const msgs = document.getElementById('BMSGS');
+  if (!msgs) return;
+  const d = document.createElement('div');
+  d.style.cssText = `max-width:90%;padding:.55rem .8rem;border-radius:11px;font-size:.77rem;line-height:1.55;align-self:${role==='user'?'flex-end':'flex-start'};${role==='user'?'background:#1a6cf5;color:#fff':'background:var(--card);border:1px solid var(--border);color:var(--text2)'}`;
+  d.textContent = text;
+  msgs.appendChild(d);
+  msgs.scrollTop = 9999;
+  return d;
+}
+
+async function B_send() {
+  const inp = document.getElementById('BINP');
+  if (!inp) return;
+  const t = inp.value.trim();
+  if (!t) return;
+  inp.value = '';
+  B_addMsg(t, 'user');
+  const ty = B_addMsg('Typing…', 'bot');
+  if (ty) { ty.style.fontStyle = 'italic'; ty.style.color = 'var(--text3)'; }
+  try {
+    const r = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 400, system: AI_CTX, messages: [{ role: 'user', content: t }] })
+    });
+    const d = await r.json();
+    if (ty) ty.remove();
+    B_addMsg(d.content?.[0]?.text || 'Sorry, something went wrong.', 'bot');
+  } catch {
+    if (ty) ty.remove();
+    B_addMsg('Network error. Please try again.', 'bot');
+  }
+}
+
+function BA(q) {
+  if (!botOpen) toggleBot();
+  const inp = document.getElementById('BINP');
+  if (inp) inp.value = q;
+  B_send();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('BINP')?.addEventListener('keydown', e => { if (e.key === 'Enter') B_send(); });
+  document.getElementById('BSND')?.addEventListener('click', B_send);
+});
 </script>
 </body>
 </html>
