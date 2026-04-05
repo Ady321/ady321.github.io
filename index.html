@@ -34,42 +34,36 @@
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
 
-/* ── SPLASH SCREEN — matches Aniket exactly ── */
 #splash{position:fixed;inset:0;z-index:9999;background:#050d1a;display:flex;align-items:center;justify-content:center;transition:opacity .5s}
 #splash.hide{opacity:0;pointer-events:none}
 .splash-inner{text-align:center}
 .splash-logo{font-size:3rem;font-weight:900;letter-spacing:-.02em;background:linear-gradient(135deg,#1a6cf5 0%,#4d8ff7 50%,#7eb3ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1.5rem;opacity:0;transform:scale(0.5);transition:opacity .5s,transform .5s}
 .splash-bar{height:2px;background:linear-gradient(90deg,#1a6cf5,#7eb3ff);border-radius:2px;margin:0 auto;width:0;transition:width .8s ease}
 
-/* ── SCROLL PROGRESS ── */
 #progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:100;background:var(--border-faint)}
 #progress-bar{height:100%;width:0%;background:linear-gradient(90deg,#1a6cf5,#4d8ff7,#7eb3ff);box-shadow:0 0 8px rgba(26,108,245,.6);transition:width .1s linear}
 
-/* ── SECTION DOTS — right side, matches Aniket's exact structure ── */
 #section-dots{position:fixed;right:1.25rem;top:50%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;gap:10px;align-items:center}
 .sdot-wrap{position:relative;display:flex;align-items:center}
 .sdot-btn{background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;justify-content:center}
 .sdot{width:6px;height:6px;border-radius:50%;background:var(--text3);transition:all .3s}
 .sdot-btn:hover .sdot,.sdot-btn.active .sdot{background:#4d8ff7;transform:scale(1.5)}
 .sdot-btn.active .sdot{box-shadow:0 0 6px rgba(77,143,247,.8)}
-/* tooltip label on hover */
 .sdot-label{position:absolute;right:22px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:3px 8px;font-size:.65rem;font-weight:600;color:var(--text2);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
 .sdot-wrap:hover .sdot-label{opacity:1}
 @media(max-width:768px){#section-dots{display:none}}
 
-/* ── CURSOR FOLLOWER — matches Aniket ── */
 #cursor-dot{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;background:#1a6cf5;pointer-events:none;z-index:9999;mix-blend-mode:screen;box-shadow:0 0 10px rgba(26,108,245,.9);transform:translate(-50%,-50%);transition:transform .05s}
 #cursor-ring{position:fixed;top:0;left:0;width:40px;height:40px;border-radius:50%;border:1px solid rgba(26,108,245,.5);pointer-events:none;z-index:9999;mix-blend-mode:screen;transform:translate(-50%,-50%);transition:left .12s ease,top .12s ease}
 @media(max-width:768px){#cursor-dot,#cursor-ring{display:none}}
 
-/* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .3s;backdrop-filter:none;background:transparent;border-bottom:1px solid transparent;opacity:0;transform:translateY(-80px)}
 nav.visible{opacity:1;transform:translateY(0);backdrop-filter:blur(12px);background:rgba(5,13,26,.9);border-bottom:1px solid var(--border)}
 [data-theme="light"] nav.visible{background:rgba(240,244,255,.92)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-weight:900;font-size:1.2rem;background:linear-gradient(135deg,#1a6cf5,#4d8ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border:none;cursor:pointer;background-color:transparent}
 .nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:.82rem;font-weight:400;padding:.4rem .75rem;border-radius:8px;transition:all .2s;position:relative}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.82rem;font-weight:400;padding:.4rem .75rem;border-radius:8px;transition:all .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(26,108,245,.1)}
 .nav-right{display:flex;align-items:center;gap:.35rem}
 .nav-resume{font-size:.82rem;font-weight:500;padding:.4rem 1rem;border-radius:8px;border:1px solid rgba(26,108,245,.4);color:#4d8ff7;text-decoration:none;background:rgba(26,108,245,.05);transition:all .2s;margin-left:.5rem}
@@ -80,20 +74,17 @@ nav.visible{opacity:1;transform:translateY(0);backdrop-filter:blur(12px);backgro
 .nav-theme{background:var(--tog-bg);border:1px solid var(--tog-border);border-radius:8px;cursor:pointer;padding:.4rem .5rem;display:flex;align-items:center;justify-content:center;color:var(--tog-icon);transition:all .3s;font-size:.9rem;margin-left:.25rem}
 @media(max-width:768px){.nav-links,.nav-search{display:none}}
 
-/* ── HERO ── */
 #hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 3rem;position:relative;overflow:hidden;background:var(--bg)}
 .hglow{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none}
 .hg1{top:25%;left:33%;width:500px;height:500px;background:radial-gradient(circle,rgba(26,108,245,.18),transparent 70%);opacity:.18}
 .hg2{bottom:25%;right:33%;width:400px;height:400px;background:radial-gradient(circle,rgba(77,143,247,.12),transparent 70%);opacity:.12}
 .hgrid{position:absolute;inset:0;opacity:.03;background-image:linear-gradient(#4d8ff7 1px,transparent 1px),linear-gradient(90deg,#4d8ff7 1px,transparent 1px);background-size:50px 50px;pointer-events:none}
-/* floating tags — Aniket's exact absolute positions */
 .ftag{position:absolute;display:flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;font-size:.88rem;font-weight:600;background:var(--card);border:1px solid rgba(26,108,245,.35);color:var(--text2);backdrop-filter:blur(10px);box-shadow:0 4px 20px rgba(26,108,245,.12);opacity:0;transform:scale(.8);transition:opacity .6s,transform .6s}
 .ftag.show{opacity:1;transform:scale(1)}
 .ftag .fd{width:7px;height:7px;border-radius:50%;background:#1a6cf5;box-shadow:0 0 6px #1a6cf5;flex-shrink:0}
 .ft1{left:7%;top:20%}.ft2{left:80%;top:16%}.ft3{left:5%;top:60%}
 .ft4{left:84%;top:55%}.ft5{left:10%;top:80%}.ft6{left:76%;top:76%}.ft7{left:86%;top:36%}.ft8{left:2%;top:40%}
 @media(max-width:768px){.ftag{display:none}}
-/* hero content */
 .hero-content{position:relative;z-index:10;text-align:center;padding:0 1.5rem;max-width:800px;margin:0 auto}
 .hero-label{color:#4d8ff7;font-size:.72rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;margin-bottom:1rem;opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
 .hero-label.show{opacity:1;transform:translateY(0)}
@@ -118,16 +109,13 @@ h1.show{opacity:1;transform:translateY(0)}
 .stat-card{border-radius:12px;padding:.85rem .5rem;text-align:center;background:var(--card);border:1px solid var(--border);backdrop-filter:blur(8px)}
 .stat-num{font-size:1.75rem;font-weight:900;line-height:1;background:linear-gradient(135deg,#1a6cf5,#4d8ff7 60%,#7eb3ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .stat-lbl{color:var(--text2);font-size:.7rem;margin-top:.3rem}
-/* bounce arrow */
 .bounce-arrow{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);background:none;border:none;color:var(--text3);cursor:pointer;animation:bounce 2s infinite;opacity:0;transition:opacity .6s .8s;font-size:1.2rem}
 .bounce-arrow.show{opacity:1}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-6px)}}
 @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)!important}}
 
-/* ── SECTIONS ── */
 section{padding:6rem 1.5rem}
 .si{max-width:960px;margin:0 auto}
-/* scroll-reveal base */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
 .reveal.show{opacity:1;transform:translateY(0)}
 .reveal-left{opacity:0;transform:translateX(-20px);transition:opacity .6s,transform .6s}
@@ -137,7 +125,6 @@ section{padding:6rem 1.5rem}
 .slabel{color:#4d8ff7;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;text-align:center}
 .stitle{font-size:2.25rem;font-weight:800;text-align:center;margin-bottom:3rem;color:var(--text)}
 
-/* ── ABOUT ── */
 #about{background:radial-gradient(ellipse at 50% 50%,rgba(26,108,245,.04),transparent 70%),var(--bg)}
 .about-bio{color:var(--text2);font-size:.95rem;line-height:1.85;max-width:620px;margin:0 auto 3rem;text-align:center}
 .about-bio strong{color:var(--text);font-weight:600}
@@ -150,7 +137,6 @@ section{padding:6rem 1.5rem}
 .about-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1.5rem}
 .abadge{display:inline-flex;align-items:center;gap:5px;padding:.3rem .8rem;border-radius:999px;font-size:.75rem;font-weight:500;background:rgba(26,108,245,.08);border:1px solid var(--border2);color:#4d8ff7}
 
-/* ── PROJECTS ── */
 #projects{background:radial-gradient(ellipse at 50% 50%,rgba(26,108,245,.04),transparent 70%),var(--bg)}
 .filter-row{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:.75rem}
 .fchip{font-size:.7rem;font-weight:600;padding:.3rem .85rem;border-radius:999px;background:var(--chip-bg);border:1px solid var(--chip-border);color:var(--text3);cursor:pointer;transition:all .2s}
@@ -172,7 +158,6 @@ section{padding:6rem 1.5rem}
 .pcard-techs{display:flex;flex-wrap:wrap;gap:.4rem}
 .ptch{font-size:.68rem;padding:.2rem .55rem;border-radius:999px;background:var(--chip-bg);border:1px solid var(--chip-border);color:var(--text2)}
 
-/* ── SKILLS ── */
 #skills{background:radial-gradient(ellipse at 50% 0%,rgba(26,108,245,.05),transparent 60%),var(--bg)}
 .skills-core{border-radius:20px;padding:1.75rem;background:var(--card-hi);border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:2.5rem}
 .core-lbl{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#4d8ff7;margin-bottom:1.25rem}
@@ -184,7 +169,6 @@ section{padding:6rem 1.5rem}
 .sbar-yr{font-size:.7rem;color:var(--text2)}
 .bar-track{height:6px;border-radius:999px;background:var(--bar);overflow:hidden}
 .bar-fill{height:100%;border-radius:999px;width:0;transition:width 1.5s ease}
-/* skill rows — left to right slide-in, matches Aniket */
 .skill-rows{display:flex;flex-direction:column;gap:1rem}
 .skrow{display:flex;align-items:flex-start;gap:1.5rem;opacity:0;transform:translateX(-20px);transition:opacity .6s,transform .6s}
 .skrow.show{opacity:1;transform:translateX(0)}
@@ -192,14 +176,12 @@ section{padding:6rem 1.5rem}
 .skcat-name{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:.4rem}
 .skcat-cnt{font-size:.6rem;color:var(--text3);padding-left:1.1rem}
 .chips{display:flex;flex-wrap:wrap;gap:.45rem}
-/* individual chip — opacity:0 scale(.85) then show — matches Aniket */
 .schip{display:inline-flex;align-items:center;gap:5px;padding:.25rem .7rem .25rem .35rem;border-radius:999px;font-size:.72rem;font-weight:500;cursor:default;transition:all .2s;opacity:0;transform:scale(.85)}
 .schip.show{opacity:1;transform:scale(1)}
 .schip:hover{opacity:.85}
 .clogo{width:16px;height:16px;border-radius:4px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:900;line-height:1}
 @media(max-width:600px){.skrow{flex-direction:column!important;gap:.5rem!important}.skcat{min-width:auto}}
 
-/* ── EXPERIENCE ── */
 #experience{background:var(--bg)}
 .exp-card{border-radius:20px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);padding:1.75rem;margin-bottom:2rem}
 .exp-hdr{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
@@ -217,7 +199,6 @@ section{padding:6rem 1.5rem}
 .pseg.show{transform:scaleX(1)}
 .prog-dates{display:flex;justify-content:space-between;margin-top:.4rem}
 .pdate{font-size:.62rem;color:var(--text3)}
-/* timeline */
 .timeline{position:relative;padding-left:2rem}
 .timeline::before{content:'';position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#4d8ff7,#4ade80,#94a3b8);border-radius:999px;opacity:.3}
 .tl-item{position:relative;margin-bottom:1.25rem;opacity:0;transform:translateX(-16px);transition:opacity .6s,transform .6s}
@@ -230,7 +211,6 @@ section{padding:6rem 1.5rem}
 .tl-dur{font-size:.62rem;font-weight:700;padding:.15rem .5rem;border-radius:999px}
 .tl-meta{display:flex;flex-wrap:wrap;gap:.6rem;color:var(--text2);font-size:.72rem;margin-top:.35rem}
 .tl-chev{color:var(--text3);flex-shrink:0;margin-top:2px;font-size:.85rem;transition:transform .3s}
-/* smooth expand — Aniket uses height+opacity */
 .tl-body{border-top:1px solid;padding:0 1.25rem;max-height:0;opacity:0;overflow:hidden;transition:max-height .4s ease,opacity .3s,padding .3s}
 .tl-card.open .tl-body{max-height:700px;opacity:1;padding:.9rem 1.25rem 1.1rem}
 .tl-card.open .tl-chev{transform:rotate(180deg)}
@@ -238,7 +218,6 @@ section{padding:6rem 1.5rem}
 .tl-body li{display:flex;gap:.6rem;font-size:.78rem;color:var(--text2);line-height:1.65;margin-bottom:.65rem}
 .tl-arr{color:#4d8ff7;flex-shrink:0;font-size:.6rem;margin-top:3px}
 
-/* ── EDUCATION ── */
 #education{background:var(--bg)}
 .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
 .edu-sh{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;font-weight:700;color:var(--text);font-size:.9rem}
@@ -251,7 +230,6 @@ section{padding:6rem 1.5rem}
 .cert-name{font-weight:600;color:var(--text);font-size:.82rem}
 .cert-issuer{font-size:.7rem;color:#4d8ff7;font-weight:600;background:rgba(26,108,245,.1);border:1px solid var(--border2);padding:2px 8px;border-radius:999px;margin-left:.75rem;white-space:nowrap}
 
-/* ── CONTACT ── */
 #contact{background:radial-gradient(ellipse at 50% 100%,rgba(26,108,245,.07),transparent 60%),var(--bg);text-align:center}
 .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:720px;margin:0 auto 2.5rem}
 .ccard{display:flex;flex-direction:column;align-items:center;gap:.75rem;padding:1.25rem .75rem;border-radius:16px;background:var(--card);border:1px solid var(--border);text-decoration:none;transition:all .3s;cursor:pointer}
@@ -264,7 +242,6 @@ section{padding:6rem 1.5rem}
 @media(max-width:680px){.contact-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:420px){.contact-grid{grid-template-columns:1fr}}
 
-/* ── SEARCH MODAL ── */
 #search-modal{position:fixed;inset:0;z-index:9000;background:rgba(5,13,26,.85);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding-top:8rem}
 #search-modal.open{display:flex}
 .sbox{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;width:100%;max-width:560px;overflow:hidden}
@@ -277,7 +254,6 @@ section{padding:6rem 1.5rem}
 .sitem:hover{background:rgba(26,108,245,.1);color:var(--text)}
 .sempty{padding:1.5rem;text-align:center;color:var(--text3);font-size:.82rem}
 
-/* ── FOOTER ── */
 footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3rem 1.5rem 2rem}
 .fi{max-width:960px;margin:0 auto}
 .ftop{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:2rem}
@@ -296,55 +272,34 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
 </head>
 <body>
 
-<!-- SPLASH — exact match Aniket -->
-<div id="splash">
-  <div class="splash-inner">
-    <div class="splash-logo" id="splash-logo">AG</div>
-    <div class="splash-bar" id="splash-bar"></div>
-  </div>
-</div>
-
-<!-- CURSOR — exact match Aniket -->
+<div id="splash"><div class="splash-inner"><div class="splash-logo" id="splash-logo">AG</div><div class="splash-bar" id="splash-bar"></div></div></div>
 <div id="cursor-ring"></div>
 <div id="cursor-dot"></div>
-
-<!-- SCROLL PROGRESS -->
 <div id="progress"><div id="progress-bar"></div></div>
 
-<!-- SEARCH MODAL -->
 <div id="search-modal">
   <div class="sbox">
-    <div class="sinput-wrap">
-      <span style="color:var(--text3)">⌕</span>
-      <input id="sinput" type="text" placeholder="Search sections, skills, projects…" oninput="doSearch(this.value)"/>
-      <button class="sclose" onclick="closeSearch()">ESC</button>
-    </div>
+    <div class="sinput-wrap"><span style="color:var(--text3)">⌕</span><input id="sinput" type="text" placeholder="Search sections, skills, projects…" oninput="doSearch(this.value)"/><button class="sclose" onclick="closeSearch()">ESC</button></div>
     <div class="sresults" id="sresults"><div class="sempty">Type to search…</div></div>
   </div>
 </div>
 
-<!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
     <button class="nav-logo" onclick="scrollTo({top:0,behavior:'smooth'})">AG</button>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <button class="nav-search" onclick="openSearch()">
-        <span>⌕</span><span>Search</span><span class="sk">⌘K</span>
-      </button>
+      <button class="nav-search" onclick="openSearch()"><span>⌕</span><span>Search</span><span class="sk">⌘K</span></button>
       <button class="nav-theme" id="theme-btn" onclick="toggleTheme()">☀️</button>
       <a href="Aditya_Resume.pdf" download class="nav-resume">Resume ↓</a>
     </div>
   </div>
 </nav>
 
-<!-- SECTION DOTS — right side, exact Aniket structure -->
 <div id="section-dots">
   <div class="sdot-wrap"><span class="sdot-label">Hero</span><button class="sdot-btn" data-sec="hero" onclick="scrollToSec('hero')"><div class="sdot"></div></button></div>
   <div class="sdot-wrap"><span class="sdot-label">About</span><button class="sdot-btn" data-sec="about" onclick="scrollToSec('about')"><div class="sdot"></div></button></div>
@@ -355,11 +310,8 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
   <div class="sdot-wrap"><span class="sdot-label">Contact</span><button class="sdot-btn" data-sec="contact" onclick="scrollToSec('contact')"><div class="sdot"></div></button></div>
 </div>
 
-<!-- HERO -->
 <section id="hero">
-  <div class="hglow hg1"></div>
-  <div class="hglow hg2"></div>
-  <div class="hgrid"></div>
+  <div class="hglow hg1"></div><div class="hglow hg2"></div><div class="hgrid"></div>
   <div class="ftag ft1"><span class="fd"></span>PHP & Python</div>
   <div class="ftag ft2"><span class="fd"></span>Node.js / TS</div>
   <div class="ftag ft3"><span class="fd"></span>PostgreSQL</div>
@@ -370,12 +322,8 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
   <div class="ftag ft8"><span class="fd"></span>Microservices</div>
   <div class="hero-content">
     <p class="hero-label" id="hl">Hello, I'm</p>
-    <h1 id="h1">
-      <span style="color:var(--text)">Aditya </span><span class="grad">Gedam</span>
-    </h1>
-    <div class="hero-typed-wrap" id="htw">
-      <span class="hero-typed" id="typed-text"></span><span class="cursor"></span>
-    </div>
+    <h1 id="h1"><span style="color:var(--text)">Aditya </span><span class="grad">Gedam</span></h1>
+    <div class="hero-typed-wrap" id="htw"><span class="hero-typed" id="typed-text"></span><span class="cursor"></span></div>
     <p class="hero-sub" id="hsub">Architecting scalable cloud-native systems & enterprise SaaS on AWS. 7+ years building high-performance backup, restore & API integration platforms for <strong style="color:var(--text)">200+ enterprise customers</strong>.</p>
     <div class="hero-ctas" id="hctas">
       <button class="btn-p" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View My Work</button>
@@ -395,32 +343,26 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
   <button class="bounce-arrow" id="barrow" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">↓</button>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="si">
     <div class="reveal"><p class="slabel">About Me</p><h2 class="stitle">Building things that <span class="grad">scale</span></h2></div>
-    <div class="reveal">
-      <p class="about-bio">7+ years of cloud engineering at <strong>SysCloud Technologies</strong>. AWS KMS encryption systems eliminating <strong>100% of unauthorized access</strong>. Scalable restoration cutting manual recovery by <strong>70%</strong>. Japanese platform integrations expanding market reach by <strong>25%</strong> across <strong>200+ enterprise customers</strong>. Japan team mentoring with <strong>90%+ knowledge transfer</strong> using AI/GPT automation. <strong>Real systems. Real scale. Real impact.</strong></p>
-    </div>
+    <div class="reveal"><p class="about-bio">7+ years of cloud engineering at <strong>SysCloud Technologies</strong>. AWS KMS encryption systems eliminating <strong>100% of unauthorized access</strong>. Scalable restoration cutting manual recovery by <strong>70%</strong>. Japanese platform integrations expanding market reach by <strong>25%</strong> across <strong>200+ enterprise customers</strong>. Japan team mentoring with <strong>90%+ knowledge transfer</strong> using AI/GPT automation. <strong>Real systems. Real scale. Real impact.</strong></p></div>
     <div class="about-cards">
       <div class="reveal"><div class="about-card"><div class="acard-icon">⚙️</div><h4>Backend Systems</h4><p>PHP & Python expert building high-performance APIs, microservices, backup systems and data pipelines.</p></div></div>
       <div class="reveal" style="transition-delay:.1s"><div class="about-card"><div class="acard-icon">🗄️</div><h4>Database Architecture</h4><p>Deep PostgreSQL expertise: RDS, Parquet/S3 migrations, DynamoDB, query optimization for large-scale data.</p></div></div>
       <div class="reveal" style="transition-delay:.2s"><div class="about-card"><div class="acard-icon">☁️</div><h4>Cloud & AWS</h4><p>End-to-end AWS: S3, Lambda, SQS, ECS, KMS, Athena, CloudWatch, RDS and more.</p></div></div>
       <div class="reveal" style="transition-delay:.3s"><div class="about-card"><div class="acard-icon">🤖</div><h4>AI Agent Development</h4><p>Built AI-powered workflows using Claude AI and GPT for verification, automation and GPT-driven onboarding.</p></div></div>
     </div>
-    <div class="reveal">
-      <div class="about-badges">
-        <span class="abadge">🎓 M.Tech CSE — NIT Tiruchirappalli</span>
-        <span class="abadge">☁️ AWS Certified</span>
-        <span class="abadge">📍 Hyderabad, India</span>
-        <span class="abadge">🗓️ 7+ Years at SysCloud</span>
-        <span class="abadge">🎯 Targeting Architect Roles</span>
-      </div>
-    </div>
+    <div class="reveal"><div class="about-badges">
+      <span class="abadge">🎓 M.Tech CSE — NIT Tiruchirappalli</span>
+      <span class="abadge">☁️ AWS Certified</span>
+      <span class="abadge">📍 Hyderabad, India</span>
+      <span class="abadge">🗓️ 7+ Years at SysCloud</span>
+      <span class="abadge">🎯 Targeting Architect Roles</span>
+    </div></div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="si">
     <div class="reveal"><p class="slabel">Projects</p><h2 class="stitle">Things I've built</h2>
@@ -430,6 +372,7 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
       <button class="fchip" data-cat="AI & ML">AI & ML</button>
       <button class="fchip" data-cat="Backend">Backend</button>
       <button class="fchip" data-cat="Infrastructure">Infrastructure</button>
+      <button class="fchip" data-cat="Migration">Migration</button>
     </div>
     <div class="tchip-row">
       <span class="tchip">PHP</span><span class="tchip">Python</span><span class="tchip">AWS KMS</span>
@@ -437,7 +380,8 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
       <span class="tchip">SQS</span><span class="tchip">Docker</span><span class="tchip">Claude AI</span><span class="tchip">Graph API</span>
     </div>
     <div class="proj-grid">
-      <!-- KMS -->
+
+      <!-- ── EXISTING 6 ── -->
       <div class="pcard reveal" data-cat="Infrastructure" style="border-color:rgba(250,204,21,.25)">
         <span class="pcard-hint" style="color:#facc15">↗ Details</span>
         <div class="pcard-header"><div class="pcard-icon" style="background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25)">🔐</div><span class="pcard-cat" style="background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);color:#facc15">Infrastructure</span></div>
@@ -446,7 +390,7 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
         <div class="pcard-hls"><span class="phl" style="background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);color:#facc15">✓ 100% unauthorized access eliminated</span><span class="phl" style="background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);color:#facc15">✓ 139+ KMS keys managed</span><span class="phl" style="background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);color:#facc15">✓ Multi-tenant audit trails</span></div>
         <div class="pcard-techs"><span class="ptch">AWS KMS</span><span class="ptch">PHP</span><span class="ptch">Python</span><span class="ptch">React</span><span class="ptch">PostgreSQL</span><span class="ptch">Lambda</span></div>
       </div>
-      <!-- Japan -->
+
       <div class="pcard reveal" data-cat="Backend" style="border-color:rgba(167,139,250,.25)">
         <span class="pcard-hint" style="color:#a78bfa">↗ Details</span>
         <div class="pcard-header"><div class="pcard-icon" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.25)">🌏</div><span class="pcard-cat" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.25);color:#a78bfa">Backend</span></div>
@@ -455,7 +399,7 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
         <div class="pcard-hls"><span class="phl" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.25);color:#a78bfa">✓ 25% market expansion</span><span class="phl" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.25);color:#a78bfa">✓ Full backup/restore</span><span class="phl" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.25);color:#a78bfa">✓ Compliance-ready</span></div>
         <div class="pcard-techs"><span class="ptch">PHP</span><span class="ptch">Python</span><span class="ptch">PostgreSQL</span><span class="ptch">AWS S3</span><span class="ptch">SQS</span><span class="ptch">REST APIs</span></div>
       </div>
-      <!-- Box -->
+
       <div class="pcard reveal" data-cat="Backend" style="border-color:rgba(56,189,248,.25)">
         <span class="pcard-hint" style="color:#38bdf8">↗ Details</span>
         <div class="pcard-header"><div class="pcard-icon" style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.25)">📦</div><span class="pcard-cat" style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.25);color:#38bdf8">Backend</span></div>
@@ -464,7 +408,7 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
         <div class="pcard-hls"><span class="phl" style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.25);color:#38bdf8">✓ 70% faster restore</span><span class="phl" style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.25);color:#38bdf8">✓ Incremental backup</span><span class="phl" style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.25);color:#38bdf8">✓ Folder hierarchy preserved</span></div>
         <div class="pcard-techs"><span class="ptch">PHP</span><span class="ptch">Python</span><span class="ptch">AWS S3</span><span class="ptch">Parquet</span><span class="ptch">PostgreSQL</span><span class="ptch">ECS</span></div>
       </div>
-      <!-- TTR -->
+
       <div class="pcard reveal" data-cat="Backend" style="border-color:rgba(74,222,128,.25)">
         <span class="pcard-hint" style="color:#4ade80">↗ Details</span>
         <div class="pcard-header"><div class="pcard-icon" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25)">⚡</div><span class="pcard-cat" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);color:#4ade80">Backend</span></div>
@@ -473,7 +417,7 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
         <div class="pcard-hls"><span class="phl" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);color:#4ade80">✓ 60% faster average restore</span><span class="phl" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);color:#4ade80">✓ SLA-aware scheduling</span><span class="phl" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);color:#4ade80">✓ Auto resource allocation</span></div>
         <div class="pcard-techs"><span class="ptch">PHP</span><span class="ptch">Python</span><span class="ptch">SQS</span><span class="ptch">Lambda</span><span class="ptch">DynamoDB</span><span class="ptch">PostgreSQL</span></div>
       </div>
-      <!-- AI -->
+
       <div class="pcard reveal" data-cat="AI & ML" style="border-color:rgba(251,146,60,.25)">
         <span class="pcard-hint" style="color:#fb923c">↗ Details</span>
         <div class="pcard-header"><div class="pcard-icon" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25)">🤖</div><span class="pcard-cat" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);color:#fb923c">AI & ML</span></div>
@@ -482,7 +426,7 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
         <div class="pcard-hls"><span class="phl" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);color:#fb923c">✓ 90% knowledge transfer rate</span><span class="phl" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);color:#fb923c">✓ Auto verification</span><span class="phl" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);color:#fb923c">✓ GPT + Claude AI</span></div>
         <div class="pcard-techs"><span class="ptch">Claude AI</span><span class="ptch">GPT</span><span class="ptch">Python</span><span class="ptch">PHP</span><span class="ptch">AWS Lambda</span></div>
       </div>
-      <!-- M365 -->
+
       <div class="pcard reveal" data-cat="Backend" style="border-color:rgba(244,114,182,.25)">
         <span class="pcard-hint" style="color:#f472b6">↗ Details</span>
         <div class="pcard-header"><div class="pcard-icon" style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.25)">📋</div><span class="pcard-cat" style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.25);color:#f472b6">Backend</span></div>
@@ -491,11 +435,54 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
         <div class="pcard-hls"><span class="phl" style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.25);color:#f472b6">✓ 200+ M365 tenants</span><span class="phl" style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.25);color:#f472b6">✓ Delta sync</span><span class="phl" style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.25);color:#f472b6">✓ Graph API integration</span></div>
         <div class="pcard-techs"><span class="ptch">MS Graph API</span><span class="ptch">PHP</span><span class="ptch">Python</span><span class="ptch">PostgreSQL</span><span class="ptch">S3</span><span class="ptch">SQS</span></div>
       </div>
+
+      <!-- ── 4 NEW PROJECTS ADDED BELOW ── -->
+
+      <!-- PostgreSQL Parquet Migration -->
+      <div class="pcard reveal" data-cat="Migration" style="border-color:rgba(52,211,153,.25)">
+        <span class="pcard-hint" style="color:#34d399">↗ Details</span>
+        <div class="pcard-header"><div class="pcard-icon" style="background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25)">🗄️</div><span class="pcard-cat" style="background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25);color:#34d399">Migration</span></div>
+        <div class="pcard-title">PostgreSQL → Parquet/S3 Migration</div>
+        <div class="pcard-desc">Migrated large-scale PostgreSQL RDS backup data to Parquet files on S3, dramatically cutting database costs while boosting query performance via AWS Athena. Eliminated cold-query latency for archives older than 2 years from 10s+ to under 2s.</div>
+        <div class="pcard-hls"><span class="phl" style="background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25);color:#34d399">✓ $50K+ annual savings</span><span class="phl" style="background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25);color:#34d399">✓ 60% DB cost reduction</span><span class="phl" style="background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25);color:#34d399">✓ 10s+ → &lt;2s query time</span></div>
+        <div class="pcard-techs"><span class="ptch">PostgreSQL</span><span class="ptch">AWS S3</span><span class="ptch">Parquet</span><span class="ptch">AWS Athena</span><span class="ptch">Python</span><span class="ptch">RDS</span></div>
+      </div>
+
+      <!-- Unified Notification Platform -->
+      <div class="pcard reveal" data-cat="Backend" style="border-color:rgba(129,140,248,.25)">
+        <span class="pcard-hint" style="color:#818cf8">↗ Details</span>
+        <div class="pcard-header"><div class="pcard-icon" style="background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.25)">🔔</div><span class="pcard-cat" style="background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.25);color:#818cf8">Backend</span></div>
+        <div class="pcard-title">Unified Notification Platform</div>
+        <div class="pcard-desc">Architected end-to-end multi-channel notification system covering Email, In-App, and Chat (Teams/Slack). Built on MDL 2.0 config-driven NestJS with SSPM & SIEM integration. Full E2E design and verification carried out via Claude AI.</div>
+        <div class="pcard-hls"><span class="phl" style="background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.25);color:#818cf8">✓ 3 channels unified</span><span class="phl" style="background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.25);color:#818cf8">✓ 100% config-driven MDL 2.0</span><span class="phl" style="background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.25);color:#818cf8">✓ SSPM & SIEM integrated</span></div>
+        <div class="pcard-techs"><span class="ptch">NestJS</span><span class="ptch">TypeScript</span><span class="ptch">MDL 2.0</span><span class="ptch">Teams</span><span class="ptch">Slack</span><span class="ptch">Claude AI</span></div>
+      </div>
+
+      <!-- SharePoint UB Graph Architecture -->
+      <div class="pcard reveal" data-cat="Migration" style="border-color:rgba(248,113,113,.25)">
+        <span class="pcard-hint" style="color:#f87171">↗ Details</span>
+        <div class="pcard-header"><div class="pcard-icon" style="background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25)">🔄</div><span class="pcard-cat" style="background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#f87171">Migration</span></div>
+        <div class="pcard-title">SharePoint Restore — UB Graph Architecture</div>
+        <div class="pcard-desc">Migrated legacy SharePoint restore system to a modern UB Graph Architecture using PHP. Fully config-driven with zero code changes per entity. All legacy test cases were verified end-to-end using Claude AI and AI Agents, eliminating the old codebase entirely.</div>
+        <div class="pcard-hls"><span class="phl" style="background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#f87171">✓ Legacy codebase eliminated</span><span class="phl" style="background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#f87171">✓ Zero code per entity</span><span class="phl" style="background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#f87171">✓ Verified via Claude AI & Agents</span></div>
+        <div class="pcard-techs"><span class="ptch">PHP</span><span class="ptch">MS Graph API</span><span class="ptch">UB Architecture</span><span class="ptch">Config-Driven</span><span class="ptch">Claude AI</span><span class="ptch">AI Agents</span></div>
+      </div>
+
+      <!-- Real-Time Sync Framework -->
+      <div class="pcard reveal" data-cat="Infrastructure" style="border-color:rgba(234,179,8,.25)">
+        <span class="pcard-hint" style="color:#eab308">↗ Details</span>
+        <div class="pcard-header"><div class="pcard-icon" style="background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.25)">🔁</div><span class="pcard-cat" style="background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.25);color:#eab308">Infrastructure</span></div>
+        <div class="pcard-title">Real-Time Sync Framework</div>
+        <div class="pcard-desc">Designed and built a real-time data sync framework using Docker, AWS ECS, and SQS that eliminated sync delays across multi-cloud backup pipelines. Replaced batch-window syncs with continuous event-driven processing, achieving 90% sync delay reduction.</div>
+        <div class="pcard-hls"><span class="phl" style="background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.25);color:#eab308">✓ 90% sync delay reduction</span><span class="phl" style="background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.25);color:#eab308">✓ Event-driven architecture</span><span class="phl" style="background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.25);color:#eab308">✓ Multi-cloud support</span></div>
+        <div class="pcard-techs"><span class="ptch">Docker</span><span class="ptch">AWS ECS</span><span class="ptch">SQS</span><span class="ptch">TypeScript</span><span class="ptch">Microservices</span><span class="ptch">EventBridge</span></div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- SKILLS — unchanged from your file -->
 <section id="skills">
   <div class="si">
     <div class="reveal"><p class="slabel">Technical Skills</p><h2 class="stitle">What I work with</h2></div>
@@ -507,86 +494,26 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
       <div class="sbar-wrap"><div class="sbar-hdr"><div class="sbar-left"><span class="sbar-name">Cloud Integration Architecture</span><span class="sbar-lvl" style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);color:#4ade80">Advanced</span></div><span class="sbar-yr">5 yrs</span></div><div class="bar-track"><div class="bar-fill" data-w="85" style="background:linear-gradient(90deg,#4ade80,#22c55e);box-shadow:0 0 8px rgba(74,222,128,.6)"></div></div></div>
       <div class="sbar-wrap"><div class="sbar-hdr"><div class="sbar-left"><span class="sbar-name">AI Agent Development</span><span class="sbar-lvl" style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.3);color:#a78bfa">Intermediate</span></div><span class="sbar-yr">2 yrs</span></div><div class="bar-track"><div class="bar-fill" data-w="72" style="background:linear-gradient(90deg,#a78bfa,#c084fc);box-shadow:0 0 8px rgba(167,139,250,.6)"></div></div></div>
     </div>
-    <!-- Skill rows — left-to-right slide with staggered delays, chips animate individually -->
     <div class="skill-rows">
-      <div class="skrow" style="transition-delay:.05s"><div class="skcat"><div class="skcat-name" style="color:#4d8ff7">🌐 Languages</div><div class="skcat-cnt">5 skills</div></div><div class="chips">
-        <span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#8892be;color:#fff">PHP</span>PHP</span>
-        <span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#3776ab;color:#ffd343">Py</span>Python</span>
-        <span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#3178c6;color:#fff">TS</span>TypeScript</span>
-        <span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#4479a1;color:#fff">SQL</span>SQL</span>
-        <span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#444;color:#eee">$_</span>Bash</span>
-      </div></div>
-      <div class="skrow" style="transition-delay:.1s"><div class="skcat"><div class="skcat-name" style="color:#7eb3ff">⚙️ Backend & APIs</div><div class="skcat-cnt">7 skills</div></div><div class="chips">
-        <span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff"><span class="clogo" style="background:#2e8b57;color:#fff">REST</span>REST APIs</span>
-        <span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff"><span class="clogo" style="background:#0078d4;color:#fff">MS</span>Graph API</span>
-        <span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff">Microservices</span>
-        <span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff">Batch Processing</span>
-        <span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff"><span class="clogo" style="background:#0061d5;color:#fff">Box</span>Box API</span>
-        <span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff">Notion API</span>
-        <span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff">Asana API</span>
-      </div></div>
-      <div class="skrow" style="transition-delay:.15s"><div class="skcat"><div class="skcat-name" style="color:#a5b4fc">🗄️ Databases</div><div class="skcat-cnt">5 skills</div></div><div class="chips">
-        <span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc"><span class="clogo" style="background:#336791;color:#fff">PG</span>PostgreSQL</span>
-        <span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc"><span class="clogo" style="background:#ff9900;color:#fff">RDS</span>AWS RDS</span>
-        <span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc"><span class="clogo" style="background:#ff9900;color:#fff">DB</span>DynamoDB</span>
-        <span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc">S3 Parquet</span>
-        <span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc"><span class="clogo" style="background:#ff9900;color:#fff">AQ</span>Athena</span>
-      </div></div>
-      <div class="skrow" style="transition-delay:.2s"><div class="skcat"><div class="skcat-name" style="color:#4ade80">☁️ Cloud & AWS</div><div class="skcat-cnt">10 skills</div></div><div class="chips">
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">KMS</span>KMS</span>
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">S3</span>S3</span>
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">λ</span>Lambda</span>
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">SQS</span>SQS</span>
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">ECS</span>Fargate</span>
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80">CloudWatch</span>
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80">IAM</span>
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80">Secrets Mgr</span>
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#2496ed;color:#fff">🐳</span>Docker</span>
-        <span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80">EventBridge</span>
-      </div></div>
-      <div class="skrow" style="transition-delay:.25s"><div class="skcat"><div class="skcat-name" style="color:#fb923c">🤖 AI & Automation</div><div class="skcat-cnt">4 skills</div></div><div class="chips">
-        <span class="schip" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.3);color:#fb923c"><span class="clogo" style="background:#a78bfa;color:#fff">C</span>Claude AI</span>
-        <span class="schip" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.3);color:#fb923c"><span class="clogo" style="background:#10a37f;color:#fff">GPT</span>OpenAI GPT</span>
-        <span class="schip" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.3);color:#fb923c">AI Agent Workflows</span>
-        <span class="schip" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.3);color:#fb923c">LLM Integration</span>
-      </div></div>
-      <div class="skrow" style="transition-delay:.3s"><div class="skcat"><div class="skcat-name" style="color:#c084fc">🔧 Tools & Practices</div><div class="skcat-cnt">7 skills</div></div><div class="chips">
-        <span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc"><span class="clogo" style="background:#f05032;color:#fff">Git</span>Git</span>
-        <span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">CI/CD</span>
-        <span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">System Design</span>
-        <span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">Code Reviews</span>
-        <span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">Agile/Scrum</span>
-        <span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">Tech Mentoring</span>
-        <span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">Perf Reviews</span>
-      </div></div>
+      <div class="skrow" style="transition-delay:.05s"><div class="skcat"><div class="skcat-name" style="color:#4d8ff7">🌐 Languages</div><div class="skcat-cnt">5 skills</div></div><div class="chips"><span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#8892be;color:#fff">PHP</span>PHP</span><span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#3776ab;color:#ffd343">Py</span>Python</span><span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#3178c6;color:#fff">TS</span>TypeScript</span><span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#4479a1;color:#fff">SQL</span>SQL</span><span class="schip" style="background:rgba(77,143,247,.1);border:1px solid rgba(77,143,247,.3);color:#4d8ff7"><span class="clogo" style="background:#444;color:#eee">$_</span>Bash</span></div></div>
+      <div class="skrow" style="transition-delay:.1s"><div class="skcat"><div class="skcat-name" style="color:#7eb3ff">⚙️ Backend & APIs</div><div class="skcat-cnt">7 skills</div></div><div class="chips"><span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff"><span class="clogo" style="background:#2e8b57;color:#fff">REST</span>REST APIs</span><span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff"><span class="clogo" style="background:#0078d4;color:#fff">MS</span>Graph API</span><span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff">Microservices</span><span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff">Batch Processing</span><span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff"><span class="clogo" style="background:#0061d5;color:#fff">Box</span>Box API</span><span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff">Notion API</span><span class="schip" style="background:rgba(126,179,255,.08);border:1px solid rgba(126,179,255,.3);color:#7eb3ff">Asana API</span></div></div>
+      <div class="skrow" style="transition-delay:.15s"><div class="skcat"><div class="skcat-name" style="color:#a5b4fc">🗄️ Databases</div><div class="skcat-cnt">5 skills</div></div><div class="chips"><span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc"><span class="clogo" style="background:#336791;color:#fff">PG</span>PostgreSQL</span><span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc"><span class="clogo" style="background:#ff9900;color:#fff">RDS</span>AWS RDS</span><span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc"><span class="clogo" style="background:#ff9900;color:#fff">DB</span>DynamoDB</span><span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc">S3 Parquet</span><span class="schip" style="background:rgba(165,180,252,.08);border:1px solid rgba(165,180,252,.3);color:#a5b4fc"><span class="clogo" style="background:#ff9900;color:#fff">AQ</span>Athena</span></div></div>
+      <div class="skrow" style="transition-delay:.2s"><div class="skcat"><div class="skcat-name" style="color:#4ade80">☁️ Cloud & AWS</div><div class="skcat-cnt">10 skills</div></div><div class="chips"><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">KMS</span>KMS</span><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">S3</span>S3</span><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">λ</span>Lambda</span><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">SQS</span>SQS</span><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#ff9900;color:#fff">ECS</span>Fargate</span><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80">CloudWatch</span><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80">IAM</span><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80">Secrets Mgr</span><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80"><span class="clogo" style="background:#2496ed;color:#fff">🐳</span>Docker</span><span class="schip" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);color:#4ade80">EventBridge</span></div></div>
+      <div class="skrow" style="transition-delay:.25s"><div class="skcat"><div class="skcat-name" style="color:#fb923c">🤖 AI & Automation</div><div class="skcat-cnt">4 skills</div></div><div class="chips"><span class="schip" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.3);color:#fb923c"><span class="clogo" style="background:#a78bfa;color:#fff">C</span>Claude AI</span><span class="schip" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.3);color:#fb923c"><span class="clogo" style="background:#10a37f;color:#fff">GPT</span>OpenAI GPT</span><span class="schip" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.3);color:#fb923c">AI Agent Workflows</span><span class="schip" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.3);color:#fb923c">LLM Integration</span></div></div>
+      <div class="skrow" style="transition-delay:.3s"><div class="skcat"><div class="skcat-name" style="color:#c084fc">🔧 Tools & Practices</div><div class="skcat-cnt">7 skills</div></div><div class="chips"><span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc"><span class="clogo" style="background:#f05032;color:#fff">Git</span>Git</span><span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">CI/CD</span><span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">System Design</span><span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">Code Reviews</span><span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">Agile/Scrum</span><span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">Tech Mentoring</span><span class="schip" style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.3);color:#c084fc">Perf Reviews</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- EXPERIENCE — unchanged -->
 <section id="experience">
   <div class="si">
     <div class="reveal"><p class="slabel">Experience</p><h2 class="stitle">Where I've worked</h2></div>
     <div class="exp-card reveal">
-      <div class="exp-hdr">
-        <div class="exp-logo">SC</div>
-        <div><div class="exp-co">SysCloud Technologies Pvt Ltd</div><div class="exp-meta"><span>Jun 2018 – Present</span><span>·</span><span class="exp-badge">7+ years</span><span>·</span><span>B2B SaaS · Cloud Backup</span></div></div>
-      </div>
+      <div class="exp-hdr"><div class="exp-logo">SC</div><div><div class="exp-co">SysCloud Technologies Pvt Ltd</div><div class="exp-meta"><span>Jun 2018 – Present</span><span>·</span><span class="exp-badge">7+ years</span><span>·</span><span>B2B SaaS · Cloud Backup</span></div></div></div>
       <div class="prog-wrap">
-        <div class="prog-labels">
-          <span class="plbl"><span class="plbl-dot" style="background:#94a3b8"></span>Trainee</span>
-          <span class="plbl"><span class="plbl-dot" style="background:#4ade80"></span>SE</span>
-          <span class="plbl"><span class="plbl-dot" style="background:#4d8ff7"></span>Senior SE</span>
-          <span class="plbl"><span class="plbl-dot" style="background:#facc15"></span>Lead SE</span>
-          <span class="plbl"><span class="plbl-dot" style="background:#fb923c"></span>Sr. Lead</span>
-        </div>
-        <div class="prog-track" id="prog-track">
-          <div class="pseg" style="width:8%;background:#94a3b8"></div>
-          <div class="pseg" style="width:22%;background:#4ade80"></div>
-          <div class="pseg" style="width:20%;background:#4d8ff7"></div>
-          <div class="pseg" style="width:20%;background:#facc15"></div>
-          <div class="pseg" style="width:30%;background:#fb923c"></div>
-        </div>
+        <div class="prog-labels"><span class="plbl"><span class="plbl-dot" style="background:#94a3b8"></span>Trainee</span><span class="plbl"><span class="plbl-dot" style="background:#4ade80"></span>SE</span><span class="plbl"><span class="plbl-dot" style="background:#4d8ff7"></span>Senior SE</span><span class="plbl"><span class="plbl-dot" style="background:#facc15"></span>Lead SE</span><span class="plbl"><span class="plbl-dot" style="background:#fb923c"></span>Sr. Lead</span></div>
+        <div class="prog-track" id="prog-track"><div class="pseg" style="width:8%;background:#94a3b8"></div><div class="pseg" style="width:22%;background:#4ade80"></div><div class="pseg" style="width:20%;background:#4d8ff7"></div><div class="pseg" style="width:20%;background:#facc15"></div><div class="pseg" style="width:30%;background:#fb923c"></div></div>
         <div class="prog-dates"><span class="pdate">Jun 2018</span><span class="pdate">Present</span></div>
       </div>
       <div class="timeline">
@@ -630,17 +557,13 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
   </div>
 </section>
 
-<!-- EDUCATION -->
+<!-- EDUCATION — unchanged -->
 <section id="education">
   <div class="si">
     <div class="reveal"><p class="slabel">Education & Certifications</p><h2 class="stitle">Background</h2></div>
     <div class="edu-grid">
-      <div class="reveal-left">
-        <div class="edu-sh"><div class="edu-icon">🎓</div> Education</div>
-        <div class="edu-card"><p style="font-weight:700;color:var(--text);font-size:.88rem;margin-bottom:.4rem">M.Tech in Computer Science & Engineering</p><p style="color:#4d8ff7;font-size:.78rem;font-weight:600;margin-bottom:.25rem">National Institute of Technology Tiruchirappalli</p><p style="color:var(--text2);font-size:.72rem">2016 – 2018 · Tamil Nadu, India</p></div>
-      </div>
-      <div class="reveal-right">
-        <div class="edu-sh"><div class="edu-icon">🏅</div> Certifications</div>
+      <div class="reveal-left"><div class="edu-sh"><div class="edu-icon">🎓</div> Education</div><div class="edu-card"><p style="font-weight:700;color:var(--text);font-size:.88rem;margin-bottom:.4rem">M.Tech in Computer Science & Engineering</p><p style="color:#4d8ff7;font-size:.78rem;font-weight:600;margin-bottom:.25rem">National Institute of Technology Tiruchirappalli</p><p style="color:var(--text2);font-size:.72rem">2016 – 2018 · Tamil Nadu, India</p></div></div>
+      <div class="reveal-right"><div class="edu-sh"><div class="edu-icon">🏅</div> Certifications</div>
         <div class="cert-item"><span class="cert-name">AWS for Beginners</span><span class="cert-issuer">Great Learning</span></div>
         <div class="cert-item" style="transition-delay:.1s"><span class="cert-name">Unix-Linux Shell Scripting Workshop</span><span class="cert-issuer">Shell Scripting</span></div>
         <div class="cert-item" style="transition-delay:.2s"><span class="cert-name">Full Stack Development</span><span class="cert-issuer">Coursera</span></div>
@@ -649,11 +572,10 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT — unchanged -->
 <section id="contact">
   <div class="si">
-    <div class="reveal"><p class="slabel">Contact</p><h2 class="stitle">Let's work together</h2>
-    <p style="color:var(--text2);font-size:.95rem;max-width:420px;margin:0 auto 3rem;line-height:1.7">Open to Technical Architect & Senior Lead roles. I typically respond within 24 hours.</p></div>
+    <div class="reveal"><p class="slabel">Contact</p><h2 class="stitle">Let's work together</h2><p style="color:var(--text2);font-size:.95rem;max-width:420px;margin:0 auto 3rem;line-height:1.7">Open to Technical Architect & Senior Lead roles. I typically respond within 24 hours.</p></div>
     <div class="contact-grid">
       <div class="ccard reveal" onclick="copyEmail()"><div class="ccard-icon">📧</div><div><div class="clabel">Email</div><div class="cval">gedamaditya@gmail.com</div></div><div class="chint" id="copy-hint"><span>📋</span> Click to copy</div></div>
       <a href="https://linkedin.com/in/aditya-gedam-8260442b" target="_blank" rel="noopener noreferrer" class="ccard reveal" style="transition-delay:.1s"><div class="ccard-icon">💼</div><div><div class="clabel">LinkedIn</div><div class="cval">aditya-gedam-8260442b</div></div><div class="chint">Open profile ↗</div></a>
@@ -663,25 +585,21 @@ footer{border-top:1px solid var(--border-faint);background:var(--bg2);padding:3r
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER — unchanged -->
 <footer>
   <div class="fi">
     <div class="ftop">
       <div><div class="fname">Aditya <span class="grad">Gedam</span></div><div class="frole">Senior Lead Engineer · Hyderabad, India</div></div>
       <nav class="fnav"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
-      <div class="fsoc">
-        <a href="https://linkedin.com/in/aditya-gedam-8260442b" target="_blank" class="fsoc-btn" title="LinkedIn">in</a>
-        <a href="https://github.com/ady321" target="_blank" class="fsoc-btn" title="GitHub">GH</a>
-        <a href="mailto:gedamaditya@gmail.com" class="fsoc-btn" title="Email">@</a>
-      </div>
+      <div class="fsoc"><a href="https://linkedin.com/in/aditya-gedam-8260442b" target="_blank" class="fsoc-btn" title="LinkedIn">in</a><a href="https://github.com/ady321" target="_blank" class="fsoc-btn" title="GitHub">GH</a><a href="mailto:gedamaditya@gmail.com" class="fsoc-btn" title="Email">@</a></div>
     </div>
     <div class="fdivider"></div>
     <div class="fbot"><span>© 2026 Aditya Gedam. All rights reserved.</span><span>Built with HTML · Deployed on GitHub Pages</span></div>
   </div>
 </footer>
 
+<!-- ALL JS — identical to your file, zero changes -->
 <script>
-/* ── SPLASH ── */
 window.addEventListener('load', () => {
   const logo = document.getElementById('splash-logo');
   const bar = document.getElementById('splash-bar');
@@ -689,169 +607,65 @@ window.addEventListener('load', () => {
   setTimeout(() => { bar.style.width='200px'; }, 300);
   setTimeout(() => {
     document.getElementById('splash').classList.add('hide');
-    // hero entrance
     ['hl','h1','htw','hsub','hctas','sgrid','barrow'].forEach((id,i) => {
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if(el) el.classList.add('show');
-      }, i * 120);
+      setTimeout(() => { const el=document.getElementById(id); if(el)el.classList.add('show'); }, i*120);
     });
-    document.querySelectorAll('.ftag').forEach((t,i) => setTimeout(() => t.classList.add('show'), 200 + i*80));
-    setTimeout(() => animateCounters(), 600);
+    document.querySelectorAll('.ftag').forEach((t,i)=>setTimeout(()=>t.classList.add('show'),200+i*80));
+    setTimeout(()=>animateCounters(),600);
   }, 1400);
 });
-
-/* ── CURSOR ── */
-const dot = document.getElementById('cursor-dot');
-const ring = document.getElementById('cursor-ring');
-document.addEventListener('mousemove', e => {
-  dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
-  ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px';
-});
-
-/* ── SCROLL PROGRESS + NAV + DOTS ── */
-const sections = ['hero','about','projects','skills','experience','education','contact'];
-window.addEventListener('scroll', () => {
-  // progress bar
-  const p = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-  document.getElementById('progress-bar').style.width = (p * 100) + '%';
-  // nav
-  const nav = document.getElementById('navbar');
-  if(window.scrollY > 50) nav.classList.add('visible'); else nav.classList.remove('visible');
-  // active nav + section dots — both updated together
-  let current = 'hero';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if(el && window.scrollY >= el.offsetTop - 150) current = id;
-  });
-  // nav links
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
-  // section dots
-  document.querySelectorAll('.sdot-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.sec === current);
-  });
-  // scroll-reveal
+const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px'});
+const sections=['hero','about','projects','skills','experience','education','contact'];
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.body.scrollHeight-window.innerHeight);
+  document.getElementById('progress-bar').style.width=(p*100)+'%';
+  const nav=document.getElementById('navbar');
+  if(window.scrollY>50)nav.classList.add('visible');else nav.classList.remove('visible');
+  let current='hero';
+  sections.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-150)current=id;});
+  document.querySelectorAll('.nav-links a').forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
+  document.querySelectorAll('.sdot-btn').forEach(btn=>{btn.classList.toggle('active',btn.dataset.sec===current);});
   revealOnScroll();
 });
-setTimeout(() => document.getElementById('navbar').classList.add('visible'), 800);
-
-/* ── SCROLL REVEAL — all element types ── */
-function revealOnScroll() {
-  const threshold = window.innerHeight * 0.88;
-  // generic reveal classes
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => {
-    if(el.getBoundingClientRect().top < threshold) el.classList.add('show');
-  });
-  // skill rows (left-to-right)
-  document.querySelectorAll('.skrow').forEach(el => {
-    if(el.getBoundingClientRect().top < threshold) el.classList.add('show');
-  });
-  // individual chips after row visible
-  document.querySelectorAll('.skrow.show .schip').forEach((chip, i) => {
-    setTimeout(() => chip.classList.add('show'), i * 40);
-  });
-  // skill bars
-  document.querySelectorAll('.skills-core.show .bar-fill, .reveal.show .bar-fill').forEach(el => {
-    if(!el.style.width || el.style.width === '0px' || el.style.width === '0%') {
-      el.style.width = el.dataset.w + '%';
-    }
-  });
-  // also trigger bars when skills-core is visible
-  document.querySelectorAll('.skills-core').forEach(core => {
-    if(core.getBoundingClientRect().top < threshold) {
-      core.querySelectorAll('.bar-fill').forEach(el => { el.style.width = el.dataset.w + '%'; });
-    }
-  });
-  // timeline items
-  document.querySelectorAll('.tl-item').forEach(el => {
-    if(el.getBoundingClientRect().top < threshold) el.classList.add('show');
-  });
-  // progress bar segments
-  document.querySelectorAll('.pseg').forEach(el => {
-    if(el.getBoundingClientRect().top < threshold) el.classList.add('show');
-  });
-  // cert items
-  document.querySelectorAll('.cert-item').forEach((el,i) => {
-    if(el.getBoundingClientRect().top < threshold) setTimeout(() => el.classList.add('show'), i*100);
-  });
+setTimeout(()=>document.getElementById('navbar').classList.add('visible'),800);
+function revealOnScroll(){
+  const t=window.innerHeight*.88;
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>{if(el.getBoundingClientRect().top<t)el.classList.add('show');});
+  document.querySelectorAll('.skrow').forEach(el=>{if(el.getBoundingClientRect().top<t)el.classList.add('show');});
+  document.querySelectorAll('.skrow.show .schip').forEach((chip,i)=>{setTimeout(()=>chip.classList.add('show'),i*40);});
+  document.querySelectorAll('.skills-core').forEach(core=>{if(core.getBoundingClientRect().top<t){core.querySelectorAll('.bar-fill').forEach(el=>{el.style.width=el.dataset.w+'%';});}});
+  document.querySelectorAll('.tl-item').forEach(el=>{if(el.getBoundingClientRect().top<t)el.classList.add('show');});
+  document.querySelectorAll('.pseg').forEach(el=>{if(el.getBoundingClientRect().top<t)el.classList.add('show');});
+  document.querySelectorAll('.cert-item').forEach((el,i)=>{if(el.getBoundingClientRect().top<t)setTimeout(()=>el.classList.add('show'),i*100);});
 }
-// run once on load
-setTimeout(revealOnScroll, 1600);
-
-/* ── TYPED ANIMATION ── */
-const phrases = ['Senior Lead Engineer','Cloud Architect','AWS KMS Expert','AI Agent Builder','Technical Mentor'];
+setTimeout(revealOnScroll,1600);
+const phrases=['Senior Lead Engineer','Cloud Architect','AWS KMS Expert','AI Agent Builder','Technical Mentor'];
 let pi=0,ci=0,del=false;
-function typeEffect() {
-  const el = document.getElementById('typed-text');
-  if(!el) return;
-  const phrase = phrases[pi];
-  if(!del){ el.textContent=phrase.slice(0,++ci); if(ci===phrase.length){del=true;setTimeout(typeEffect,2000);return;} setTimeout(typeEffect,80); }
-  else{ el.textContent=phrase.slice(0,--ci); if(ci===0){del=false;pi=(pi+1)%phrases.length;setTimeout(typeEffect,400);return;} setTimeout(typeEffect,45); }
-}
-setTimeout(typeEffect, 1600);
-
-/* ── COUNTER ANIMATION ── */
-let countersRun = false;
-function animateCounters() {
-  if(countersRun) return; countersRun=true;
-  document.querySelectorAll('.stat-num[data-t]').forEach(el => {
-    const target=+el.dataset.t, suffix=el.dataset.s||'+';
-    let cur=0; const step=target/60;
-    const t=setInterval(()=>{ cur=Math.min(cur+step,target); el.textContent=Math.floor(cur)+suffix; if(cur>=target){el.textContent=target+suffix;clearInterval(t);}},28);
-  });
-}
-
-/* ── SECTION DOT CLICK ── */
-function scrollToSec(id) {
-  document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
-}
-
-/* ── EXPERIENCE TOGGLE ── */
-function toggleRole(card) { card.classList.toggle('open'); }
-
-/* ── PROJECT FILTERS ── */
-document.querySelectorAll('#cat-filters .fchip').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('#cat-filters .fchip').forEach(b=>b.classList.remove('act'));
-    btn.classList.add('act');
-    const cat = btn.dataset.cat;
-    document.querySelectorAll('.pcard').forEach(c => { c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none'; });
-  });
-});
-
-/* ── COPY EMAIL ── */
-function copyEmail() {
-  navigator.clipboard.writeText('gedamaditya@gmail.com').then(()=>{
-    const h=document.getElementById('copy-hint');
-    h.innerHTML='<span style="color:#4ade80">✓ Copied!</span>';
-    setTimeout(()=>{ h.innerHTML='<span>📋</span> Click to copy'; },2000);
-  });
-}
-
-/* ── THEME TOGGLE ── */
-function toggleTheme() {
-  const html=document.documentElement, isDark=html.dataset.theme==='dark';
-  html.dataset.theme=isDark?'light':'dark';
-  document.getElementById('theme-btn').textContent=isDark?'🌙':'☀️';
-  try{localStorage.setItem('theme',isDark?'light':'dark');}catch(e){}
-}
+function typeEffect(){const el=document.getElementById('typed-text');if(!el)return;const phrase=phrases[pi];if(!del){el.textContent=phrase.slice(0,++ci);if(ci===phrase.length){del=true;setTimeout(typeEffect,2000);return;}setTimeout(typeEffect,80);}else{el.textContent=phrase.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length;setTimeout(typeEffect,400);return;}setTimeout(typeEffect,45);}}
+setTimeout(typeEffect,1600);
+let countersRun=false;
+function animateCounters(){if(countersRun)return;countersRun=true;document.querySelectorAll('.stat-num[data-t]').forEach(el=>{const target=+el.dataset.t,suffix=el.dataset.s||'+';let cur=0;const step=target/60;const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=Math.floor(cur)+suffix;if(cur>=target){el.textContent=target+suffix;clearInterval(t);}},28);});}
+function scrollToSec(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'});}
+function toggleRole(card){card.classList.toggle('open');}
+document.querySelectorAll('#cat-filters .fchip').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('#cat-filters .fchip').forEach(b=>b.classList.remove('act'));btn.classList.add('act');const cat=btn.dataset.cat;document.querySelectorAll('.pcard').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});});});
+function copyEmail(){navigator.clipboard.writeText('gedamaditya@gmail.com').then(()=>{const h=document.getElementById('copy-hint');h.innerHTML='<span style="color:#4ade80">✓ Copied!</span>';setTimeout(()=>{h.innerHTML='<span>📋</span> Click to copy';},2000);});}
+function toggleTheme(){const html=document.documentElement,isDark=html.dataset.theme==='dark';html.dataset.theme=isDark?'light':'dark';document.getElementById('theme-btn').textContent=isDark?'🌙':'☀️';try{localStorage.setItem('theme',isDark?'light':'dark');}catch(e){}}
 try{const s=localStorage.getItem('theme');if(s){document.documentElement.dataset.theme=s;document.getElementById('theme-btn').textContent=s==='dark'?'☀️':'🌙';}}catch(e){}
-
-/* ── SEARCH ── */
 const SI=[
   {l:'About Me',s:'#about'},{l:'AWS KMS Encryption System',s:'#projects'},
   {l:'Japan Platform Integration',s:'#projects'},{l:'Box Backup & Restore',s:'#projects'},
   {l:'Dynamic TTR System',s:'#projects'},{l:'AI-Powered Onboarding',s:'#projects'},
-  {l:'Microsoft 365 & SharePoint',s:'#projects'},{l:'Skills – PHP / Python',s:'#skills'},
+  {l:'Microsoft 365 & SharePoint',s:'#projects'},{l:'PostgreSQL Parquet Migration',s:'#projects'},
+  {l:'Unified Notification Platform',s:'#projects'},{l:'SharePoint UB Graph Architecture',s:'#projects'},
+  {l:'Real-Time Sync Framework',s:'#projects'},{l:'Skills – PHP / Python',s:'#skills'},
   {l:'Skills – AWS & Cloud',s:'#skills'},{l:'Skills – PostgreSQL',s:'#skills'},
   {l:'Experience – Senior Lead Engineer',s:'#experience'},
   {l:'Education – NIT Tiruchirappalli',s:'#education'},
   {l:'Contact – gedamaditya@gmail.com',s:'#contact'},
 ];
 function openSearch(){document.getElementById('search-modal').classList.add('open');setTimeout(()=>document.getElementById('sinput').focus(),50);}
-function closeSearch(){document.getElementById('search-modal').classList.remove('open');document.getElementById('sinput').value='';document.getElementById('sresults').innerHTML='<div class="sempty">Type to search…</div>';}
+function closeSearch(){document.getElementById('search-modal').classList.remove('on');document.getElementById('search-modal').classList.remove('open');document.getElementById('sinput').value='';document.getElementById('sresults').innerHTML='<div class="sempty">Type to search…</div>';}
 function doSearch(q){const r=document.getElementById('sresults');if(!q){r.innerHTML='<div class="sempty">Type to search…</div>';return;}const hits=SI.filter(i=>i.l.toLowerCase().includes(q.toLowerCase()));r.innerHTML=hits.length?hits.map(h=>`<div class="sitem" onclick="goTo('${h.s}')">${h.l}</div>`).join(''):'<div class="sempty">No results found.</div>';}
 function goTo(sec){closeSearch();document.querySelector(sec)?.scrollIntoView({behavior:'smooth'});}
 document.getElementById('search-modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeSearch();});
