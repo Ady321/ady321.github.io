@@ -727,16 +727,22 @@ BIE.addEventListener('keydown',e=>{if(e.key==='Enter')B_send()});
 document.getElementById('BSND').addEventListener('click',B_send);
 
 /* SCROLL DOTS */
-const SECTIONS=['about','projects','skills','experience','education','ai','contact'];
+const SECS=['about','projects','skills','experience','education','ai','contact'];
 const dotsEl=document.getElementById('SDOTS');
-dotsEl.innerHTML=SECTIONS.map((s,i)=>`<button class="scroll-dot" data-sec="${s}" title="${s}" onclick="document.getElementById('${s}').scrollIntoView({behavior:'smooth'})"></button>`).join('');
+dotsEl.innerHTML=SECS.map(s=>`<button class="scroll-dot" data-sec="${s}" title="${s}" onclick="document.getElementById('${s}').scrollIntoView({behavior:'smooth'})"></button>`).join('');
 function updateDots(){
-  let cur=SECTIONS[0];
-  SECTIONS.forEach(s=>{const el=document.getElementById(s);if(el&&scrollY>=el.offsetTop-300)cur=s});
-  document.querySelectorAll('.scroll-dot').forEach(d=>d.classList.toggle('active',d.dataset.sec===cur));
+  let cur=SECS[0];
+  SECS.forEach(s=>{const el=document.getElementById(s);if(el&&window.scrollY>=el.offsetTop-300)cur=s});
+  document.querySelectorAll('.scroll-dot').forEach(d=>{
+    const isActive=d.dataset.sec===cur;
+    d.classList.toggle('active',isActive);
+    d.style.background=isActive?'#6366f1':'rgba(255,255,255,.15)';
+    d.style.height=isActive?'20px':'8px';
+  });
 }
 window.addEventListener('scroll',updateDots,{passive:true});
-setTimeout(updateDots,100);
+window.addEventListener('load',updateDots);
+updateDots();
 
 /* COPY EMAIL */
 function copyEmail(){navigator.clipboard.writeText('gedamaditya@gmail.com').then(()=>{const t=document.getElementById('toast');t.style.opacity='1';t.style.transform='translateX(-50%) translateY(0)';setTimeout(()=>{t.style.opacity='0';t.style.transform='translateX(-50%) translateY(8px)'},2000)})}
