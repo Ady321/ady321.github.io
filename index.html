@@ -11,8 +11,11 @@ html{scroll-behavior:smooth}
 body{background:#0a0a0f;color:#e2e8f0;font-family:'Inter',sans-serif;overflow-x:hidden}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#6366f1;border-radius:4px}
 
-/* CANVAS — fixed to body, never affects any layout */
+/* CANVAS */
 #CNV{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+
+/* SCROLL DOTS */
+#SDOTS{position:fixed;right:.5rem;top:50%;transform:translateY(-50%);z-index:9999;display:flex;flex-direction:column;gap:.45rem;align-items:center}
 
 /* NAV */
 nav{position:fixed;top:0;inset-x:0;z-index:200;background:rgba(10,10,15,.93);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
@@ -60,43 +63,65 @@ nav{position:fixed;top:0;inset-x:0;z-index:200;background:rgba(10,10,15,.93);bac
 .ti{display:inline-flex;align-items:center;gap:.4rem;padding:0 1.5rem;font-size:.75rem;color:#475569;font-weight:500}
 .tidot{width:4px;height:4px;border-radius:50%;background:#6366f1;flex-shrink:0}
 
-/* HERO — no canvas inside, content centered */
-.hero{height:100vh;display:flex;align-items:center;justify-content:center;padding:0 1.5rem;position:relative;z-index:1;margin-top:0}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:1rem}
+/* ═══════════════════════════════════
+   HERO — exactly like Aniket
+   Full viewport, content centered
+   Floating pills in background
+   Stats in horizontal row
+   NO right card
+   ═══════════════════════════════════ */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 1.5rem;
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+}
+/* floating pills */
+.hpill{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  gap:.35rem;
+  background:rgba(13,18,30,.9);
+  border:1px solid rgba(99,102,241,.2);
+  border-radius:50px;
+  padding:.28rem .85rem;
+  font-size:.72rem;
+  color:#64748b;
+  white-space:nowrap;
+  pointer-events:none;
+  z-index:1;
+}
+.hpill-dot{width:6px;height:6px;border-radius:50%;background:#6366f1;flex-shrink:0}
+/* hero content — centered column */
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  max-width:620px;
+  width:100%;
+}
+.hero-badge{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:1.2rem}
 .hbdot{width:7px;height:7px;border-radius:50%;background:#10b981;animation:GBLINK 2s infinite;flex-shrink:0}
 .hbtext{font-size:.75rem;color:#10b981;font-weight:500}
-.hero-greeting{font-size:1rem;color:#64748b;margin-bottom:.2rem}
-.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:.5rem;color:#f1f5f9}
-.hero-type{font-size:clamp(.9rem,2.2vw,1.25rem);font-weight:600;color:#818cf8;margin-bottom:.9rem;min-height:1.6rem;display:flex;align-items:center}
-.caret{width:2px;height:1.1em;background:#6366f1;display:inline-block;animation:CBLINK .7s infinite;border-radius:1px;margin-left:2px;vertical-align:middle}
-.hero-sub{font-size:.9rem;color:#64748b;line-height:1.75;max-width:440px;margin-bottom:1.8rem}
-.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
-.btn-p{background:#6366f1;border:none;border-radius:8px;padding:.65rem 1.4rem;font-size:.855rem;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;transition:.2s}
+.hero-greeting{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:#6366f1;margin-bottom:.4rem;font-weight:600}
+.hero h1{font-size:clamp(2.8rem,9vw,4.8rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.6rem;color:#f1f5f9}
+.hero-type{font-size:clamp(.88rem,2vw,1.1rem);font-weight:500;color:#64748b;margin-bottom:.9rem;min-height:1.5rem;display:flex;align-items:center;justify-content:center;gap:2px}
+.caret{width:2px;height:1em;background:#6366f1;display:inline-block;animation:CBLINK .7s infinite;border-radius:1px;vertical-align:middle}
+.hero-sub{font-size:.88rem;color:#64748b;line-height:1.75;max-width:480px;margin:0 auto 1.6rem}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.8rem}
+.btn-p{background:#6366f1;border:none;border-radius:8px;padding:.65rem 1.5rem;font-size:.855rem;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;transition:.2s}
 .btn-p:hover{background:#5457e5}
-.btn-g{background:transparent;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.65rem 1.4rem;font-size:.855rem;font-weight:500;color:#94a3b8;cursor:pointer;text-decoration:none;transition:.2s}
-.btn-g:hover{border-color:rgba(99,102,241,.4);color:#e2e8f0}
-
-/* FLOATING PILLS in hero background — exactly like Aniket */
-.hero-pills{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.hpill{position:absolute;display:flex;align-items:center;gap:.35rem;background:rgba(15,23,42,.8);border:1px solid rgba(99,102,241,.2);border-radius:50px;padding:.3rem .75rem;font-size:.72rem;color:#64748b;backdrop-filter:blur(4px)}
-.hpill-dot{width:6px;height:6px;border-radius:50%;background:#6366f1;flex-shrink:0}
-/* Stats horizontal row — like Aniket (4 boxes in a row) */
-.hero-stats{display:flex;gap:1rem;margin-top:1.8rem;flex-wrap:wrap}
-.hstat-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:.7rem 1.1rem;text-align:center;flex:1;min-width:80px}
-.hstat-box .sn{font-size:1.3rem;font-weight:800;color:#e2e8f0}
-.hstat-box .sl{font-size:.62rem;color:#475569;margin-top:.1rem;text-transform:uppercase;letter-spacing:.04em}
-.hcard-top{background:linear-gradient(135deg,#6366f1,#8b5cf6);padding:1.8rem;display:flex;flex-direction:column;align-items:center;gap:.6rem;text-align:center}
-.hcard-av{width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:2rem}
-.hcard-name{font-size:1rem;font-weight:700;color:#fff}
-.hcard-role{font-size:.75rem;color:rgba(255,255,255,.7);line-height:1.5}
-.hcard-avail{display:flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:.28rem .8rem;font-size:.7rem;color:#fff}
-.avdot{width:6px;height:6px;border-radius:50%;background:#10b981;flex-shrink:0;animation:GBLINK 2s infinite}
-.hcard-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06)}
-.hstat{background:#13131f;padding:.9rem;text-align:center}
-.hstat .n{font-size:1.4rem;font-weight:800;color:#818cf8}
-.hstat .l{font-size:.62rem;color:#475569;margin-top:.1rem;text-transform:uppercase;letter-spacing:.04em}
-.hcard-loc{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.75rem;border-top:1px solid rgba(255,255,255,.06);font-size:.73rem;color:#475569}
+.btn-g{background:transparent;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.65rem 1.5rem;font-size:.855rem;font-weight:500;color:#94a3b8;cursor:pointer;text-decoration:none}
+/* stats row — 4 boxes horizontal */
+.hero-stats{display:flex;gap:.6rem;justify-content:center}
+.hstat-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:.65rem .9rem;text-align:center;flex:1;min-width:0}
+.hstat-box .sn{font-size:1.2rem;font-weight:800;color:#e2e8f0}
+.hstat-box .sl{font-size:.55rem;color:#475569;margin-top:.1rem;text-transform:uppercase;letter-spacing:.03em;line-height:1.3}
 
 /* SECTIONS */
 section{padding:5rem 1.5rem;position:relative;z-index:1}
@@ -162,7 +187,7 @@ section{padding:5rem 1.5rem;position:relative;z-index:1}
 .sk-fill.c5{background:linear-gradient(90deg,#6366f1,#8b5cf6)}
 .sk-fill.c6{background:linear-gradient(90deg,#f59e0b,#10b981)}
 .sk-yr{font-size:.7rem;color:#475569;min-width:32px;text-align:right}
-/* Category rows */
+/* skill category rows — animation via JS inline styles */
 .sk-cats{display:flex;flex-direction:column}
 .sk-cat-row{display:flex;align-items:flex-start;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
 .sk-cat-row:last-child{border-bottom:none}
@@ -231,9 +256,9 @@ section{padding:5rem 1.5rem;position:relative;z-index:1}
 .ai-online{margin-left:auto;display:flex;align-items:center;gap:.3rem;font-size:.68rem;color:#10b981}
 .ai-dot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:GBLINK 2s infinite}
 .chat-msgs{height:260px;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.65rem}
-.msg{max-width:85%;padding:.6rem .9rem;border-radius:12px;font-size:.8rem;line-height:1.6;animation:POP .25s ease}
-.msg.bot{background:#1a1a2e;border:1px solid rgba(255,255,255,.06);align-self:flex-start;border-bottom-left-radius:3px;color:#94a3b8}
-.msg.user{background:#6366f1;color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
+.msg{max-width:85%;padding:.6rem .9rem;border-radius:12px;font-size:.8rem;line-height:1.6}
+.msg.bot{background:#1a1a2e;border:1px solid rgba(255,255,255,.06);align-self:flex-start;color:#94a3b8}
+.msg.user{background:#6366f1;color:#fff;align-self:flex-end}
 .msg.typing{color:#475569;font-style:italic}
 .chat-qrow{display:flex;flex-wrap:wrap;gap:.35rem;padding:.65rem 1rem;border-top:1px solid rgba(255,255,255,.06)}
 .qb{background:#0d0d17;border:1px solid rgba(255,255,255,.07);border-radius:50px;padding:.24rem .75rem;font-size:.69rem;color:#64748b;cursor:pointer}
@@ -255,7 +280,7 @@ section{padding:5rem 1.5rem;position:relative;z-index:1}
 .email-cta{display:flex;justify-content:center;margin-top:.5rem}
 .email-cta a{display:inline-flex;align-items:center;gap:.5rem;background:#6366f1;border-radius:8px;padding:.7rem 2rem;font-size:.88rem;color:#fff;text-decoration:none;font-weight:600}
 
-/* FOOTER — single footer, exactly like Aniket */
+/* FOOTER */
 footer{background:#0a0a0f;border-top:1px solid rgba(255,255,255,.05);position:relative;z-index:1}
 .foot-line1{text-align:center;padding:.6rem 2rem;font-size:.7rem;color:#1e293b}
 .foot-line2{max-width:1200px;margin:0 auto;padding:.85rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;border-top:1px solid rgba(255,255,255,.04)}
@@ -266,10 +291,6 @@ footer{background:#0a0a0f;border-top:1px solid rgba(255,255,255,.05);position:re
 .foot-nav a{font-size:.75rem;color:#475569;text-decoration:none;transition:.2s}
 .foot-nav a:hover{color:#818cf8}
 .foot-right{font-size:.7rem;color:#1e293b}
-
-/* SCROLL DOTS */
-.scroll-dots{position:fixed;right:.5rem;top:50%;transform:translateY(-50%);z-index:9999;display:flex;flex-direction:column;gap:.5rem;align-items:center}
-.scroll-dot{width:6px;height:6px;border-radius:50px;background:rgba(255,255,255,.2);cursor:pointer;border:none;padding:0;display:block;transition:all .3s ease}
 
 /* FLOATING BOT */
 .bot-wrap{position:fixed;bottom:1.6rem;right:1.6rem;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
@@ -301,27 +322,24 @@ footer{background:#0a0a0f;border-top:1px solid rgba(255,255,255,.05);position:re
 @keyframes TICK{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes GBLINK{0%,100%{opacity:1}50%{opacity:.2}}
 @keyframes CBLINK{0%,100%{opacity:1}50%{opacity:0}}
-@keyframes POP{from{opacity:0;transform:scale(.95) translateY(4px)}to{opacity:1;transform:none}}
 @keyframes BOTRING{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.4);opacity:0}}
 
 @media(max-width:768px){
-  .hero-inner{grid-template-columns:1fr}
-  .hcard{display:none}
   .edu-wrap{grid-template-columns:1fr}
   .nav-links,.nav-search{display:none}
   .foot-nav{display:none}
+  .hero-stats{gap:.4rem}
+  .hstat-box{padding:.55rem .5rem}
+  .hstat-box .sn{font-size:1rem}
 }
 </style>
 </head>
 <body>
 
-<!-- CANVAS at body level — never affects layout -->
 <canvas id="CNV"></canvas>
+<div id="SDOTS"></div>
 
-<!-- SCROLL DOTS -->
-<div class="scroll-dots" id="SDOTS"></div>
-
-<!-- SEARCH MODAL -->
+<!-- SEARCH -->
 <div class="sov" id="SOV" onclick="if(event.target===this)SC()">
   <div class="sbox">
     <div class="srow"><span style="color:#475569">⌕</span><input id="SINP" placeholder="Search sections, skills, projects..." oninput="SS(this.value)" onkeydown="if(event.key==='Escape')SC()"/><kbd style="background:rgba(99,102,241,.12);border-radius:4px;padding:.12rem .42rem;font-size:.65rem;color:#818cf8">ESC</kbd></div>
@@ -354,43 +372,34 @@ footer{background:#0a0a0f;border-top:1px solid rgba(255,255,255,.05);position:re
 <!-- TICKER -->
 <div class="ticker-wrap"><div class="ticker" id="TKR"></div></div>
 
-<!-- HERO — content centered, floating pills in background -->
+<!-- HERO — content only, no right card, exactly like Aniket -->
 <section class="hero">
-  <!-- Floating tech pills like Aniket -->
-  <div class="hero-pills">
-    <div class="hpill" style="top:20%;left:5%"><span class="hpill-dot"></span>TypeScript</div>
-    <div class="hpill" style="top:35%;right:6%"><span class="hpill-dot"></span>Node.js</div>
-    <div class="hpill" style="top:55%;left:4%"><span class="hpill-dot"></span>PostgreSQL</div>
-    <div class="hpill" style="top:15%;right:10%"><span class="hpill-dot"></span>AWS</div>
-    <div class="hpill" style="bottom:30%;right:5%"><span class="hpill-dot"></span>Docker</div>
-    <div class="hpill" style="bottom:20%;left:6%"><span class="hpill-dot"></span>Microservices</div>
-    <div class="hpill" style="top:70%;right:8%"><span class="hpill-dot"></span>AI Agents</div>
-    <div class="hpill" style="bottom:38%;left:3%"><span class="hpill-dot"></span>GraphQL</div>
-  </div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-badge"><span class="hbdot"></span><span class="hbtext">Open to Technical Architect Roles</span></div>
-      <p class="hero-greeting">Hello, I'm</p>
-      <h1>Aditya Gedam</h1>
-      <div class="hero-type"><span id="TYPED"></span><span class="caret"></span></div>
-      <p class="hero-sub">Architecting scalable cloud-native systems & enterprise SaaS on AWS. 7+ years building high-performance backup, restore & API integration platforms for 200+ enterprise customers.</p>
-      <div class="hero-btns"><a href="#projects" class="btn-p">View My Work</a><a href="#" class="btn-g">Resume ↗</a></div>
-      <!-- Stats horizontal row like Aniket -->
-      <div class="hero-stats">
-        <div class="hstat-box"><div class="sn" data-t="7" data-s="+">0</div><div class="sl">Years Experience</div></div>
-        <div class="hstat-box"><div class="sn" data-t="10" data-s="+">0</div><div class="sl">Cloud Integrations</div></div>
-        <div class="hstat-box"><div class="sn" data-t="70" data-s="%">0</div><div class="sl">Faster Recovery</div></div>
-        <div class="hstat-box"><div class="sn" data-t="200" data-s="+">0</div><div class="sl">Enterprise Clients</div></div>
-      </div>
+  <!-- floating background pills -->
+  <div class="hpill" style="top:18%;left:4%"><span class="hpill-dot"></span>TypeScript</div>
+  <div class="hpill" style="top:28%;right:5%"><span class="hpill-dot"></span>Node.js</div>
+  <div class="hpill" style="top:52%;left:3%"><span class="hpill-dot"></span>PostgreSQL</div>
+  <div class="hpill" style="top:12%;right:8%"><span class="hpill-dot"></span>AWS</div>
+  <div class="hpill" style="bottom:28%;right:4%"><span class="hpill-dot"></span>Docker</div>
+  <div class="hpill" style="bottom:18%;left:5%"><span class="hpill-dot"></span>Microservices</div>
+  <div class="hpill" style="top:68%;right:7%"><span class="hpill-dot"></span>AI Agents</div>
+  <div class="hpill" style="bottom:35%;left:2%"><span class="hpill-dot"></span>GraphQL</div>
+
+  <!-- centered content -->
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hbdot"></span><span class="hbtext">Open to Technical Architect Roles</span></div>
+    <p class="hero-greeting">Hello, I'm</p>
+    <h1>Aditya Gedam</h1>
+    <div class="hero-type"><span id="TYPED"></span><span class="caret"></span></div>
+    <p class="hero-sub">Architecting scalable cloud-native systems & enterprise SaaS on AWS. 7+ years building high-performance backup, restore & API integration platforms for 200+ enterprise customers.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-p">View My Work</a>
+      <a href="#" class="btn-g">Resume ↗</a>
     </div>
-    <div class="hcard">
-      <div class="hcard-top">
-        <div class="hcard-av">👨‍💻</div>
-        <div class="hcard-name">Aditya Gedam</div>
-        <div class="hcard-role">Senior Lead Engineer · SysCloud Technologies<br/>Hyderabad, India</div>
-        <div class="hcard-avail"><span class="avdot"></span>Available for Architect Roles</div>
-      </div>
-      <div class="hcard-loc">📍 Hyderabad, India · IST (UTC+5:30)</div>
+    <div class="hero-stats">
+      <div class="hstat-box"><div class="sn" data-t="7" data-s="+">0</div><div class="sl">Years Experience</div></div>
+      <div class="hstat-box"><div class="sn" data-t="10" data-s="+">0</div><div class="sl">Cloud Integrations</div></div>
+      <div class="hstat-box"><div class="sn" data-t="70" data-s="%">0</div><div class="sl">Faster Recovery</div></div>
+      <div class="hstat-box"><div class="sn" data-t="200" data-s="+">0</div><div class="sl">Enterprise Clients</div></div>
     </div>
   </div>
 </section>
@@ -495,10 +504,10 @@ footer{background:#0a0a0f;border-top:1px solid rgba(255,255,255,.05);position:re
     <div class="ai-head"><div class="ai-av">🤖</div><div class="ai-meta"><strong>Aditya Assistant Bot</strong><p>Ask me anything</p></div><div class="ai-online"><span class="ai-dot"></span>Online</div></div>
     <div class="chat-msgs" id="CMSGS"><div class="msg bot">👋 Hi! I'm Aditya's AI assistant. Ask me anything!</div></div>
     <div class="chat-qrow">
-      <button class="qb" onclick="AI_ask('What are his top AWS achievements?')">AWS Achievements</button>
+      <button class="qb" onclick="AI_ask('Top AWS achievements?')">AWS</button>
       <button class="qb" onclick="AI_ask('Tell me about the KMS project')">KMS Project</button>
       <button class="qb" onclick="AI_ask('Japan work?')">Japan Work</button>
-      <button class="qb" onclick="AI_ask('Is he open to new opportunities?')">Open to Work</button>
+      <button class="qb" onclick="AI_ask('Open to new opportunities?')">Open to Work</button>
     </div>
     <div class="chat-foot">
       <input class="chat-inp" id="CINP" placeholder="Ask about skills, experience, projects..."/>
@@ -552,69 +561,59 @@ footer{background:#0a0a0f;border-top:1px solid rgba(255,255,255,.05);position:re
 <div id="toast">✓ Email copied!</div>
 
 <script>
-// ── CANVAS (body level, fixed position, zero layout impact) ──
+// CANVAS
 const CNV=document.getElementById('CNV'),CX=CNV.getContext('2d');
 CNV.width=innerWidth;CNV.height=innerHeight;
 addEventListener('resize',()=>{CNV.width=innerWidth;CNV.height=innerHeight});
 const PTS=Array.from({length:40},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15}));
-(function draw(){
-  CX.clearRect(0,0,CNV.width,CNV.height);
-  PTS.forEach(p=>{
-    p.x+=p.vx;p.y+=p.vy;
-    if(p.x<0||p.x>CNV.width)p.vx*=-1;
-    if(p.y<0||p.y>CNV.height)p.vy*=-1;
-    CX.beginPath();CX.arc(p.x,p.y,1.2,0,Math.PI*2);
-    CX.fillStyle='rgba(99,102,241,.25)';CX.fill();
-  });
-  PTS.forEach((a,i)=>PTS.slice(i+1).forEach(b=>{
-    const d=Math.hypot(a.x-b.x,a.y-b.y);
-    if(d<90){CX.beginPath();CX.moveTo(a.x,a.y);CX.lineTo(b.x,b.y);CX.strokeStyle=`rgba(99,102,241,${.1*(1-d/90)})`;CX.lineWidth=.6;CX.stroke()}
-  }));
-  requestAnimationFrame(draw);
-})();
+(function draw(){CX.clearRect(0,0,CNV.width,CNV.height);PTS.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>CNV.width)p.vx*=-1;if(p.y<0||p.y>CNV.height)p.vy*=-1;CX.beginPath();CX.arc(p.x,p.y,1.2,0,Math.PI*2);CX.fillStyle='rgba(99,102,241,.25)';CX.fill()});PTS.forEach((a,i)=>PTS.slice(i+1).forEach(b=>{const d=Math.hypot(a.x-b.x,a.y-b.y);if(d<90){CX.beginPath();CX.moveTo(a.x,a.y);CX.lineTo(b.x,b.y);CX.strokeStyle=`rgba(99,102,241,${.1*(1-d/90)})`;CX.lineWidth=.6;CX.stroke()}}));requestAnimationFrame(draw)})();
 
-// ── TICKER ──
+// TICKER
 const TK=['PHP','Python','TypeScript','JavaScript','AWS','PostgreSQL','NestJS','S3','Lambda','SQS','Docker','DynamoDB','Microsoft Graph','KMS Encryption','Microservices','REST APIs','GCP','Unix Shell Scripting','ECS','RDS','MDL 2.0','Config-Driven','Claude AI','AI Agents'];
 document.getElementById('TKR').innerHTML=[...TK,...TK].map(x=>`<span class="ti"><span class="tidot"></span>${x}</span>`).join('');
 
-// ── TYPEWRITER ──
+// TYPEWRITER
 const TWR=['PHP Expert','Cloud Architect','Python Developer','AWS Engineer','TypeScript Developer','PostgreSQL Expert','API Integration Expert','Backend Architect','Enterprise SaaS Builder','AI-Powered Developer'];
 let TWi=0,TWc=0,TWd=false;
 const TWe=document.getElementById('TYPED');
 function TWrun(){const w=TWR[TWi];if(!TWd){TWe.textContent=w.slice(0,++TWc);if(TWc===w.length){setTimeout(()=>{TWd=true;TWrun()},1800);return}setTimeout(TWrun,80)}else{TWe.textContent=w.slice(0,--TWc);if(TWc===0){TWd=false;TWi=(TWi+1)%TWR.length;setTimeout(TWrun,300);return}setTimeout(TWrun,40)}}
 TWrun();
 
-// ── COUNTERS ──
+// COUNTERS
 document.querySelectorAll('[data-t]').forEach(el=>{new IntersectionObserver(([e])=>{if(!e.isIntersecting)return;const tg=+el.dataset.t,sf=el.dataset.s||'';let c=0;const s=setInterval(()=>{c=Math.min(c+tg/55,tg);el.textContent=Math.floor(c)+sf;if(c>=tg)clearInterval(s)},20)},{threshold:.5}).observe(el)});
 
-// ── REVEAL ──
+// REVEAL
 document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('in')},{threshold:.06}).observe(el)});
 
-// ── ACTIVE NAV ──
+// ACTIVE NAV
 window.addEventListener('scroll',()=>{let cur='';document.querySelectorAll('section[id]').forEach(s=>{if(scrollY>=s.offsetTop-130)cur=s.id});document.querySelectorAll('.nl').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur))},{passive:true});
 
-// ── SCROLL DOTS ──
+// SCROLL DOTS — 7 dots, circles, active = indigo pill
 const SECS=['about','projects','skills','experience','education','ai','contact'];
-document.getElementById('SDOTS').innerHTML=SECS.map(s=>`<button onclick="document.getElementById('${s}').scrollIntoView({behavior:'smooth'})" data-s="${s}" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;display:block;transition:all .3s;padding:0"></button>`).join('');
+const SDOTS=document.getElementById('SDOTS');
+SDOTS.innerHTML=SECS.map(s=>`<button data-s="${s}" onclick="document.getElementById('${s}').scrollIntoView({behavior:'smooth'})"></button>`).join('');
+// style each dot
+SDOTS.querySelectorAll('button').forEach(b=>{
+  b.style.cssText='width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18);border:none;cursor:pointer;padding:0;display:block;transition:all .3s ease;flex-shrink:0';
+});
 function updateDots(){
   let cur=SECS[0];
-  SECS.forEach(s=>{const el=document.getElementById(s);if(el&&window.scrollY>=el.offsetTop-250)cur=s});
-  document.querySelectorAll('#SDOTS button').forEach(b=>{
-    if(b.dataset.s===cur){b.style.background='#6366f1';b.style.height='18px';b.style.borderRadius='3px'}
-    else{b.style.background='rgba(255,255,255,.2)';b.style.height='6px';b.style.borderRadius='50%'}
+  SECS.forEach(s=>{const el=document.getElementById(s);if(el&&window.scrollY>=el.offsetTop-300)cur=s});
+  SDOTS.querySelectorAll('button').forEach(b=>{
+    if(b.dataset.s===cur){b.style.background='#6366f1';b.style.height='20px';b.style.borderRadius='4px'}
+    else{b.style.background='rgba(255,255,255,.18)';b.style.height='8px';b.style.borderRadius='50%'}
   });
 }
 window.addEventListener('scroll',updateDots,{passive:true});
-document.addEventListener('DOMContentLoaded',updateDots);
-setTimeout(updateDots,200);
+updateDots();
 
-// ── PROJECTS ──
+// PROJECTS
 const PCATS={cloud:{l:'Cloud',c:'#22d3ee'},backend:{l:'Backend',c:'#10b981'},infra:{l:'Infrastructure',c:'#a78bfa'},integration:{l:'Integration',c:'#fb923c'},security:{l:'Security',c:'#f87171'},notifications:{l:'Notifications',c:'#34d399'},migration:{l:'Migration',c:'#60a5fa'}};
 const PD=[
   {cat:'security',title:'AWS KMS Encryption Platform',desc:'Architected AWS KMS-based encryption for S3 storage, achieving 100% reduction in unauthorized access and ensuring regulatory compliance.',checks:['100% unauthorized access eliminated','Regulatory compliance achieved','Scalable encryption architecture'],tags:['AWS KMS','S3','Encryption','PHP','Python']},
   {cat:'infra',title:'PostgreSQL → Parquet/S3 Migration',desc:'Migrated PostgreSQL RDS data to Parquet files in S3, reducing database costs while improving query performance.',checks:['$50K+ saved annually','45% query performance improvement','60% database cost reduction'],tags:['PostgreSQL','AWS S3','Parquet','RDS','Python']},
   {cat:'backend',title:'Scalable Disaster Recovery System',desc:'Enhanced the scalable restoration system reducing manual recovery time and enhancing disaster recovery capabilities.',checks:['70% manual recovery time reduction','99.9% data accuracy guaranteed','Full disaster recovery capability'],tags:['AWS','Python','SQS','PostgreSQL','Microservices']},
-  {cat:'integration',title:'Japanese Platform Integrations',desc:'Built complete backup and export solutions for Kintone, Asana, and Notion, expanding market reach into Japan.',checks:['25% market reach expansion','200+ enterprise customers supported','Kintone, Asana, Notion integrated'],tags:['Kintone API','Asana API','Notion API','Python','AWS']},
+  {cat:'integration',title:'Japanese Platform Integrations',desc:'Built complete backup and export solutions for Kintone, Asana, and Notion expanding market reach into Japan.',checks:['25% market reach expansion','200+ enterprise customers supported','Kintone, Asana, Notion integrated'],tags:['Kintone API','Asana API','Notion API','Python','AWS']},
   {cat:'cloud',title:'SharePoint & Teams Graph Framework',desc:'Re-architected SharePoint and Teams integration to a Graph-based framework achieving massive code reduction.',checks:['50% code reduction achieved','40% faster multi-cloud integration','Graph API fully adopted'],tags:['Microsoft Graph','TypeScript','NestJS','REST','Docker']},
   {cat:'infra',title:'Real-Time Sync Framework',desc:'Created real-time sync framework using Docker, ECS, and SQS reducing sync delays by 90%.',checks:['90% sync delay reduction','Docker + ECS + SQS stack','Multi-cloud data sync'],tags:['Docker','AWS ECS','SQS','TypeScript','Microservices']},
   {cat:'backend',title:'Enterprise Email Backup System',desc:'Implemented high-accuracy backup for millions of archived emails ensuring 100% data accuracy.',checks:['100% data accuracy achieved','Millions of emails archived','Full compliance ensured'],tags:['O365 API','Graph API','Python','PostgreSQL','S3']},
@@ -639,29 +638,12 @@ function Pft(t){Ptech=t;document.querySelectorAll('#TROW .fb').forEach(b=>b.clas
 function Pop(i){const p=PD[i],cc=PCATS[p.cat]||{l:'Other',c:'#818cf8'};document.getElementById('PCAT').textContent=cc.l;document.getElementById('PCAT').style.color=cc.c;document.getElementById('PTIT').textContent=p.title;document.getElementById('PDESC').textContent=p.desc;document.getElementById('PCHK').innerHTML=p.checks.map(c=>`<span>✓ ${c}</span>`).join('');document.getElementById('PTAGS').innerHTML=p.tags.map(t=>`<span class="mp-tag">${t}</span>`).join('');document.getElementById('POV').classList.add('on')}
 function PCLOSE(){document.getElementById('POV').classList.remove('on')}
 
-// ── SKILLS SCROLL ANIMATION ──
-function initSkillsAnimation(){
-  const catObserver=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        const row=entry.target;
-        row.classList.add('visible');
-        row.querySelectorAll('.sk-pill').forEach((pill,i)=>{
-          setTimeout(()=>pill.classList.add('visible'),i*60);
-        });
-        catObserver.unobserve(row);
-      }
-    });
-  },{threshold:.15});
-  document.querySelectorAll('.sk-cat-row').forEach((row,i)=>{
-    row.style.transitionDelay=`${i*80}ms`;
-    catObserver.observe(row);
-  });
-}
+// SKILLS BARS
 const SKD=[{n:'PHP',p:95,l:'Expert',y:'7 yrs',c:'c0'},{n:'Python',p:90,l:'Expert',y:'5 yrs',c:'c1'},{n:'TypeScript',p:88,l:'Advanced',y:'4 yrs',c:'c2'},{n:'PostgreSQL',p:90,l:'Expert',y:'5 yrs',c:'c3'},{n:'AWS',p:88,l:'Advanced',y:'5 yrs',c:'c4'},{n:'NestJS',p:82,l:'Advanced',y:'4 yrs',c:'c5'},{n:'REST APIs',p:92,l:'Expert',y:'7 yrs',c:'c6'}];
 document.getElementById('SKBARS').innerHTML=SKD.map(s=>`<div class="sk-row"><div class="sk-name">${s.n}<span class="sk-badge ${s.l.toLowerCase()}">${s.l}</span></div><div class="sk-track"><div class="sk-fill ${s.c}" data-w="${s.p}%"></div></div><div class="sk-yr">${s.y}</div></div>`).join('');
 setTimeout(()=>document.querySelectorAll('.sk-fill').forEach(b=>b.style.width=b.dataset.w),400);
 
+// SKILLS CATEGORIES with scroll animation
 const SKCD=[
   {icon:'💻',name:'Languages',col:'lang',pills:[{b:'TS',n:'TypeScript',bg:'#3b82f6'},{b:'JS',n:'JavaScript',bg:'#f59e0b'},{b:'PH',n:'PHP',bg:'#8b5cf6'},{b:'SQ',n:'SQL',bg:'#10b981'},{b:'Py',n:'Python',bg:'#06b6d4'}]},
   {icon:'⚙️',name:'Backend & APIs',col:'back',pills:[{b:'NJ',n:'NestJS',bg:'#ef4444'},{b:'RE',n:'REST APIs',bg:'#6366f1'},{b:'MS',n:'Microservices',bg:'#8b5cf6'},{b:'GR',n:'Microsoft Graph',bg:'#3b82f6'},{b:'CA',n:'Config-Driven',bg:'#10b981'},{b:'ML',n:'MDL 2.0',bg:'#f59e0b'},{b:'SQ',n:'SQS',bg:'#06b6d4'}]},
@@ -672,12 +654,29 @@ const SKCD=[
   {icon:'🛠',name:'Tools & Practices',col:'tools',pills:[{b:'GI',n:'Git',bg:'#f59e0b'},{b:'DO',n:'Docker',bg:'#06b6d4'},{b:'SH',n:'Unix Shell',bg:'#10b981'},{b:'AG',n:'Agile',bg:'#6366f1'},{b:'SD',n:'System Design',bg:'#8b5cf6'},{b:'CR',n:'Code Reviews',bg:'#ef4444'},{b:'CI',n:'CI/CD',bg:'#3b82f6'},{b:'TR',n:'Training',bg:'#10b981'},{b:'PM',n:'PM2',bg:'#f59e0b'},{b:'SQ',n:'SonarQube',bg:'#ef4444'}]},
 ];
 document.getElementById('SKCATS').innerHTML=SKCD.map(g=>`<div class="sk-cat-row"><div class="sk-cat-left"><div class="sk-cat-lbl ${g.col}"><span>${g.icon}</span>${g.name.toUpperCase()}</div><div class="sk-cat-count">${g.pills.length} skills</div></div><div class="sk-pills">${g.pills.map(s=>`<span class="sk-pill"><span class="sk-pill-b" style="background:${s.bg}">${s.b}</span>${s.n}</span>`).join('')}</div></div>`).join('');
-// Init animation AFTER rows are in DOM
-initSkillsAnimation();
 
-// ── EXPERIENCE ──
+// Skills animation — rows + pills slide in from left on scroll
+const skObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const row=e.target;
+    row.style.opacity='1';
+    row.style.transform='translateX(0)';
+    row.querySelectorAll('.sk-pill').forEach((p,i)=>{
+      setTimeout(()=>{p.style.opacity='1';p.style.transform='translateX(0)'},i*50);
+    });
+    skObs.unobserve(row);
+  });
+},{threshold:.1});
+document.querySelectorAll('.sk-cat-row').forEach((row,i)=>{
+  row.style.cssText=`opacity:0;transform:translateX(-20px);transition:opacity .4s ease ${i*70}ms,transform .4s ease ${i*70}ms`;
+  row.querySelectorAll('.sk-pill').forEach(p=>{p.style.cssText='opacity:0;transform:translateX(-15px);transition:opacity .35s ease,transform .35s ease'});
+  skObs.observe(row);
+});
+
+// EXPERIENCE
 const EXP=[
-  {role:'Senior Lead Engineer',date:'Jun 2023 – Present',cur:true,pts:['Architected AWS KMS encryption for S3 — <strong>100%</strong> unauthorized access eliminated, full regulatory compliance','Enhanced restoration system — <strong>70%</strong> reduction in manual recovery time','Migrated PostgreSQL RDS → Parquet/S3 — <strong>$50K+</strong> annual savings, 45% better queries, 60% DB cost cut','Built backup/export for Kintone, Asana, Notion — <strong>25%</strong> market expansion, 200+ enterprise customers','Mentored Japan engineering teams — <strong>90%+</strong> knowledge transfer, 60% faster onboarding via AI/GPT','Architected Unified Notification Platform (Email + In-App + Chat) with SSPM & SIEM — <strong>100% config-driven</strong> MDL 2.0 NestJS; E2E verified via Claude AI','Migrated legacy SharePoint restore to UB Graph Architecture (PHP) — <strong>fully config-driven</strong>; verified with Claude AI & AI Agents']},
+  {role:'Senior Lead Engineer',date:'Jun 2023 – Present',cur:true,pts:['Architected AWS KMS encryption for S3 — <strong>100%</strong> unauthorized access eliminated','Enhanced restoration system — <strong>70%</strong> reduction in manual recovery time','Migrated PostgreSQL RDS → Parquet/S3 — <strong>$50K+</strong> annual savings, 45% better queries, 60% DB cost cut','Built backup/export for Kintone, Asana, Notion — <strong>25%</strong> market expansion, 200+ enterprise customers','Mentored Japan engineering teams — <strong>90%+</strong> knowledge transfer, 60% faster onboarding via AI/GPT','Architected Unified Notification Platform (Email + In-App + Chat) with SSPM & SIEM — <strong>100% config-driven</strong> MDL 2.0 NestJS; E2E verified via Claude AI','Migrated legacy SharePoint restore to UB Graph Architecture (PHP) — <strong>fully config-driven</strong>; verified with Claude AI & AI Agents']},
   {role:'Lead Software Engineer',date:'Aug 2021 – May 2023',cur:false,pts:['Re-architected SharePoint & Teams to Graph-based framework — <strong>50%</strong> code reduction, 40% faster','Created real-time sync with Docker, ECS & SQS — <strong>90%</strong> sync delay reduction','Led MS SQL → PostgreSQL migration — <strong>30%</strong> performance boost']},
   {role:'Senior Software Engineer',date:'Aug 2019 – Jul 2021',cur:false,pts:['Improved backup/export solution for Teams channels, conversations & attachments','Optimized restore functionality — <strong>40%</strong> reduction in restore/export time','Implemented backup system with <strong>100%</strong> data accuracy for millions of archived emails']},
   {role:'Software Engineer',date:'Feb 2019 – Jul 2019',cur:false,pts:['Built AWS SQS + O365 API scanning system — <strong>70%</strong> faster security incident response','Enhanced S3 data migration — <strong>60%</strong> reduction in handling time & costs','Developed Graph API & REST API backup solution — <strong>75%</strong> faster recovery times']},
@@ -686,7 +685,7 @@ const EXP=[
 document.getElementById('EXPROLES').innerHTML=EXP.map((e,i)=>`<div class="tl-role"><div class="tl-role-head" onclick="EXPt(${i},this)"><div class="tl-role-left"><h4>${e.role}<span class="tl-badge ${e.cur?'cur':'old'}">${e.cur?'Current':e.date.split('–')[1].trim()}</span></h4><div class="tl-role-meta"><span>📅 ${e.date}</span><span>📍 Hyderabad</span></div></div><span class="tl-chev${i===0?' open':''}">▼</span></div><div class="tl-role-body${i===0?' open':''}"><ul class="tl-role-list">${e.pts.map(p=>`<li>${p}</li>`).join('')}</ul></div></div>`).join('');
 function EXPt(i,head){head.nextElementSibling.classList.toggle('open');head.querySelector('.tl-chev').classList.toggle('open')}
 
-// ── SEARCH ──
+// SEARCH
 const SP=['About','Projects','Skills','Experience','Education & Certifications','Contact','AWS KMS Encryption','PostgreSQL Migration','Disaster Recovery','Japanese Platforms','SharePoint Graph Framework','Real-Time Sync','Email Backup','Security Scanner','Unified Notification Platform','SharePoint UB Graph Migration'];
 function SO(){document.getElementById('SOV').classList.add('on');setTimeout(()=>document.getElementById('SINP').focus(),80);SS('')}
 function SC(){document.getElementById('SOV').classList.remove('on');document.getElementById('SINP').value=''}
@@ -694,7 +693,7 @@ function SS(q){const items=q?SP.filter(p=>p.toLowerCase().includes(q.toLowerCase
 function SG(p){SC();const m={About:'#about',Projects:'#projects',Skills:'#skills',Experience:'#experience','Education & Certifications':'#education',Contact:'#contact'};document.querySelector(m[p]||'#projects')?.scrollIntoView({behavior:'smooth'})}
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();SO()}if(e.key==='Escape'){SC();PCLOSE()}});
 
-// ── AI ──
+// AI
 const AI_CTX=`You are Aditya Gedam's personal AI portfolio assistant. Be concise, professional, friendly. Answer only from: Name: Aditya Gedam | Senior Lead Engineer, SysCloud Technologies | Hyderabad, India. Contact: gedamaditya@gmail.com | +91-9751136721 | linkedin.com/in/aditya-gedam-8260442b. Education: M.Tech CSE, NIT Tiruchirappalli (2016-2018). Certifications: AWS for Beginners, Unix-Linux Shell Scripting. Skills: PHP, Python, TypeScript, NestJS, REST APIs, Microservices, MDL 2.0, Config-Driven, AWS S3/Lambda/SQS/Athena/KMS/ECS, PostgreSQL, MS SQL, DynamoDB, Docker, Microsoft Graph, GCP, Unix Shell, Claude AI, AI Agents. Experience 7+ years at SysCloud. Goal: Technical Architect.`;
 const CME=document.getElementById('CMSGS'),CIE=document.getElementById('CINP');
 async function AI_send(){const t=CIE.value.trim();if(!t)return;CIE.value='';AI_add(t,'user');const ty=AI_add('Typing...','bot typing');try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,system:AI_CTX,messages:[{role:'user',content:t}]})});const d=await r.json();ty.remove();AI_add(d.content?.[0]?.text||'Sorry.','bot')}catch{ty.remove();AI_add('Network error.','bot')}}
@@ -703,7 +702,7 @@ function AI_ask(q){CIE.value=q;AI_send()}
 CIE.addEventListener('keydown',e=>{if(e.key==='Enter')AI_send()});
 document.getElementById('CSND').addEventListener('click',AI_send);
 
-// ── BOT ──
+// BOT
 let Bo=false;
 function BT(){Bo=!Bo;document.getElementById('BPANEL').classList.toggle('on',Bo);document.getElementById('BLBL').style.display=Bo?'none':'flex'}
 setTimeout(()=>{const l=document.getElementById('BLBL');l.style.transition='opacity .5s';l.style.opacity='0';setTimeout(()=>l.style.display='none',500)},4000);
@@ -714,7 +713,7 @@ function BA(q){if(!Bo)BT();BIE.value=q;B_send()}
 BIE.addEventListener('keydown',e=>{if(e.key==='Enter')B_send()});
 document.getElementById('BSND').addEventListener('click',B_send);
 
-// ── COPY EMAIL ──
+// COPY EMAIL
 function copyEmail(){navigator.clipboard.writeText('gedamaditya@gmail.com').then(()=>{const t=document.getElementById('toast');t.style.opacity='1';t.style.transform='translateX(-50%) translateY(0)';setTimeout(()=>{t.style.opacity='0';t.style.transform='translateX(-50%) translateY(8px)'},2000)})}
 </script>
 </body>
