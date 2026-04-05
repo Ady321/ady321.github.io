@@ -28,35 +28,35 @@ nav{position:fixed;top:0;inset-x:0;z-index:200;background:rgba(10,10,15,.93);bac
 /* SEARCH MODAL */
 .sov{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);z-index:500;display:none;align-items:flex-start;justify-content:center;padding-top:9rem}
 .sov.on{display:flex}
-.sbox{background:#13131f;border:1px solid rgba(255,255,255,.1);border-radius:14px;width:min(560px,92vw);overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.6)}
-.sbox-row{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.06)}
-.sbox-row input{flex:1;background:none;border:none;color:#e2e8f0;font-size:.92rem;outline:none;font-family:'Inter',sans-serif}
-.sbox-row input::placeholder{color:#475569}
-.sresults{padding:.5rem}
+.sbox{background:#13131f;border:1px solid rgba(255,255,255,.1);border-radius:14px;width:min(560px,92vw);overflow:hidden}
+.srow{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.srow input{flex:1;background:none;border:none;color:#e2e8f0;font-size:.92rem;outline:none;font-family:'Inter',sans-serif}
+.srow input::placeholder{color:#475569}
+.sres{padding:.5rem}
 .sri{display:flex;align-items:center;gap:.6rem;padding:.5rem .75rem;border-radius:7px;font-size:.82rem;color:#64748b;cursor:pointer;transition:.2s}
 .sri:hover{background:rgba(99,102,241,.1);color:#818cf8}
-.sri-ic{width:24px;height:24px;border-radius:5px;background:rgba(99,102,241,.1);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0}
+.sri-ic{width:22px;height:22px;border-radius:5px;background:rgba(99,102,241,.1);display:flex;align-items:center;justify-content:center;font-size:.68rem;flex-shrink:0}
 
 /* PROJECT MODAL */
 .pov{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:500;display:none;align-items:center;justify-content:center;padding:1rem}
 .pov.on{display:flex}
-.pmodal{background:#13131f;border:1px solid rgba(255,255,255,.08);border-radius:16px;width:min(600px,95vw);max-height:85vh;overflow-y:auto}
-.pmodal-h{padding:1.3rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:flex-start;position:sticky;top:0;background:#13131f}
-.pmodal-x{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#64748b;cursor:pointer;font-size:.82rem;display:flex;align-items:center;justify-content:center}
-.pmodal-x:hover{color:#e2e8f0}
-.pmodal-b{padding:1.3rem}
-.pm-cat{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#22d3ee;margin-bottom:.3rem;font-weight:600}
-.pm-title{font-size:1.2rem;font-weight:700;margin-bottom:.15rem}
-.pm-desc{font-size:.84rem;color:#94a3b8;line-height:1.75;margin-bottom:1rem}
-.pm-sh{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#475569;margin-bottom:.45rem;font-weight:600}
-.pm-checks{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem}
-.pm-checks span{font-size:.82rem;color:#10b981;display:flex;align-items:center;gap:.4rem}
-.pm-tags{display:flex;flex-wrap:wrap;gap:.35rem}
-.pmtag{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.18);border-radius:5px;padding:.22rem .6rem;font-size:.72rem;color:#818cf8}
+.pmod{background:#13131f;border:1px solid rgba(255,255,255,.08);border-radius:16px;width:min(600px,95vw);max-height:85vh;overflow-y:auto}
+.pmod-h{padding:1.3rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:flex-start;position:sticky;top:0;background:#13131f}
+.pmod-x{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#64748b;cursor:pointer;font-size:.82rem;display:flex;align-items:center;justify-content:center}
+.pmod-x:hover{color:#e2e8f0}
+.pmod-b{padding:1.3rem}
+.mp-cat{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.3rem;font-weight:600}
+.mp-title{font-size:1.2rem;font-weight:700;margin-bottom:.15rem;color:#f1f5f9}
+.mp-desc{font-size:.84rem;color:#94a3b8;line-height:1.75;margin-bottom:1rem}
+.mp-sh{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#475569;margin-bottom:.45rem;font-weight:600;margin-top:.9rem}
+.mp-checks{display:flex;flex-direction:column;gap:.3rem}
+.mp-checks span{font-size:.82rem;color:#10b981;display:flex;align-items:center;gap:.4rem}
+.mp-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.mp-tag{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.18);border-radius:5px;padding:.22rem .6rem;font-size:.72rem;color:#818cf8}
 
 /* TICKER */
 .ticker-wrap{background:#0d0d17;border-bottom:1px solid rgba(255,255,255,.05);overflow:hidden;padding:.5rem 0;white-space:nowrap;margin-top:57px}
-.ticker{display:inline-flex;animation:ticker 32s linear infinite}
+.ticker{display:inline-flex;animation:TICK 32s linear infinite}
 .ticker:hover{animation-play-state:paused}
 .ti{display:inline-flex;align-items:center;gap:.4rem;padding:0 1.5rem;font-size:.75rem;color:#475569;font-weight:500}
 .tidot{width:4px;height:4px;border-radius:50%;background:#6366f1;flex-shrink:0}
@@ -68,28 +68,25 @@ nav{position:fixed;top:0;inset-x:0;z-index:200;background:rgba(10,10,15,.93);bac
 canvas{position:absolute;inset:0;pointer-events:none}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
 .hero-badge{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:1rem}
-.hbdot{width:7px;height:7px;border-radius:50%;background:#10b981;animation:blink 2s infinite;flex-shrink:0}
+.hbdot{width:7px;height:7px;border-radius:50%;background:#10b981;animation:GBLINK 2s infinite;flex-shrink:0}
 .hbtext{font-size:.75rem;color:#10b981;font-weight:500}
 .hero-greeting{font-size:1rem;color:#64748b;margin-bottom:.2rem}
 .hero h1{font-size:clamp(2.5rem,5vw,3.8rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:.5rem;color:#f1f5f9}
-/* TYPEWRITER */
-.hero-type{font-size:clamp(1rem,2.2vw,1.25rem);font-weight:600;color:#818cf8;margin-bottom:.9rem;min-height:1.6rem;display:flex;align-items:center;gap:3px}
-.cursor{width:2px;height:1.2em;background:#6366f1;display:inline-block;animation:cur .7s infinite;border-radius:1px;margin-left:1px}
-@keyframes cur{0%,100%{opacity:1}50%{opacity:0}}
+.hero-type{font-size:clamp(1rem,2.2vw,1.25rem);font-weight:600;color:#818cf8;margin-bottom:.9rem;min-height:1.6rem;display:flex;align-items:center}
+.caret{width:2px;height:1.1em;background:#6366f1;display:inline-block;animation:CBLINK .7s infinite;border-radius:1px;margin-left:2px;vertical-align:middle}
 .hero-sub{font-size:.93rem;color:#64748b;line-height:1.75;max-width:440px;margin-bottom:1.8rem}
 .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
-.hbp{background:#6366f1;border:none;border-radius:8px;padding:.65rem 1.5rem;font-size:.855rem;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;transition:.2s}
-.hbp:hover{background:#5457e5;transform:translateY(-1px)}
-.hbg{background:transparent;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.65rem 1.5rem;font-size:.855rem;font-weight:500;color:#94a3b8;cursor:pointer;text-decoration:none;transition:.2s}
-.hbg:hover{border-color:rgba(99,102,241,.4);color:#e2e8f0}
-
-/* HERO CARD */
+.btn-p{background:#6366f1;border:none;border-radius:8px;padding:.65rem 1.5rem;font-size:.855rem;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;transition:.2s}
+.btn-p:hover{background:#5457e5;transform:translateY(-1px)}
+.btn-g{background:transparent;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.65rem 1.5rem;font-size:.855rem;font-weight:500;color:#94a3b8;cursor:pointer;text-decoration:none;transition:.2s}
+.btn-g:hover{border-color:rgba(99,102,241,.4);color:#e2e8f0}
 .hcard{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:18px;overflow:hidden}
 .hcard-top{background:linear-gradient(135deg,#6366f1,#8b5cf6);padding:1.8rem;display:flex;flex-direction:column;align-items:center;gap:.6rem;text-align:center}
 .hcard-av{width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:2rem}
 .hcard-name{font-size:1rem;font-weight:700;color:#fff}
 .hcard-role{font-size:.75rem;color:rgba(255,255,255,.7);line-height:1.5}
 .hcard-avail{display:flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:.28rem .8rem;font-size:.7rem;color:#fff}
+.avdot{width:6px;height:6px;border-radius:50%;background:#10b981;flex-shrink:0;animation:GBLINK 2s infinite}
 .hcard-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06)}
 .hstat{background:#13131f;padding:.9rem;text-align:center}
 .hstat .n{font-size:1.4rem;font-weight:800;color:#818cf8}
@@ -98,233 +95,260 @@ canvas{position:absolute;inset:0;pointer-events:none}
 
 /* SECTIONS */
 section{padding:5rem 2rem}
-.sec-inner{max-width:1200px;margin:0 auto}
-.sec-tag{display:flex;align-items:center;gap:.4rem;margin-bottom:.35rem}
-.sec-dot{width:5px;height:5px;border-radius:50%;background:#6366f1}
-.sec-lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:#6366f1;font-weight:600}
-.sec-title{font-size:clamp(1.7rem,3.5vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.45rem;color:#f1f5f9}
-.sec-sub{color:#64748b;font-size:.87rem;line-height:1.65;margin-bottom:2.5rem}
-.alt{background:#0d0d17}
+.wrap{max-width:1200px;margin:0 auto}
+.stag{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-bottom:.35rem}
+.sdot{width:5px;height:5px;border-radius:50%;background:#6366f1;flex-shrink:0}
+.slbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:#6366f1;font-weight:600}
+.stitle{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.45rem;color:#f1f5f9;text-align:center}
+.ssub{color:#64748b;font-size:.87rem;line-height:1.65;margin-bottom:2.5rem;text-align:center}
+.bg2{background:#0d0d17}
 .reveal{opacity:0;transform:translateY(22px);transition:.6s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* ABOUT — full width, no avatar column */
-.about-body{font-size:.92rem;color:#64748b;line-height:1.8;max-width:800px;margin-bottom:2.2rem}
-.about-body strong{color:#e2e8f0}
-.about-feats{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.9rem;margin-bottom:2rem}
-.afc{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;transition:.2s}
-.afc:hover{border-color:rgba(99,102,241,.3)}
-.afc-ico{font-size:1.3rem;margin-bottom:.55rem}
-.afc h4{font-size:.85rem;font-weight:600;color:#e2e8f0;margin-bottom:.3rem}
-.afc p{font-size:.76rem;color:#64748b;line-height:1.55}
-.about-chips{display:flex;flex-wrap:wrap;gap:.4rem}
-.achip{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:.28rem .75rem;font-size:.73rem;color:#64748b}
+/* ABOUT */
+.about-text{font-size:.95rem;color:#64748b;line-height:1.8;max-width:800px;margin:0 auto 2.2rem;text-align:center}
+.about-text strong{color:#e2e8f0}
+.about-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.9rem;margin-bottom:2rem}
+.acard{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.3rem;transition:.2s}
+.acard:hover{border-color:rgba(99,102,241,.3)}
+.acard-ico{width:36px;height:36px;background:rgba(99,102,241,.12);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:.75rem}
+.acard h4{font-size:.88rem;font-weight:600;color:#e2e8f0;margin-bottom:.35rem}
+.acard p{font-size:.78rem;color:#64748b;line-height:1.55}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
+.chip{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:.28rem .75rem;font-size:.73rem;color:#64748b}
 
 /* PROJECTS */
-/* row 1: category filters */
-/* row 2: tech tag pills — horizontal scroll, exact match to Aniket */
-.filter-row{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.5rem}
-.tech-row{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.3rem;margin-bottom:1.5rem;scrollbar-width:none}
-.tech-row::-webkit-scrollbar{display:none}
-.fb{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:.32rem .85rem;font-size:.75rem;color:#64748b;cursor:pointer;transition:.2s;font-weight:500;white-space:nowrap}
+.frow{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.5rem;justify-content:center}
+.trow{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.3rem;margin-bottom:1.5rem;scrollbar-width:none;justify-content:center}
+.trow::-webkit-scrollbar{display:none}
+.fb{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:.32rem .85rem;font-size:.75rem;color:#64748b;cursor:pointer;transition:.2s;font-weight:500;white-space:nowrap;flex-shrink:0}
 .fb.on,.fb:hover{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.3);color:#818cf8}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem}
 .pcard{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
 .pcard:hover{border-color:rgba(99,102,241,.3);transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.4)}
-.pcard-acc{height:2px}
-.pcard-body{padding:1.2rem;flex:1}
-.pcard-cat{font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;font-weight:600}
-.pcard-title{font-size:.93rem;font-weight:700;color:#e2e8f0;margin-bottom:.4rem;line-height:1.3}
-.pcard-desc{font-size:.78rem;color:#64748b;line-height:1.6;margin-bottom:.8rem}
-.pcard-wins{display:flex;flex-direction:column;gap:.2rem}
+.pacc{height:2px}
+.pbody{padding:1.2rem;flex:1}
+.p-cat{font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;font-weight:600}
+.p-tit{font-size:.93rem;font-weight:700;color:#e2e8f0;margin-bottom:.4rem;line-height:1.3}
+.p-desc{font-size:.78rem;color:#64748b;line-height:1.6;margin-bottom:.8rem}
+.p-wins{display:flex;flex-direction:column;gap:.2rem}
 .pw{font-size:.74rem;color:#10b981;display:flex;align-items:center;gap:.35rem}
-.pcard-foot{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.2rem;border-top:1px solid rgba(255,255,255,.05);gap:.5rem}
-.pcard-tags{display:flex;flex-wrap:wrap;gap:.28rem}
-.ptag{background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.15);border-radius:4px;padding:.15rem .5rem;font-size:.66rem;color:#818cf8;cursor:pointer;transition:.15s}
-.ptag:hover{background:rgba(99,102,241,.2)}
-.det-btn{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:6px;padding:.26rem .7rem;font-size:.71rem;color:#818cf8;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:.2s}
-.det-btn:hover{background:rgba(99,102,241,.22)}
+.pfoot{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.2rem;border-top:1px solid rgba(255,255,255,.05);gap:.5rem}
+.p-tags{display:flex;flex-wrap:wrap;gap:.28rem}
+.p-tag{background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.15);border-radius:4px;padding:.15rem .5rem;font-size:.66rem;color:#818cf8;cursor:pointer;transition:.15s}
+.p-tag:hover{background:rgba(99,102,241,.2)}
+.dbtn{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:6px;padding:.26rem .7rem;font-size:.71rem;color:#818cf8;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:.2s}
+.dbtn:hover{background:rgba(99,102,241,.22)}
 
-/* SKILLS */
-.skills-top{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:1.1rem}
-.sg{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.3rem}
-.sg-head{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:#475569;margin-bottom:1.1rem;font-weight:600}
-/* skill row — name, bar, Expert/Advanced label, years */
-.skrow{display:flex;align-items:center;gap:.7rem;margin-bottom:.85rem}
-.sk-name{font-size:.82rem;font-weight:500;color:#94a3b8;min-width:130px}
-.sk-track{flex:1;height:4px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden}
-.sk-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,#6366f1,#8b5cf6);width:0;transition:width 1.3s ease}
-.sk-lvl{font-size:.67rem;color:#818cf8;min-width:52px;text-align:right;font-weight:500}
-.sk-yr{font-size:.62rem;color:#475569;min-width:26px;text-align:right}
-/* skill categories */
-.skill-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.9rem}
-.scat{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.1rem}
-.scat-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
-.scat-title{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:#475569;font-weight:600;display:flex;align-items:center;gap:.35rem}
-.scat-cnt{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.15);border-radius:50px;padding:.08rem .45rem;font-size:.6rem;color:#818cf8}
-.cpills{display:flex;flex-wrap:wrap;gap:.3rem}
-.cp{display:flex;align-items:center;gap:.28rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:5px;padding:.22rem .55rem;font-size:.7rem;color:#64748b;transition:.15s}
-.cp:hover{border-color:rgba(99,102,241,.3);color:#818cf8}
-.cp-b{width:15px;height:15px;border-radius:3px;background:rgba(99,102,241,.2);display:flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:700;color:#818cf8;flex-shrink:0}
+/* ══════════════════════════════════════════════════
+   SKILLS — exactly matching Aniket's screenshot
+   Top: dark card with colored badge bars
+   Bottom: LEFT category name+count | RIGHT pills row
+   ══════════════════════════════════════════════════ */
+.sk-card{background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.6rem;margin-bottom:1.5rem}
+.sk-card-title{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:#475569;font-weight:700;margin-bottom:1.4rem}
+.sk-row{display:flex;align-items:center;gap:.9rem;margin-bottom:1rem}
+.sk-row:last-child{margin-bottom:0}
+.sk-name{font-size:.88rem;font-weight:500;color:#e2e8f0;min-width:180px}
+/* colored badge next to name — Expert=blue, Advanced=orange, Intermediate=green */
+.sk-badge{font-size:.67rem;font-weight:600;padding:.18rem .6rem;border-radius:50px;margin-left:.1rem}
+.sk-badge.expert{background:rgba(59,130,246,.15);color:#60a5fa;border:1px solid rgba(59,130,246,.3)}
+.sk-badge.advanced{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.3)}
+.sk-badge.intermediate{background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.3)}
+.sk-track{flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.sk-fill{height:100%;border-radius:3px;width:0;transition:width 1.4s ease}
+/* different colors per skill like Aniket */
+.sk-fill.c0{background:linear-gradient(90deg,#3b82f6,#06b6d4)}
+.sk-fill.c1{background:linear-gradient(90deg,#8b5cf6,#6366f1)}
+.sk-fill.c2{background:linear-gradient(90deg,#f59e0b,#ef4444)}
+.sk-fill.c3{background:linear-gradient(90deg,#10b981,#06b6d4)}
+.sk-fill.c4{background:linear-gradient(90deg,#ec4899,#8b5cf6)}
+.sk-fill.c5{background:linear-gradient(90deg,#6366f1,#8b5cf6)}
+.sk-fill.c6{background:linear-gradient(90deg,#f59e0b,#10b981)}
+.sk-yr{font-size:.7rem;color:#475569;min-width:30px;text-align:right}
+
+/* Skill categories — LEFT label | RIGHT pills, exactly like Aniket's screenshot */
+.sk-cats{display:flex;flex-direction:column;gap:0;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden}
+.sk-cat-row{display:flex;align-items:flex-start;padding:1rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.05)}
+.sk-cat-row:last-child{border-bottom:none}
+.sk-cat-left{min-width:160px;flex-shrink:0;padding-right:1.2rem;padding-top:.1rem}
+.sk-cat-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:.25rem;display:flex;align-items:center;gap:.4rem}
+.sk-cat-label.lang{color:#3b82f6}
+.sk-cat-label.back{color:#8b5cf6}
+.sk-cat-label.db{color:#10b981}
+.sk-cat-label.cloud{color:#f59e0b}
+.sk-cat-label.mon{color:#ef4444}
+.sk-cat-label.ai{color:#06b6d4}
+.sk-cat-label.tools{color:#a78bfa}
+.sk-cat-count{font-size:.65rem;color:#475569}
+.sk-cat-pills{display:flex;flex-wrap:wrap;gap:.4rem;flex:1}
+/* each pill: colored square badge + name */
+.sk-pill{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:7px;padding:.28rem .65rem;font-size:.75rem;color:#94a3b8;transition:.15s;cursor:default}
+.sk-pill:hover{border-color:rgba(99,102,241,.3);color:#e2e8f0}
+.sk-pill-b{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:700;color:#fff;flex-shrink:0}
 
 /* EXPERIENCE */
-.exp-wrap{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden}
-.exp-co-head{display:flex;align-items:center;gap:.9rem;padding:1.2rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.exp-box{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden}
+.exp-co{display:flex;align-items:center;gap:.9rem;padding:1.2rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.06)}
 .co-logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:#fff;flex-shrink:0}
 .co-info h3{font-size:.95rem;font-weight:700;color:#e2e8f0}
 .co-info p{font-size:.74rem;color:#64748b;margin-top:.12rem}
 .tl-prog{padding:.9rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:.45rem;overflow-x:auto}
 .tl-prog::-webkit-scrollbar{display:none}
-.tlstage{font-size:.66rem;color:#475569;white-space:nowrap;flex-shrink:0}
-.tlbar{flex:1;min-width:28px;height:3px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden}
-.tlbar-f{height:100%;border-radius:2px;background:linear-gradient(90deg,#6366f1,#8b5cf6)}
-.tl-roles{padding:0}
-.tlr{padding:1.2rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.05);transition:.15s}
-.tlr:last-child{border-bottom:none}
-.tlr:hover{background:rgba(255,255,255,.02)}
-.tlr-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.4rem;margin-bottom:.2rem}
-.tlr-title{font-size:.92rem;font-weight:700;color:#e2e8f0}
-.tlr-badge{font-size:.65rem;padding:.16rem .6rem;border-radius:50px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);color:#818cf8;font-weight:500}
-.tlr-badge.cur{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.2);color:#10b981}
-.tlr-date{font-size:.72rem;color:#475569;margin-bottom:.7rem}
-.tlr-list{list-style:none}
-.tlr-list li{font-size:.79rem;color:#64748b;padding:.2rem 0 .2rem 1rem;position:relative;line-height:1.6}
-.tlr-list li::before{content:'▸';position:absolute;left:0;color:#6366f1}
-.tlr-list li strong{color:#10b981}
+.tl-stage{font-size:.66rem;color:#475569;white-space:nowrap;flex-shrink:0}
+.tl-bar{flex:1;min-width:28px;height:3px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden}
+.tl-bar-f{height:100%;border-radius:2px;background:linear-gradient(90deg,#6366f1,#8b5cf6)}
+/* collapsible role cards like Aniket */
+.tl-role{border-bottom:1px solid rgba(255,255,255,.05)}
+.tl-role:last-child{border-bottom:none}
+.tl-role-head{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;cursor:pointer;transition:.15s;user-select:none}
+.tl-role-head:hover{background:rgba(255,255,255,.02)}
+.tl-role-left h4{font-size:.92rem;font-weight:700;color:#e2e8f0;margin-bottom:.2rem}
+.tl-role-meta{display:flex;align-items:center;gap:.6rem;font-size:.72rem;color:#475569}
+.tl-role-meta span{display:flex;align-items:center;gap:.25rem}
+.tl-badge{font-size:.65rem;padding:.16rem .6rem;border-radius:50px;font-weight:500;margin-left:.4rem}
+.tl-badge.cur{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#10b981}
+.tl-badge.old{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);color:#818cf8}
+.tl-chevron{color:#475569;font-size:.75rem;transition:transform .25s;flex-shrink:0}
+.tl-chevron.open{transform:rotate(180deg)}
+.tl-role-body{padding:0 1.4rem 1rem;display:none}
+.tl-role-body.open{display:block}
+.tl-role-list{list-style:none}
+.tl-role-list li{font-size:.8rem;color:#64748b;padding:.25rem 0 .25rem 1.1rem;position:relative;line-height:1.6}
+.tl-role-list li::before{content:'▸';position:absolute;left:0;color:#6366f1}
+.tl-role-list li strong{color:#10b981}
 
-/* EDUCATION */
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
-.edu-card{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;display:flex;gap:.85rem;align-items:flex-start;transition:.2s}
+/* EDUCATION — two columns with icon, exactly like Aniket */
+.edu-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.edu-col-title{font-size:.75rem;font-weight:600;color:#e2e8f0;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.edu-col-title-ico{width:28px;height:28px;border-radius:7px;background:rgba(99,102,241,.12);display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.edu-card{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;transition:.2s}
 .edu-card:hover{border-color:rgba(99,102,241,.25)}
-.edu-ico{width:40px;height:40px;border-radius:9px;background:rgba(99,102,241,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.edu-deg{font-size:.85rem;font-weight:600;color:#e2e8f0;margin-bottom:.2rem}
-.edu-sch{font-size:.75rem;color:#22d3ee;margin-bottom:.1rem}
-.edu-yr{font-size:.68rem;color:#475569}
+.edu-deg{font-size:.88rem;font-weight:700;color:#e2e8f0;margin-bottom:.3rem;line-height:1.4}
+.edu-sch{font-size:.78rem;color:#22d3ee;margin-bottom:.2rem}
+.edu-yr{font-size:.7rem;color:#475569}
 .cert-list{display:flex;flex-direction:column;gap:.6rem}
 .cert-item{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:.85rem 1.1rem;display:flex;align-items:center;justify-content:space-between;transition:.2s}
 .cert-item:hover{border-color:rgba(99,102,241,.25)}
-.cert-name{font-size:.83rem;font-weight:600;color:#e2e8f0}
-.cert-by{font-size:.7rem;color:#64748b;margin-top:.1rem}
-.cert-badge{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:50px;padding:.16rem .6rem;font-size:.65rem;color:#10b981;font-weight:600}
+.cert-name{font-size:.84rem;font-weight:600;color:#e2e8f0}
+.cert-by-badge{background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.2);border-radius:6px;padding:.2rem .65rem;font-size:.7rem;color:#818cf8;font-weight:500;flex-shrink:0}
 
 /* AI CHAT */
 .ai-wrap{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;max-width:720px;margin:0 auto}
 .ai-head{display:flex;align-items:center;gap:.75rem;padding:.95rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.06);background:#0d0d17}
 .ai-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
-.ai-info strong{font-size:.85rem;color:#e2e8f0}
-.ai-info p{font-size:.7rem;color:#64748b}
-.ai-status{margin-left:auto;display:flex;align-items:center;gap:.3rem;font-size:.68rem;color:#10b981}
-.ai-dot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:blink 2s infinite}
-.chat-body{height:270px;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.65rem}
-.chat-body::-webkit-scrollbar{width:3px}
-.cmsg{max-width:85%;padding:.6rem .9rem;border-radius:12px;font-size:.8rem;line-height:1.6;animation:pop .25s ease}
-.cmsg.bot{background:#1a1a2e;border:1px solid rgba(255,255,255,.06);align-self:flex-start;border-bottom-left-radius:3px;color:#94a3b8}
-.cmsg.user{background:#6366f1;color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
-.cmsg.typing{color:#475569;font-style:italic}
-.qrow{display:flex;flex-wrap:wrap;gap:.35rem;padding:.65rem 1rem;border-top:1px solid rgba(255,255,255,.06)}
+.ai-meta strong{font-size:.85rem;color:#e2e8f0}
+.ai-meta p{font-size:.7rem;color:#64748b}
+.ai-online{margin-left:auto;display:flex;align-items:center;gap:.3rem;font-size:.68rem;color:#10b981}
+.ai-dot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:GBLINK 2s infinite}
+.chat-msgs{height:270px;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.65rem}
+.chat-msgs::-webkit-scrollbar{width:3px}
+.msg{max-width:85%;padding:.6rem .9rem;border-radius:12px;font-size:.8rem;line-height:1.6;animation:POP .25s ease}
+.msg.bot{background:#1a1a2e;border:1px solid rgba(255,255,255,.06);align-self:flex-start;border-bottom-left-radius:3px;color:#94a3b8}
+.msg.user{background:#6366f1;color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
+.msg.typing{color:#475569;font-style:italic}
+.chat-qrow{display:flex;flex-wrap:wrap;gap:.35rem;padding:.65rem 1rem;border-top:1px solid rgba(255,255,255,.06)}
 .qb{background:#0d0d17;border:1px solid rgba(255,255,255,.07);border-radius:50px;padding:.24rem .75rem;font-size:.69rem;color:#64748b;cursor:pointer;transition:.2s}
 .qb:hover{border-color:rgba(99,102,241,.3);color:#818cf8}
 .chat-foot{display:flex;gap:.55rem;padding:.8rem 1rem;border-top:1px solid rgba(255,255,255,.06)}
-.cinp{flex:1;background:#0d0d17;border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:.5rem .9rem;color:#e2e8f0;font-size:.8rem;outline:none;transition:.2s;font-family:'Inter',sans-serif}
-.cinp:focus{border-color:rgba(99,102,241,.4)}
-.csend{width:34px;height:34px;border-radius:7px;background:#6366f1;border:none;cursor:pointer;color:#fff;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.2s}
-.csend:hover{background:#5457e5}
+.chat-inp{flex:1;background:#0d0d17;border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:.5rem .9rem;color:#e2e8f0;font-size:.8rem;outline:none;transition:.2s;font-family:'Inter',sans-serif}
+.chat-inp:focus{border-color:rgba(99,102,241,.4)}
+.chat-snd{width:34px;height:34px;border-radius:7px;background:#6366f1;border:none;cursor:pointer;color:#fff;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chat-snd:hover{background:#5457e5}
 
-/* CONTACT — matches Aniket exactly */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.85rem;margin-bottom:1.5rem}
-.con{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.1rem;display:flex;align-items:center;gap:.8rem;text-decoration:none;color:#e2e8f0;transition:.25s;cursor:pointer}
+/* CONTACT */
+.con-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.85rem;margin-bottom:1.5rem}
+.con{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:#e2e8f0;transition:.25s;cursor:pointer;gap:.5rem}
 .con:hover{border-color:rgba(99,102,241,.3);transform:translateY(-2px)}
-.con-ico{width:40px;height:40px;border-radius:9px;background:rgba(99,102,241,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.con-ico{width:42px;height:42px;border-radius:10px;background:rgba(99,102,241,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
 .con-lbl{font-size:.64rem;color:#475569;text-transform:uppercase;letter-spacing:.06em}
-.con-val{font-size:.82rem;margin-top:.08rem;font-weight:500}
-.con-sub{font-size:.67rem;color:#6366f1;margin-top:.1rem}
+.con-val{font-size:.84rem;font-weight:500;color:#e2e8f0}
+.con-sub{font-size:.68rem;color:#6366f1}
+/* green dot for location like Aniket */
+.con-green{color:#10b981;font-size:.68rem;display:flex;align-items:center;gap:.3rem;justify-content:center}
+.con-green::before{content:'';width:7px;height:7px;border-radius:50%;background:#10b981;display:inline-block;animation:GBLINK 2s infinite}
 .email-cta{display:flex;justify-content:center;margin-top:.5rem}
-.email-cta a{display:inline-flex;align-items:center;gap:.5rem;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);border-radius:8px;padding:.65rem 1.8rem;font-size:.85rem;color:#818cf8;text-decoration:none;font-weight:500;transition:.2s}
-.email-cta a:hover{background:rgba(99,102,241,.22);color:#e2e8f0}
+.email-cta a{display:inline-flex;align-items:center;gap:.5rem;background:#6366f1;border-radius:8px;padding:.7rem 2rem;font-size:.88rem;color:#fff;text-decoration:none;font-weight:600;transition:.2s}
+.email-cta a:hover{background:#5457e5;transform:translateY(-1px)}
 
-/* FOOTER */
-.foot-main{background:#0d0d17;border-top:1px solid rgba(255,255,255,.05);padding:1.3rem 2rem}
-.foot-main-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
-.fl-logo{display:flex;align-items:center;gap:.6rem}
-.fl-gem{width:28px;height:28px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.72rem;color:#fff}
-.fl-name{font-size:.82rem;font-weight:700;color:#e2e8f0}
-.fl-role{font-size:.68rem;color:#475569}
-.foot-links{display:flex;gap:1.2rem}
-.foot-links a{font-size:.74rem;color:#475569;text-decoration:none;transition:.2s}
-.foot-links a:hover{color:#818cf8}
-.foot-strip{background:#070710;border-top:1px solid rgba(255,255,255,.04);padding:.7rem 2rem}
-.foot-strip-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-.foot-strip p{font-size:.7rem;color:#1e293b}
+/* ══════════════════════════════════════════
+   FOOTER — exactly ONE footer like Aniket's screenshot:
+   Line 1 (very subtle center): built with...
+   Line 2: Name in white+cyan | nav | social icons + copyright
+   ══════════════════════════════════════════ */
+footer{background:#0a0a0f;border-top:1px solid rgba(255,255,255,.05)}
+.foot-line1{text-align:center;padding:.6rem 2rem;font-size:.7rem;color:#1e293b}
+.foot-line2{max-width:1200px;margin:0 auto;padding:.85rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;border-top:1px solid rgba(255,255,255,.04)}
+.foot-brand{display:flex;flex-direction:column}
+.foot-brand-name{font-size:.92rem;font-weight:700}
+.foot-brand-name span{color:#22d3ee}
+.foot-brand-role{font-size:.7rem;color:#475569;margin-top:.1rem}
+.foot-nav{display:flex;gap:1rem}
+.foot-nav a{font-size:.75rem;color:#475569;text-decoration:none;transition:.2s}
+.foot-nav a:hover{color:#818cf8}
+.foot-right{font-size:.7rem;color:#1e293b}
 
 /* FLOATING BOT */
 .bot-wrap{position:fixed;bottom:1.6rem;right:1.6rem;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
-.bot-lbl{background:#13131f;border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:.4rem .85rem;font-size:.73rem;color:#94a3b8;white-space:nowrap;display:flex;align-items:center;gap:.4rem;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:opacity .5s}
+.bot-lbl{background:#13131f;border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:.4rem .85rem;font-size:.73rem;color:#94a3b8;white-space:nowrap;display:flex;align-items:center;gap:.4rem;box-shadow:0 4px 20px rgba(0,0,0,.4)}
 .bot-lbl span{color:#64748b;font-size:.68rem}
 .bot-btn{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 20px rgba(99,102,241,.4);transition:.2s;position:relative}
 .bot-btn:hover{transform:scale(1.08)}
-.bot-btn::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid rgba(99,102,241,.25);animation:ring 2s infinite}
-
-/* CHAT PANEL */
+.bot-btn::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid rgba(99,102,241,.25);animation:BOTRING 2s infinite}
 .cpanel{position:fixed;bottom:5rem;right:1.6rem;z-index:300;width:320px;background:#13131f;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6);display:none;flex-direction:column}
-.cpanel.on{display:flex;animation:pop .25s ease}
+.cpanel.on{display:flex;animation:POP .25s ease}
 .cp-head{display:flex;align-items:center;gap:.65rem;padding:.85rem 1rem;background:linear-gradient(135deg,#6366f1,#8b5cf6)}
 .cp-av{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-.cp-info strong{font-size:.82rem;color:#fff}
-.cp-info p{font-size:.68rem;color:rgba(255,255,255,.7)}
+.cp-meta strong{font-size:.82rem;color:#fff}
+.cp-meta p{font-size:.68rem;color:rgba(255,255,255,.7)}
 .cp-close{margin-left:auto;width:24px;height:24px;border-radius:5px;background:rgba(255,255,255,.12);border:none;cursor:pointer;color:#fff;font-size:.75rem;display:flex;align-items:center;justify-content:center}
 .cp-msgs{height:220px;overflow-y:auto;padding:.85rem;display:flex;flex-direction:column;gap:.55rem;background:#0a0a0f}
 .cp-msgs::-webkit-scrollbar{width:3px}
-.bm{max-width:90%;padding:.55rem .8rem;border-radius:11px;font-size:.77rem;line-height:1.55;animation:pop .22s ease}
+.bm{max-width:90%;padding:.55rem .8rem;border-radius:11px;font-size:.77rem;line-height:1.55;animation:POP .22s ease}
 .bm.bot{background:#13131f;border:1px solid rgba(255,255,255,.06);align-self:flex-start;border-bottom-left-radius:3px;color:#94a3b8}
 .bm.user{background:#6366f1;color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
 .bm.typing{color:#475569;font-style:italic}
 .cp-qrow{display:flex;flex-wrap:wrap;gap:.3rem;padding:.55rem .85rem;border-top:1px solid rgba(255,255,255,.06);background:#0d0d17}
 .bqb{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:50px;padding:.2rem .65rem;font-size:.67rem;color:#64748b;cursor:pointer;transition:.15s}
 .bqb:hover{border-color:rgba(99,102,241,.3);color:#818cf8}
-.cp-input{display:flex;gap:.45rem;padding:.65rem .85rem;border-top:1px solid rgba(255,255,255,.06);background:#13131f}
-.bp-inp{flex:1;background:#0d0d17;border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:.45rem .75rem;color:#e2e8f0;font-size:.76rem;outline:none;font-family:'Inter',sans-serif}
-.bp-inp:focus{border-color:rgba(99,102,241,.35)}
-.bp-send{width:30px;height:30px;border-radius:6px;background:#6366f1;border:none;cursor:pointer;color:#fff;font-size:.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.bp-send:hover{background:#5457e5}
+.cp-foot{display:flex;gap:.45rem;padding:.65rem .85rem;border-top:1px solid rgba(255,255,255,.06);background:#13131f}
+.bot-inp{flex:1;background:#0d0d17;border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:.45rem .75rem;color:#e2e8f0;font-size:.76rem;outline:none;font-family:'Inter',sans-serif;transition:.2s}
+.bot-inp:focus{border-color:rgba(99,102,241,.35)}
+.bot-snd{width:30px;height:30px;border-radius:6px;background:#6366f1;border:none;cursor:pointer;color:#fff;font-size:.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bot-snd:hover{background:#5457e5}
+#toast{position:fixed;bottom:6.5rem;left:50%;transform:translateX(-50%) translateY(8px);background:#10b981;color:#fff;padding:.5rem 1.2rem;border-radius:50px;font-size:.78rem;font-weight:600;opacity:0;transition:.3s;z-index:400;pointer-events:none;white-space:nowrap}
 
-/* TOAST */
-#toast{position:fixed;bottom:6.5rem;left:50%;transform:translateX(-50%) translateY(8px);background:#10b981;color:#fff;padding:.5rem 1.2rem;border-radius:50px;font-size:.78rem;font-weight:600;opacity:0;transition:.3s;z-index:400;pointer-events:none}
-
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-@keyframes pop{from{opacity:0;transform:scale(.95) translateY(6px)}to{opacity:1;transform:none}}
-@keyframes ring{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.4);opacity:0}}
+@keyframes TICK{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes GBLINK{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes CBLINK{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes POP{from{opacity:0;transform:scale(.95) translateY(6px)}to{opacity:1;transform:none}}
+@keyframes BOTRING{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.4);opacity:0}}
 
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr}.hcard{display:none}
-  .skills-top,.edu-grid{grid-template-columns:1fr}
+  .edu-wrap{grid-template-columns:1fr}
   .nav-links,.nav-search{display:none}
-  .foot-links{display:none}
+  .foot-nav{display:none}
+  .sk-cat-row{flex-direction:column;gap:.6rem}
+  .sk-cat-left{min-width:unset}
 }
 </style>
 </head>
 <body>
 
-<!-- SEARCH MODAL -->
-<div class="sov" id="sov" onclick="if(event.target===this)sc()">
+<!-- SEARCH -->
+<div class="sov" id="SOV" onclick="if(event.target===this)SC()">
   <div class="sbox">
-    <div class="sbox-row"><span style="color:#475569">⌕</span><input id="sinp" placeholder="Search sections, skills, projects..." oninput="ds(this.value)" onkeydown="if(event.key==='Escape')sc()"/><kbd style="background:rgba(99,102,241,.12);border-radius:4px;padding:.12rem .42rem;font-size:.65rem;color:#818cf8">ESC</kbd></div>
-    <div id="sres"></div>
+    <div class="srow"><span style="color:#475569">⌕</span><input id="SINP" placeholder="Search sections, skills, projects..." oninput="SS(this.value)" onkeydown="if(event.key==='Escape')SC()"/><kbd style="background:rgba(99,102,241,.12);border-radius:4px;padding:.12rem .42rem;font-size:.65rem;color:#818cf8">ESC</kbd></div>
+    <div id="SRES"></div>
   </div>
 </div>
 
 <!-- PROJECT MODAL -->
-<div class="pov" id="pov" onclick="if(event.target===this)pc()">
-  <div class="pmodal">
-    <div class="pmodal-h">
-      <div><div class="pm-cat" id="pmCat"></div><div class="pm-title" id="pmTitle"></div></div>
-      <button class="pmodal-x" onclick="pc()">✕</button>
-    </div>
-    <div class="pmodal-b">
-      <div class="pm-desc" id="pmDesc"></div>
-      <div class="pm-sh">✓ Key Outcomes</div><div class="pm-checks" id="pmChecks"></div>
-      <div class="pm-sh" style="margin-top:1rem">🛠 Technologies</div><div class="pm-tags" id="pmTags"></div>
-    </div>
+<div class="pov" id="POV" onclick="if(event.target===this)PCLOSE()">
+  <div class="pmod">
+    <div class="pmod-h"><div><div class="mp-cat" id="PCAT"></div><div class="mp-title" id="PTIT"></div></div><button class="pmod-x" onclick="PC()">✕</button></div>
+    <div class="pmod-b"><div class="mp-desc" id="PDESC"></div><div class="mp-sh">✓ Key Outcomes</div><div class="mp-checks" id="PCHK"></div><div class="mp-sh">🛠 Technologies</div><div class="mp-tags" id="PTAGS"></div></div>
   </div>
 </div>
 
@@ -333,45 +357,36 @@ section{padding:5rem 2rem}
   <div class="nav-inner">
     <div class="nav-logo">AG</div>
     <div class="nav-links">
-      <a href="#about" class="nl">About</a>
-      <a href="#projects" class="nl">Projects</a>
-      <a href="#skills" class="nl">Skills</a>
-      <a href="#experience" class="nl">Experience</a>
-      <a href="#contact" class="nl">Contact</a>
+      <a href="#about" class="nl">About</a><a href="#projects" class="nl">Projects</a><a href="#skills" class="nl">Skills</a><a href="#experience" class="nl">Experience</a><a href="#contact" class="nl">Contact</a>
     </div>
     <div class="nav-right">
-      <button class="nav-search" onclick="so()">Search <kbd>⌘K</kbd></button>
+      <button class="nav-search" onclick="SO()">Search <kbd>⌘K</kbd></button>
       <a href="#" class="nav-resume">Resume ↗</a>
     </div>
   </div>
 </nav>
 
 <!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker" id="tkr"></div>
-</div>
+<div class="ticker-wrap"><div class="ticker" id="TKR"></div></div>
 
 <!-- HERO -->
 <section class="hero">
-  <canvas id="cv"></canvas>
+  <canvas id="CNV"></canvas>
   <div class="hero-inner">
     <div>
       <div class="hero-badge"><span class="hbdot"></span><span class="hbtext">Open to Technical Architect Roles</span></div>
       <p class="hero-greeting">Hello, I'm</p>
       <h1>Aditya Gedam</h1>
-      <div class="hero-type"><span id="typed"></span><span class="cursor"></span></div>
+      <div class="hero-type"><span id="TYPED"></span><span class="caret"></span></div>
       <p class="hero-sub">Architecting scalable cloud-native systems & enterprise SaaS on AWS. 7+ years building high-performance backup, restore & API integration platforms for 200+ enterprise customers.</p>
-      <div class="hero-btns">
-        <a href="#projects" class="hbp">View My Work</a>
-        <a href="#" class="hbg">Resume ↗</a>
-      </div>
+      <div class="hero-btns"><a href="#projects" class="btn-p">View My Work</a><a href="#" class="btn-g">Resume ↗</a></div>
     </div>
     <div class="hcard">
       <div class="hcard-top">
         <div class="hcard-av">👨‍💻</div>
         <div class="hcard-name">Aditya Gedam</div>
         <div class="hcard-role">Senior Lead Engineer · SysCloud Technologies<br/>Hyderabad, India</div>
-        <div class="hcard-avail"><span style="width:6px;height:6px;border-radius:50%;background:#fff;display:inline-block;flex-shrink:0"></span>Available for Architect Roles</div>
+        <div class="hcard-avail"><span class="avdot"></span>Available for Architect Roles</div>
       </div>
       <div class="hcard-stats">
         <div class="hstat"><div class="n" data-t="7" data-s="+">0</div><div class="l">Years Experience</div></div>
@@ -385,95 +400,95 @@ section{padding:5rem 2rem}
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="alt">
-<div class="sec-inner reveal">
-  <div class="sec-tag"><span class="sec-dot"></span><span class="sec-lbl">Who I Am</span></div>
-  <h2 class="sec-title">Building things that scale</h2>
-  <p class="about-body">7+ years of cloud engineering at <strong>SysCloud Technologies</strong>. AWS KMS encryption systems eliminating 100% of unauthorized access. Scalable restoration cutting manual recovery by 70%. Japanese platform integrations expanding market reach by 25% across <strong>200+ enterprise customers</strong>. Japan team mentoring with 90%+ knowledge transfer using AI/GPT automation. <strong>Real systems. Real scale. Real impact.</strong></p>
-  <div class="about-feats">
-    <div class="afc"><div class="afc-ico">☁️</div><h4>Cloud Architecture</h4><p>AWS-first design with S3, Lambda, SQS, ECS, KMS. Scalable data pipelines for enterprise SaaS at 99.9% reliability.</p></div>
-    <div class="afc"><div class="afc-ico">🗄️</div><h4>Database Engineering</h4><p>Deep PostgreSQL expertise with RDS, Parquet/S3 migrations, DynamoDB, and query performance optimization.</p></div>
-    <div class="afc"><div class="afc-ico">🔗</div><h4>API Integrations</h4><p>Microsoft Graph, Asana, Notion, Kintone, Box — building enterprise backup & export platforms at scale.</p></div>
-    <div class="afc"><div class="afc-ico">👥</div><h4>Team Leadership</h4><p>Japan team mentoring with 90%+ knowledge transfer. Cross-functional delivery and performance cycle leadership.</p></div>
+<section id="about" class="bg2">
+<div class="wrap reveal">
+  <div class="stag"><span class="sdot"></span><span class="slbl">About Me</span></div>
+  <h2 class="stitle">Building things that scale</h2>
+  <p class="about-text">7+ years of cloud engineering at <strong>SysCloud Technologies</strong>. AWS KMS encryption systems eliminating 100% of unauthorized access. Scalable restoration cutting manual recovery by 70%. Japanese platform integrations expanding market reach by 25% across <strong>200+ enterprise customers</strong>. Japan team mentoring with 90%+ knowledge transfer using AI/GPT automation. <strong>Real systems. Real scale. Real impact.</strong></p>
+  <div class="about-cards">
+    <div class="acard"><div class="acard-ico">⚙️</div><h4>Backend Systems</h4><p>PHP & Python expert building high-performance APIs, microservices, backup systems and data pipelines.</p></div>
+    <div class="acard"><div class="acard-ico">🗄️</div><h4>Database Architecture</h4><p>Deep PostgreSQL expertise: RDS, Parquet/S3 migrations, DynamoDB, query optimization, and config-driven schemas.</p></div>
+    <div class="acard"><div class="acard-ico">☁️</div><h4>Cloud & AWS</h4><p>End-to-end AWS experience: S3, Lambda, Fargate, SQS, KMS, Athena, ECS, CloudWatch, and more.</p></div>
+    <div class="acard"><div class="acard-ico">🤖</div><h4>AI Agent Development</h4><p>Built AI-powered workflows using Claude AI and AI Agents for test verification, automation, and GPT-driven onboarding.</p></div>
   </div>
-  <div class="about-chips">
-    <span class="achip">🎓 M.Tech CSE — NIT Tiruchirappalli</span>
-    <span class="achip">☁️ AWS Certified</span>
-    <span class="achip">📍 Hyderabad, India</span>
-    <span class="achip">🗓️ 7+ Years at SysCloud</span>
-    <span class="achip">🎯 Targeting Architect Roles</span>
+  <div class="chips">
+    <span class="chip">🎓 M.Tech CSE — NIT Tiruchirappalli</span>
+    <span class="chip">☁️ AWS Certified</span>
+    <span class="chip">📍 Hyderabad, India</span>
+    <span class="chip">🗓️ 7+ Years at SysCloud</span>
+    <span class="chip">🎯 Targeting Architect Roles</span>
   </div>
 </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<div class="sec-inner reveal">
-  <div class="sec-tag"><span class="sec-dot"></span><span class="sec-lbl">What I've Built</span></div>
-  <h2 class="sec-title">Things I've built</h2>
-  <p class="sec-sub">Key systems and solutions I designed and owned at SysCloud. Click any card for full details.</p>
-  <!-- Category filter row -->
-  <div class="filter-row" id="frow"></div>
-  <!-- Tech tag pill row — horizontal scroll like Aniket -->
-  <div class="tech-row" id="trow"></div>
-  <div class="proj-grid" id="pgrid"></div>
+<div class="wrap reveal">
+  <div class="stag"><span class="sdot"></span><span class="slbl">Projects</span></div>
+  <h2 class="stitle">Things I've built</h2>
+  <p class="ssub">Key systems and solutions I designed and owned at SysCloud. Click any card for full details.</p>
+  <div class="frow" id="CROW"></div>
+  <div class="trow" id="TROW"></div>
+  <div class="pgrid" id="PGRID"></div>
 </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="alt">
-<div class="sec-inner reveal">
-  <div class="sec-tag"><span class="sec-dot"></span><span class="sec-lbl">Tech Stack</span></div>
-  <h2 class="sec-title">What I work with</h2>
-  <div class="skills-top">
-    <div class="sg"><div class="sg-head">⚡ Core Expertise</div><div id="coreS"></div></div>
-    <div class="sg"><div class="sg-head">☁️ Cloud & Infrastructure</div><div id="cloudS"></div></div>
+<!-- SKILLS — exact match to Aniket screenshot -->
+<section id="skills" class="bg2">
+<div class="wrap reveal">
+  <div class="stag"><span class="sdot"></span><span class="slbl">Technical Skills</span></div>
+  <h2 class="stitle">What I work with</h2>
+  <!-- Core Expertise: dark card with colored bars + badges -->
+  <div class="sk-card">
+    <div class="sk-card-title">⚡ CORE EXPERTISE</div>
+    <div id="SKBARS"></div>
   </div>
-  <div class="skill-cats" id="scats"></div>
+  <!-- Category rows: LEFT name+count | RIGHT pills -->
+  <div class="sk-cats" id="SKCATS"></div>
 </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-<div class="sec-inner reveal">
-  <div class="sec-tag"><span class="sec-dot"></span><span class="sec-lbl">Career Journey</span></div>
-  <h2 class="sec-title">Where I've worked</h2>
-  <div class="exp-wrap">
-    <div class="exp-co-head">
+<div class="wrap reveal">
+  <div class="stag"><span class="sdot"></span><span class="slbl">Experience</span></div>
+  <h2 class="stitle">Where I've worked</h2>
+  <div class="exp-box">
+    <div class="exp-co">
       <div class="co-logo">SC</div>
-      <div class="co-info"><h3>SysCloud Technologies Pvt Ltd</h3><p>Jun 2018 – Present · 7+ years · B2B SaaS · Cloud Backup & Data Management</p></div>
+      <div class="co-info"><h3>SysCloud Technologies Pvt Ltd</h3><p>Jun 2018 – Present · 7+ years · B2B SaaS · Cloud Backup</p></div>
     </div>
     <div class="tl-prog">
-      <span class="tlstage">Trainee</span>
-      <div class="tlbar"><div class="tlbar-f" style="width:100%"></div></div>
-      <span class="tlstage">SE</span>
-      <div class="tlbar"><div class="tlbar-f" style="width:100%"></div></div>
-      <span class="tlstage">Senior SE</span>
-      <div class="tlbar"><div class="tlbar-f" style="width:100%"></div></div>
-      <span class="tlstage">Lead SE</span>
-      <div class="tlbar"><div class="tlbar-f" style="width:100%"></div></div>
-      <span class="tlstage">Sr. Lead</span>
+      <span class="tl-stage">Trainee</span><div class="tl-bar"><div class="tl-bar-f" style="width:100%"></div></div>
+      <span class="tl-stage">SE</span><div class="tl-bar"><div class="tl-bar-f" style="width:100%"></div></div>
+      <span class="tl-stage">Senior SE</span><div class="tl-bar"><div class="tl-bar-f" style="width:100%"></div></div>
+      <span class="tl-stage">Lead SE</span><div class="tl-bar"><div class="tl-bar-f" style="width:100%"></div></div>
+      <span class="tl-stage">Sr. Lead</span>
     </div>
-    <div class="tl-roles" id="tlroles"></div>
+    <div id="EXPROLES"></div>
   </div>
 </div>
 </section>
 
 <!-- EDUCATION -->
-<section id="education" class="alt">
-<div class="sec-inner reveal">
-  <div class="sec-tag"><span class="sec-dot"></span><span class="sec-lbl">Background</span></div>
-  <h2 class="sec-title">Education & Certifications</h2>
-  <div class="edu-grid">
+<section id="education" class="bg2">
+<div class="wrap reveal">
+  <div class="stag"><span class="sdot"></span><span class="slbl">Education & Certifications</span></div>
+  <h2 class="stitle">Background</h2>
+  <div class="edu-wrap">
     <div>
-      <p style="font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:#475569;font-weight:600;margin-bottom:.85rem">Education</p>
-      <div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-deg">M.Tech in Computer Science & Engineering</div><div class="edu-sch">National Institute of Technology Tiruchirappalli</div><div class="edu-yr">2016 – 2018 · Tamil Nadu, India</div></div></div>
+      <div class="edu-col-title"><div class="edu-col-title-ico">🎓</div>Education</div>
+      <div class="edu-card">
+        <div class="edu-deg">M.Tech in Computer Science & Engineering</div>
+        <div class="edu-sch">National Institute of Technology Tiruchirappalli</div>
+        <div class="edu-yr">2016 – 2018 · Tamil Nadu, India</div>
+      </div>
     </div>
     <div>
-      <p style="font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:#475569;font-weight:600;margin-bottom:.85rem">Certifications</p>
+      <div class="edu-col-title"><div class="edu-col-title-ico">🏅</div>Certifications</div>
       <div class="cert-list">
-        <div class="cert-item"><div><div class="cert-name">AWS for Beginners</div><div class="cert-by">Great Learning</div></div><span class="cert-badge">Certified</span></div>
-        <div class="cert-item"><div><div class="cert-name">Unix-Linux Shell Scripting Workshop</div><div class="cert-by">Shell Scripting</div></div><span class="cert-badge">Certified</span></div>
+        <div class="cert-item"><div class="cert-name">AWS for Beginners</div><span class="cert-by-badge">Great Learning</span></div>
+        <div class="cert-item"><div class="cert-name">Unix-Linux Shell Scripting Workshop</div><span class="cert-by-badge">Shell Scripting</span></div>
       </div>
     </div>
   </div>
@@ -482,252 +497,230 @@ section{padding:5rem 2rem}
 
 <!-- AI CHAT -->
 <section id="ai">
-<div class="sec-inner reveal">
-  <div class="sec-tag"><span class="sec-dot"></span><span class="sec-lbl">Powered by Claude AI</span></div>
-  <h2 class="sec-title">Ask My AI Assistant</h2>
-  <p class="sec-sub">Ask anything about my experience, skills, projects, or career goals.</p>
+<div class="wrap reveal">
+  <div class="stag"><span class="sdot"></span><span class="slbl">AI Assistant</span></div>
+  <h2 class="stitle">Ask My AI Assistant</h2>
+  <p class="ssub">Ask anything about my experience, skills, projects, or career goals.</p>
   <div class="ai-wrap">
     <div class="ai-head">
       <div class="ai-av">🤖</div>
-      <div class="ai-info"><strong>Aditya Assistant Bot</strong><p>Ask me anything</p></div>
-      <div class="ai-status"><span class="ai-dot"></span>Online</div>
+      <div class="ai-meta"><strong>Aditya Assistant Bot</strong><p>Ask me anything</p></div>
+      <div class="ai-online"><span class="ai-dot"></span>Online</div>
     </div>
-    <div class="chat-body" id="chatBody">
-      <div class="cmsg bot">👋 Hi! I'm Aditya's AI assistant. Ask me anything about his work, skills, or projects!</div>
-    </div>
-    <div class="qrow">
-      <button class="qb" onclick="qa('What are his top AWS achievements?')">AWS Achievements</button>
-      <button class="qb" onclick="qa('Tell me about the KMS project')">KMS Project</button>
-      <button class="qb" onclick="qa('What Japanese platforms has he worked with?')">Japan Work</button>
-      <button class="qb" onclick="qa('Is he open to new opportunities?')">Open to Work</button>
-      <button class="qb" onclick="qa('What is his education?')">Education</button>
+    <div class="chat-msgs" id="CMSGS"><div class="msg bot">👋 Hi! I'm Aditya's AI assistant. Ask me anything about his work, skills, or projects!</div></div>
+    <div class="chat-qrow">
+      <button class="qb" onclick="AI_ask('What are his top AWS achievements?')">AWS Achievements</button>
+      <button class="qb" onclick="AI_ask('Tell me about the KMS project')">KMS Project</button>
+      <button class="qb" onclick="AI_ask('What Japanese platforms has he worked with?')">Japan Work</button>
+      <button class="qb" onclick="AI_ask('Is he open to new opportunities?')">Open to Work</button>
+      <button class="qb" onclick="AI_ask('What is his education?')">Education</button>
     </div>
     <div class="chat-foot">
-      <input class="cinp" id="cinp" placeholder="Ask about skills, experience, projects..."/>
-      <button class="csend" id="csend">➤</button>
+      <input class="chat-inp" id="CINP" placeholder="Ask about skills, experience, projects..."/>
+      <button class="chat-snd" id="CSND">➤</button>
     </div>
   </div>
 </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="alt">
-<div class="sec-inner reveal">
-  <div class="sec-tag"><span class="sec-dot"></span><span class="sec-lbl">Get In Touch</span></div>
-  <h2 class="sec-title">Let's work together</h2>
-  <p class="sec-sub">Open to Technical Architect & Senior Lead roles. I typically respond within 24 hours.</p>
-  <div class="contact-grid">
+<section id="contact" class="bg2">
+<div class="wrap reveal">
+  <div class="stag"><span class="sdot"></span><span class="slbl">Contact</span></div>
+  <h2 class="stitle">Let's work together</h2>
+  <p class="ssub">Open to Technical Architect & Senior Lead roles. I typically respond within 24 hours.</p>
+  <div class="con-grid">
     <div class="con" onclick="copyEmail()">
       <div class="con-ico">📧</div>
-      <div><div class="con-lbl">Email</div><div class="con-val">gedamaditya@gmail.com</div><div class="con-sub">Click to copy</div></div>
+      <div class="con-lbl">Email</div>
+      <div class="con-val">gedamaditya@gmail.com</div>
+      <div class="con-sub">Click to copy</div>
     </div>
     <a href="https://linkedin.com/in/aditya-gedam-8260442b" target="_blank" class="con">
       <div class="con-ico">💼</div>
-      <div><div class="con-lbl">LinkedIn</div><div class="con-val">aditya-gedam-8260442b</div><div class="con-sub">Open profile ↗</div></div>
+      <div class="con-lbl">LinkedIn</div>
+      <div class="con-val">aditya-gedam-8260442b</div>
+      <div class="con-sub">Open profile ↗</div>
     </a>
     <div class="con" style="cursor:default">
       <div class="con-ico">📍</div>
-      <div><div class="con-lbl">Location</div><div class="con-val">Hyderabad, India</div><div class="con-sub">IST (UTC+5:30)</div></div>
+      <div class="con-lbl">Location</div>
+      <div class="con-val">Hyderabad, India</div>
+      <div class="con-green">IST (UTC+5:30)</div>
     </div>
   </div>
-  <div class="email-cta">
-    <a href="mailto:gedamaditya@gmail.com">✉️ Send me an email</a>
-  </div>
+  <div class="email-cta"><a href="mailto:gedamaditya@gmail.com">✉️ Send me an email</a></div>
 </div>
 </section>
 
-<!-- FOOTER MAIN -->
-<div class="foot-main">
-  <div class="foot-main-in">
-    <div class="fl-logo"><div class="fl-gem">AG</div><div><div class="fl-name">Aditya Gedam</div><div class="fl-role">Senior Lead Engineer · Hyderabad, India</div></div></div>
-    <div class="foot-links">
+<!-- FOOTER — ONE footer, exactly like Aniket screenshot:
+     Line 1: very subtle "Built with..." centered
+     Line 2: Name(white+cyan) + role | nav links | copyright + "Built with..." -->
+<footer>
+  <div class="foot-line1">© 2026 Aditya Gedam · All rights reserved.</div>
+  <div class="foot-line2">
+    <div class="foot-brand">
+      <div class="foot-brand-name">Aditya <span>Gedam</span></div>
+      <div class="foot-brand-role">Senior Lead Engineer · Hyderabad, India</div>
+    </div>
+    <div class="foot-nav">
       <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
     </div>
-    <p style="font-size:.7rem;color:#334155">© 2026 Aditya Gedam. All rights reserved.</p>
+    <div class="foot-right">© 2026 Aditya Gedam. All rights reserved.</div>
   </div>
-</div>
-<!-- FOOTER STRIP -->
-<div class="foot-strip">
-  <div class="foot-strip-in">
-    <p>Aditya Gedam · Senior Lead Engineer · Hyderabad, India</p>
-    <div class="foot-links" style="display:flex"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
-    <p>© 2026 Aditya Gedam. All rights reserved.</p>
-  </div>
-</div>
+</footer>
 
 <!-- FLOATING BOT -->
 <div class="bot-wrap">
-  <div class="bot-lbl" id="blbl">Aditya Assistant Bot <span>Ask me anything</span></div>
-  <button class="bot-btn" onclick="tb()">🤖</button>
+  <div class="bot-lbl" id="BLBL">Aditya Assistant Bot <span>Ask me anything</span></div>
+  <button class="bot-btn" onclick="BT()">🤖</button>
 </div>
-<div class="cpanel" id="cpanel">
-  <div class="cp-head">
-    <div class="cp-av">🤖</div>
-    <div class="cp-info"><strong>Aditya Assistant Bot</strong><p>Ask me anything</p></div>
-    <button class="cp-close" onclick="tb()">✕</button>
-  </div>
-  <div class="cp-msgs" id="cpmsgs">
-    <div class="bm bot">👋 Hi! Ask me anything about Aditya's skills, experience or projects!</div>
-  </div>
+<div class="cpanel" id="BPANEL">
+  <div class="cp-head"><div class="cp-av">🤖</div><div class="cp-meta"><strong>Aditya Assistant Bot</strong><p>Ask me anything</p></div><button class="cp-close" onclick="BT()">✕</button></div>
+  <div class="cp-msgs" id="BMSGS"><div class="bm bot">👋 Hi! Ask me anything about Aditya's skills, experience or projects!</div></div>
   <div class="cp-qrow">
-    <button class="bqb" onclick="bq('Top AWS skills?')">AWS Skills</button>
-    <button class="bqb" onclick="bq('KMS project?')">KMS</button>
-    <button class="bqb" onclick="bq('Open to work?')">Open to Work</button>
-    <button class="bqb" onclick="bq('Education?')">Education</button>
+    <button class="bqb" onclick="BA('Top AWS skills?')">AWS Skills</button>
+    <button class="bqb" onclick="BA('KMS project?')">KMS</button>
+    <button class="bqb" onclick="BA('Open to work?')">Open to Work</button>
+    <button class="bqb" onclick="BA('Education?')">Education</button>
   </div>
-  <div class="cp-input">
-    <input class="bp-inp" id="bpinp" placeholder="Ask anything..."/>
-    <button class="bp-send" id="bpsend">➤</button>
-  </div>
+  <div class="cp-foot"><input class="bot-inp" id="BINP" placeholder="Ask anything..."/><button class="bot-snd" id="BSND">➤</button></div>
 </div>
 <div id="toast">✓ Email copied!</div>
 
 <script>
-// CANVAS
-const cv=document.getElementById('cv'),cx=cv.getContext('2d');
-function rsz(){cv.width=innerWidth;cv.height=innerHeight}rsz();addEventListener('resize',rsz);
-const pts=Array.from({length:45},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18}));
-(function tick(){cx.clearRect(0,0,cv.width,cv.height);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>cv.width)p.vx*=-1;if(p.y<0||p.y>cv.height)p.vy*=-1;cx.beginPath();cx.arc(p.x,p.y,1.3,0,Math.PI*2);cx.fillStyle='rgba(99,102,241,.3)';cx.fill()});pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{const d=Math.hypot(a.x-b.x,a.y-b.y);if(d<100){cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.strokeStyle=`rgba(99,102,241,${.12*(1-d/100)})`;cx.lineWidth=.6;cx.stroke()}}));requestAnimationFrame(tick)})();
+/* CANVAS */
+const CNV=document.getElementById('CNV'),CX=CNV.getContext('2d');
+function rsz(){CNV.width=innerWidth;CNV.height=innerHeight}rsz();addEventListener('resize',rsz);
+const PTS=Array.from({length:45},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18}));
+(function draw(){CX.clearRect(0,0,CNV.width,CNV.height);PTS.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>CNV.width)p.vx*=-1;if(p.y<0||p.y>CNV.height)p.vy*=-1;CX.beginPath();CX.arc(p.x,p.y,1.3,0,Math.PI*2);CX.fillStyle='rgba(99,102,241,.3)';CX.fill()});PTS.forEach((a,i)=>PTS.slice(i+1).forEach(b=>{const d=Math.hypot(a.x-b.x,a.y-b.y);if(d<100){CX.beginPath();CX.moveTo(a.x,a.y);CX.lineTo(b.x,b.y);CX.strokeStyle=`rgba(99,102,241,${.12*(1-d/100)})`;CX.lineWidth=.6;CX.stroke()}}));requestAnimationFrame(draw)})();
 
-// TICKER
-const TK=['PHP','Python','TypeScript','JavaScript','AWS','PostgreSQL','NestJS','S3','Lambda','SQS','Docker','DynamoDB','Microsoft Graph','KMS Encryption','Microservices','REST APIs','GCP','Unix Shell','ECS','RDS','MDL 2.0','Config-Driven','Claude AI','AI Agents'];
-const te=document.getElementById('tkr');te.innerHTML=[...TK,...TK].map(x=>`<span class="ti"><span class="tidot"></span>${x}</span>`).join('');
+/* TICKER */
+const TK=['PHP','Python','TypeScript','JavaScript','AWS','PostgreSQL','NestJS','S3','Lambda','SQS','Docker','DynamoDB','Microsoft Graph','KMS Encryption','Microservices','REST APIs','GCP','Unix Shell Scripting','ECS','RDS','MDL 2.0','Config-Driven','Claude AI','AI Agents'];
+document.getElementById('TKR').innerHTML=[...TK,...TK].map(x=>`<span class="ti"><span class="tidot"></span>${x}</span>`).join('');
 
-// TYPEWRITER
-const ROLES=['PHP Expert','Cloud Architect','Python Developer','AWS Engineer','TypeScript Developer','PostgreSQL Expert','API Integration Expert','Backend Architect','Enterprise SaaS Builder','AI-Powered Developer'];
-let ri=0,tc=0,del=false;
-const tel=document.getElementById('typed');
-function type(){
-  const w=ROLES[ri];
-  if(!del){tel.textContent=w.slice(0,++tc);if(tc===w.length){setTimeout(()=>{del=true;type()},1800);return}setTimeout(type,80)}
-  else{tel.textContent=w.slice(0,--tc);if(tc===0){del=false;ri=(ri+1)%ROLES.length;setTimeout(type,300);return}setTimeout(type,40)}
-}
-type();
+/* TYPEWRITER */
+const TWR=['PHP Expert','Cloud Architect','Python Developer','AWS Engineer','TypeScript Developer','PostgreSQL Expert','API Integration Expert','Backend Architect','Enterprise SaaS Builder','AI-Powered Developer'];
+let TWi=0,TWc=0,TWd=false;
+const TWe=document.getElementById('TYPED');
+function TWrun(){const w=TWR[TWi];if(!TWd){TWe.textContent=w.slice(0,++TWc);if(TWc===w.length){setTimeout(()=>{TWd=true;TWrun()},1800);return}setTimeout(TWrun,80)}else{TWe.textContent=w.slice(0,--TWc);if(TWc===0){TWd=false;TWi=(TWi+1)%TWR.length;setTimeout(TWrun,300);return}setTimeout(TWrun,40)}}
+TWrun();
 
-// COUNTERS
-document.querySelectorAll('[data-t]').forEach(el=>new IntersectionObserver(([e])=>{if(e.isIntersecting){const tg=+el.dataset.t,sf=el.dataset.s||'';let c=0;const s=setInterval(()=>{c=Math.min(c+tg/55,tg);el.textContent=Math.floor(c)+sf;if(c>=tg)clearInterval(s)},20)}},{threshold:.5}).observe(el));
+/* COUNTERS */
+document.querySelectorAll('[data-t]').forEach(el=>{new IntersectionObserver(([e])=>{if(!e.isIntersecting)return;const tg=+el.dataset.t,sf=el.dataset.s||'';let c=0;const s=setInterval(()=>{c=Math.min(c+tg/55,tg);el.textContent=Math.floor(c)+sf;if(c>=tg)clearInterval(s)},20)},{threshold:.5}).observe(el)});
 
-// REVEAL
-document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('in')},{threshold:.06}).observe(el));
+/* REVEAL */
+document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('in')},{threshold:.06}).observe(el)});
 
-// ACTIVE NAV
-window.addEventListener('scroll',()=>{
-  let cur='';
-  document.querySelectorAll('section[id]').forEach(s=>{if(scrollY>=s.offsetTop-130)cur=s.id});
-  document.querySelectorAll('.nl').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
-});
+/* ACTIVE NAV */
+window.addEventListener('scroll',()=>{let cur='';document.querySelectorAll('section[id]').forEach(s=>{if(scrollY>=s.offsetTop-130)cur=s.id});document.querySelectorAll('.nl').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur))});
 
-// PROJECTS DATA
-const CATS={cloud:{l:'Cloud',c:'#22d3ee'},backend:{l:'Backend',c:'#10b981'},infra:{l:'Infrastructure',c:'#a78bfa'},integration:{l:'Integration',c:'#fb923c'},security:{l:'Security',c:'#f87171'},notifications:{l:'Notifications',c:'#34d399'},migration:{l:'Migration',c:'#60a5fa'}};
-const PROJS=[
-  {cat:'security',title:'AWS KMS Encryption Platform',desc:'Architected AWS KMS-based encryption for S3 storage, achieving 100% reduction in unauthorized access and ensuring regulatory compliance across all enterprise data.',checks:['100% unauthorized access eliminated','Regulatory compliance achieved','Scalable encryption architecture'],tags:['AWS KMS','S3','Encryption','PHP','Python']},
-  {cat:'infra',title:'PostgreSQL → Parquet/S3 Migration',desc:'Migrated PostgreSQL RDS data to Parquet files in S3, dramatically reducing database costs while improving query performance across the entire platform.',checks:['$50K+ saved annually','45% query performance improvement','60% database cost reduction'],tags:['PostgreSQL','AWS S3','Parquet','RDS','Python']},
-  {cat:'backend',title:'Scalable Disaster Recovery System',desc:'Enhanced the scalable restoration system with improved orchestration and parallel processing, reducing manual recovery time and enhancing disaster recovery capabilities.',checks:['70% manual recovery time reduction','99.9% data accuracy guaranteed','Full disaster recovery capability'],tags:['AWS','Python','SQS','PostgreSQL','Microservices']},
-  {cat:'integration',title:'Japanese Platform Integrations',desc:'Built complete backup and export solutions for Japanese enterprise platforms — Kintone, Asana, and Notion — expanding SysCloud\'s market reach into Japan.',checks:['25% market reach expansion','200+ enterprise customers supported','Kintone, Asana, Notion integrated'],tags:['Kintone API','Asana API','Notion API','Python','AWS']},
-  {cat:'cloud',title:'SharePoint & Teams Graph Framework',desc:'Re-architected SharePoint and Teams integration to a Graph-based framework, achieving massive code reduction and significantly faster multi-cloud integration.',checks:['50% code reduction achieved','40% faster multi-cloud integration','Graph API fully adopted'],tags:['Microsoft Graph','TypeScript','NestJS','REST','Docker']},
-  {cat:'infra',title:'Real-Time Sync Framework',desc:'Created real-time sync framework using Docker, ECS, and SQS for O365 and cloud data, reducing sync delays by 90% and enabling near-real-time backup operations.',checks:['90% sync delay reduction','Docker + ECS + SQS stack','Multi-cloud data sync'],tags:['Docker','AWS ECS','SQS','TypeScript','Microservices']},
-  {cat:'backend',title:'Enterprise Email Backup System',desc:'Implemented a high-accuracy backup system for millions of archived emails, ensuring 100% data accuracy, compliance, and full recovery capabilities.',checks:['100% data accuracy achieved','Millions of emails archived','Full compliance ensured'],tags:['O365 API','Graph API','Python','PostgreSQL','S3']},
-  {cat:'cloud',title:'AWS SQS Security Scanner',desc:'Built scanning system using AWS SQS and O365 APIs to detect and respond to security incidents in real-time, dramatically reducing incident response time.',checks:['70% faster incident response','O365 + AWS integrated','Real-time threat detection'],tags:['AWS SQS','O365 API','Python','Security','Lambda']},
-  {cat:'notifications',title:'Unified Notification Platform',desc:'Architected end-to-end multi-channel notification system extending Email & In-App alerts to Chat (Teams/Slack). Built on MDL 2.0 — a fully config-driven NestJS microservice. Integrated SSPM and SIEM alert pipelines. Full design, development and verification with Claude AI.',checks:['3 channels unified: Email, In-App & Chat','100% config-driven via MDL 2.0 NestJS','SSPM & SIEM security alerts at enterprise scale','E2E design, dev & verification via Claude AI'],tags:['NestJS','TypeScript','MDL 2.0','SSPM','SIEM','Teams','Slack','Claude AI']},
-  {cat:'migration',title:'SharePoint Restore — UB Graph Architecture',desc:'Migrated legacy SharePoint restore codebase to Unified Base (UB) Graph Architecture using PHP. Fully config-driven with zero hardcoded restore logic. All legacy test cases verified with Claude AI and AI Agents.',checks:['Legacy codebase fully eliminated','100% config-driven — zero code per new entity','All legacy cases verified via Claude AI & AI Agents','Improved maintainability & scalability'],tags:['PHP','Microsoft Graph','UB Architecture','Config-Driven','AI Agents','Claude AI']},
+/* PROJECTS */
+const PC={cloud:{l:'Cloud',c:'#22d3ee'},backend:{l:'Backend',c:'#10b981'},infra:{l:'Infrastructure',c:'#a78bfa'},integration:{l:'Integration',c:'#fb923c'},security:{l:'Security',c:'#f87171'},notifications:{l:'Notifications',c:'#34d399'},migration:{l:'Migration',c:'#60a5fa'}};
+const PD=[
+  {cat:'security',title:'AWS KMS Encryption Platform',desc:'Architected AWS KMS-based encryption for S3 storage, achieving 100% reduction in unauthorized access and ensuring regulatory compliance.',checks:['100% unauthorized access eliminated','Regulatory compliance achieved','Scalable encryption architecture'],tags:['AWS KMS','S3','Encryption','PHP','Python']},
+  {cat:'infra',title:'PostgreSQL → Parquet/S3 Migration',desc:'Migrated PostgreSQL RDS data to Parquet files in S3, dramatically reducing database costs while improving query performance.',checks:['$50K+ saved annually','45% query performance improvement','60% database cost reduction'],tags:['PostgreSQL','AWS S3','Parquet','RDS','Python']},
+  {cat:'backend',title:'Scalable Disaster Recovery System',desc:'Enhanced the scalable restoration system reducing manual recovery time and enhancing disaster recovery capabilities.',checks:['70% manual recovery time reduction','99.9% data accuracy guaranteed','Full disaster recovery capability'],tags:['AWS','Python','SQS','PostgreSQL','Microservices']},
+  {cat:'integration',title:'Japanese Platform Integrations',desc:'Built complete backup and export solutions for Japanese enterprise platforms — Kintone, Asana, and Notion.',checks:['25% market reach expansion','200+ enterprise customers supported','Kintone, Asana, Notion integrated'],tags:['Kintone API','Asana API','Notion API','Python','AWS']},
+  {cat:'cloud',title:'SharePoint & Teams Graph Framework',desc:'Re-architected SharePoint and Teams integration to a Graph-based framework achieving massive code reduction.',checks:['50% code reduction achieved','40% faster multi-cloud integration','Graph API fully adopted'],tags:['Microsoft Graph','TypeScript','NestJS','REST','Docker']},
+  {cat:'infra',title:'Real-Time Sync Framework',desc:'Created real-time sync framework using Docker, ECS, and SQS reducing sync delays by 90%.',checks:['90% sync delay reduction','Docker + ECS + SQS stack','Multi-cloud data sync'],tags:['Docker','AWS ECS','SQS','TypeScript','Microservices']},
+  {cat:'backend',title:'Enterprise Email Backup System',desc:'Implemented a high-accuracy backup system for millions of archived emails ensuring 100% data accuracy.',checks:['100% data accuracy achieved','Millions of emails archived','Full compliance ensured'],tags:['O365 API','Graph API','Python','PostgreSQL','S3']},
+  {cat:'cloud',title:'AWS SQS Security Scanner',desc:'Built scanning system using AWS SQS and O365 APIs to detect security incidents in real-time.',checks:['70% faster incident response','O365 + AWS integrated','Real-time threat detection'],tags:['AWS SQS','O365 API','Python','Security','Lambda']},
+  {cat:'notifications',title:'Unified Notification Platform',desc:'Architected end-to-end multi-channel notification system (Email + In-App + Chat via Teams/Slack). Built on MDL 2.0 config-driven NestJS with SSPM & SIEM integration. Full E2E verified with Claude AI.',checks:['3 channels: Email, In-App & Chat unified','100% config-driven via MDL 2.0 NestJS','SSPM & SIEM alerts at enterprise scale','E2E design & verification via Claude AI'],tags:['NestJS','TypeScript','MDL 2.0','SSPM','SIEM','Teams','Slack','Claude AI']},
+  {cat:'migration',title:'SharePoint Restore — UB Graph Architecture',desc:'Migrated legacy SharePoint restore to Unified Base (UB) Graph Architecture using PHP. Fully config-driven with zero hardcoded logic. All legacy test cases verified with Claude AI & AI Agents.',checks:['Legacy codebase fully eliminated','100% config-driven — zero code per entity','All legacy cases verified via Claude AI & Agents','Improved maintainability & scalability'],tags:['PHP','Microsoft Graph','UB Architecture','Config-Driven','AI Agents','Claude AI']},
 ];
-
-// FILTER ROWS
-const CATS_F=['All','Cloud','Backend','Infrastructure','Integration','Security','Notifications','Migration'];
-const TECH_F=['Node.js','TypeScript','PostgreSQL','AWS','PHP','Python','Docker','NestJS','Microsoft Graph','Claude AI','Config-Driven'];
-document.getElementById('frow').innerHTML=CATS_F.map((f,i)=>`<button class="fb${i===0?' on':''}" data-f="${f.toLowerCase()}">${f}</button>`).join('');
-document.getElementById('trow').innerHTML=['All',...TECH_F].map((f,i)=>`<button class="fb${i===0?' on':''}" data-tech="${f}">${f}</button>`).join('');
-let aC='all',aT='All';
-function rp(){
-  const list=PROJS.filter(p=>{
-    const catOk=aC==='all'||p.cat===aC||CATS[p.cat]?.l.toLowerCase()===aC;
-    const techOk=aT==='All'||p.tags.some(t=>t.toLowerCase().includes(aT.toLowerCase()));
-    return catOk&&techOk;
-  });
-  const cc=p=>CATS[p.cat]||{l:'Other',c:'#818cf8'};
-  document.getElementById('pgrid').innerHTML=list.length
-    ?list.map(p=>`<div class="pcard"><div class="pcard-acc" style="background:${cc(p).c}"></div><div class="pcard-body"><div class="pcard-cat" style="color:${cc(p).c}">${cc(p).l}</div><div class="pcard-title">${p.title}</div><div class="pcard-desc">${p.desc}</div><div class="pcard-wins">${p.checks.map(c=>`<div class="pw">✓ ${c}</div>`).join('')}</div></div><div class="pcard-foot"><div class="pcard-tags">${p.tags.map(t=>`<span class="ptag" onclick="ft('${t}')">${t}</span>`).join('')}</div><button class="det-btn" onclick="po(${PROJS.indexOf(p)})">Details</button></div></div>`).join('')
-    :`<div style="grid-column:1/-1;text-align:center;padding:3rem;color:#475569">No projects match this filter.</div>`;
+const CF=['All','Cloud','Backend','Infrastructure','Integration','Security','Notifications','Migration'];
+const TF=['All','PHP','Python','TypeScript','AWS','PostgreSQL','Docker','NestJS','Microsoft Graph','Claude AI','Config-Driven'];
+document.getElementById('CROW').innerHTML=CF.map((f,i)=>`<button class="fb${i===0?' on':''}" data-cf="${f.toLowerCase()}">${f}</button>`).join('');
+document.getElementById('TROW').innerHTML=TF.map((f,i)=>`<button class="fb${i===0?' on':''}" data-tf="${f}">${f}</button>`).join('');
+let Pcat='all',Ptech='All';
+function Prend(){
+  const list=PD.filter(p=>{const cl=PC[p.cat]?.l.toLowerCase();return(Pcat==='all'||p.cat===Pcat||cl===Pcat)&&(Ptech==='All'||p.tags.some(t=>t.toLowerCase().includes(Ptech.toLowerCase())))});
+  const gc=p=>PC[p.cat]||{l:'Other',c:'#818cf8'};
+  document.getElementById('PGRID').innerHTML=list.length?list.map(p=>`<div class="pcard"><div class="pacc" style="background:${gc(p).c}"></div><div class="pbody"><div class="p-cat" style="color:${gc(p).c}">${gc(p).l}</div><div class="p-tit">${p.title}</div><div class="p-desc">${p.desc}</div><div class="p-wins">${p.checks.map(c=>`<div class="pw">✓ ${c}</div>`).join('')}</div></div><div class="pfoot"><div class="p-tags">${p.tags.map(t=>`<span class="p-tag" onclick="Pft('${t}')">${t}</span>`).join('')}</div><button class="dbtn" onclick="Pop(${PD.indexOf(p)})">Details</button></div></div>`).join(''):`<div style="grid-column:1/-1;text-align:center;padding:3rem;color:#475569">No projects match.</div>`;
 }
-rp();
-document.getElementById('frow').addEventListener('click',e=>{const b=e.target.closest('.fb');if(!b)return;document.querySelectorAll('#frow .fb').forEach(x=>x.classList.remove('on'));b.classList.add('on');aC=b.dataset.f;rp()});
-document.getElementById('trow').addEventListener('click',e=>{const b=e.target.closest('.fb');if(!b)return;document.querySelectorAll('#trow .fb').forEach(x=>x.classList.remove('on'));b.classList.add('on');aT=b.dataset.tech;rp()});
-function ft(t){aT=t;document.querySelectorAll('#trow .fb').forEach(b=>b.classList.toggle('on',b.dataset.tech===t));rp();document.getElementById('projects').scrollIntoView({behavior:'smooth'})}
+Prend();
+document.getElementById('CROW').addEventListener('click',e=>{const b=e.target.closest('.fb');if(!b)return;document.querySelectorAll('#CROW .fb').forEach(x=>x.classList.remove('on'));b.classList.add('on');Pcat=b.dataset.cf;Prend()});
+document.getElementById('TROW').addEventListener('click',e=>{const b=e.target.closest('.fb');if(!b)return;document.querySelectorAll('#TROW .fb').forEach(x=>x.classList.remove('on'));b.classList.add('on');Ptech=b.dataset.tf;Prend()});
+function Pft(t){Ptech=t;document.querySelectorAll('#TROW .fb').forEach(b=>b.classList.toggle('on',b.dataset.tf===t));Prend();document.getElementById('projects').scrollIntoView({behavior:'smooth'})}
+function Pop(i){const p=PD[i],cc=PC[p.cat]||{l:'Other',c:'#818cf8'};document.getElementById('PCAT').textContent=cc.l;document.getElementById('PCAT').style.color=cc.c;document.getElementById('PTIT').textContent=p.title;document.getElementById('PDESC').textContent=p.desc;document.getElementById('PCHK').innerHTML=p.checks.map(c=>`<span>✓ ${c}</span>`).join('');document.getElementById('PTAGS').innerHTML=p.tags.map(t=>`<span class="mp-tag">${t}</span>`).join('');document.getElementById('POV').classList.add('on')}
+function PCLOSE(){document.getElementById('POV').classList.remove('on')}
 
-// PROJECT MODAL
-function po(i){const p=PROJS[i],cc=CATS[p.cat]||{l:'Other',c:'#818cf8'};document.getElementById('pmCat').textContent=cc.l;document.getElementById('pmCat').style.color=cc.c;document.getElementById('pmTitle').textContent=p.title;document.getElementById('pmDesc').textContent=p.desc;document.getElementById('pmChecks').innerHTML=p.checks.map(c=>`<span>✓ ${c}</span>`).join('');document.getElementById('pmTags').innerHTML=p.tags.map(t=>`<span class="pmtag">${t}</span>`).join('');document.getElementById('pov').classList.add('on')}
-function pc(){document.getElementById('pov').classList.remove('on')}
-
-// SKILLS
-const coreS=[['PHP',95,'Expert',7],['Python',90,'Expert',5],['TypeScript',88,'Advanced',4],['PostgreSQL',90,'Expert',5],['NestJS',82,'Advanced',4],['REST APIs',92,'Expert',7]];
-const cloudS=[['AWS S3 / Lambda',92,'Expert',5],['SQS / ECS / ELB',85,'Advanced',4],['Docker',80,'Advanced',4],['DynamoDB',78,'Advanced',4],['AWS Athena',82,'Advanced',3],['GCP',65,'Intermediate',2]];
-function rb(data,id){document.getElementById(id).innerHTML=data.map(([n,p,l,y])=>`<div class="skrow"><div class="sk-name">${n}</div><div class="sk-track"><div class="sk-fill" data-w="${p}%"></div></div><div class="sk-lvl">${l}</div><div class="sk-yr">${y}yr</div></div>`).join('')}
-rb(coreS,'coreS');rb(cloudS,'cloudS');
+/* ══════════════════════════════════════════════════
+   SKILLS — Core bars with colored badges + category rows
+   Exactly matching Aniket's screenshot layout
+   ══════════════════════════════════════════════════ */
+const SKCORE=[
+  {n:'PHP',p:95,lvl:'Expert',yr:'7 yrs',c:'c0'},
+  {n:'Python',p:90,lvl:'Expert',yr:'5 yrs',c:'c1'},
+  {n:'TypeScript',p:88,lvl:'Advanced',yr:'4 yrs',c:'c2'},
+  {n:'PostgreSQL',p:90,lvl:'Expert',yr:'5 yrs',c:'c3'},
+  {n:'AWS',p:88,lvl:'Advanced',yr:'5 yrs',c:'c4'},
+  {n:'NestJS',p:82,lvl:'Advanced',yr:'4 yrs',c:'c5'},
+  {n:'REST APIs',p:92,lvl:'Expert',yr:'7 yrs',c:'c6'},
+];
+const lvlClass={Expert:'expert',Advanced:'advanced',Intermediate:'intermediate'};
+document.getElementById('SKBARS').innerHTML=SKCORE.map(s=>`<div class="sk-row"><div class="sk-name">${s.n}<span class="sk-badge ${lvlClass[s.lvl]}">${s.lvl}</span></div><div class="sk-track"><div class="sk-fill ${s.c}" data-w="${s.p}%"></div></div><div class="sk-yr">${s.yr}</div></div>`).join('');
 setTimeout(()=>document.querySelectorAll('.sk-fill').forEach(b=>b.style.width=b.dataset.w),400);
-const SCATS=[
-  {t:'Languages',e:'💻',p:[['PHP','PH'],['Python','Py'],['TypeScript','TS'],['JavaScript','JS'],['C/C++','C+'],['SQL','SQ']]},
-  {t:'Backend & APIs',e:'⚙️',p:[['NestJS','NJ'],['REST APIs','RE'],['Microservices','MS'],['Microsoft Graph','GR'],['SQS','SQ'],['Config-Driven','CA'],['MDL 2.0','ML']]},
-  {t:'Databases',e:'🗄️',p:[['PostgreSQL','PG'],['MS SQL Server','MS'],['DynamoDB','DY'],['RDS','RD'],['AWS Athena','AT']]},
-  {t:'Cloud & AWS',e:'☁️',p:[['S3','S3'],['Lambda','λ'],['ELB','EL'],['CloudWatch','CW'],['KMS','KM'],['GCP','GC'],['ECS','EC'],['SQS','SQ']]},
-  {t:'AI & Automation',e:'🤖',p:[['Claude AI','CA'],['AI Agents','AG'],['GPT Automation','GP'],['LLM Integration','LM']]},
-  {t:'DevOps',e:'🐳',p:[['Docker','DO'],['ECS','EC'],['Unix Shell','SH'],['AWS Batch','BA']]},
-  {t:'Tools & Practices',e:'🛠',p:[['Git','GI'],['Agile','AG'],['System Design','SD'],['Code Review','CR'],['Training','TR']]},
-];
-document.getElementById('scats').innerHTML=SCATS.map(g=>`<div class="scat"><div class="scat-head"><div class="scat-title"><span>${g.e}</span>${g.t}</div><span class="scat-cnt">${g.p.length} skills</span></div><div class="cpills">${g.p.map(([n,b])=>`<span class="cp"><span class="cp-b">${b}</span>${n}</span>`).join('')}</div></div>`).join('');
 
-// EXPERIENCE
+/* Category rows — LEFT: icon + name + count | RIGHT: pills */
+const SKCATS=[
+  {icon:'💻',name:'Languages',col:'lang',skills:[{b:'TS',n:'TypeScript',bg:'#3b82f6'},{b:'JS',n:'JavaScript',bg:'#f59e0b'},{b:'PH',n:'PHP',bg:'#8b5cf6'},{b:'SQ',n:'SQL',bg:'#10b981'},{b:'Py',n:'Python',bg:'#06b6d4'}]},
+  {icon:'⚙️',name:'Backend & APIs',col:'back',skills:[{b:'NJ',n:'NestJS',bg:'#ef4444'},{b:'RE',n:'REST APIs',bg:'#6366f1'},{b:'MS',n:'Microservices',bg:'#8b5cf6'},{b:'GR',n:'Microsoft Graph',bg:'#3b82f6'},{b:'CA',n:'Config-Driven',bg:'#10b981'},{b:'ML',n:'MDL 2.0',bg:'#f59e0b'},{b:'SQ',n:'SQS',bg:'#06b6d4'}]},
+  {icon:'🗄️',name:'Databases',col:'db',skills:[{b:'PG',n:'PostgreSQL',bg:'#3b82f6'},{b:'MS',n:'MS SQL Server',bg:'#6366f1'},{b:'DY',n:'DynamoDB',bg:'#f59e0b'},{b:'RD',n:'RDS',bg:'#10b981'},{b:'AT',n:'AWS Athena',bg:'#06b6d4'},{b:'MG',n:'MongoDB',bg:'#10b981'}]},
+  {icon:'☁️',name:'Cloud & AWS',col:'cloud',skills:[{b:'S3',n:'S3',bg:'#f59e0b'},{b:'λ',n:'Lambda',bg:'#f59e0b'},{b:'EC',n:'ECS',bg:'#f59e0b'},{b:'BA',n:'Batch',bg:'#f59e0b'},{b:'SQ',n:'SQS',bg:'#f59e0b'},{b:'KM',n:'KMS',bg:'#ef4444'},{b:'GC',n:'GCP',bg:'#3b82f6'},{b:'DO',n:'Docker',bg:'#06b6d4'},{b:'SL',n:'Serverless',bg:'#8b5cf6'}]},
+  {icon:'📊',name:'Monitoring',col:'mon',skills:[{b:'CW',n:'CloudWatch',bg:'#f59e0b'},{b:'AT',n:'Athena Logs',bg:'#06b6d4'},{b:'EL',n:'ELB Logs',bg:'#6366f1'},{b:'S3',n:'S3 Events',bg:'#10b981'},{b:'AL',n:'Alerts',bg:'#ef4444'}]},
+  {icon:'🤖',name:'AI & Automation',col:'ai',skills:[{b:'CA',n:'Claude AI',bg:'#8b5cf6'},{b:'AG',n:'AI Agents',bg:'#6366f1'},{b:'GP',n:'GPT Automation',bg:'#10b981'},{b:'LM',n:'LLM Integration',bg:'#06b6d4'},{b:'PR',n:'Prompt Eng.',bg:'#f59e0b'},{b:'MC',n:'MCP',bg:'#ef4444'}]},
+  {icon:'🛠',name:'Tools & Practices',col:'tools',skills:[{b:'GI',n:'Git',bg:'#f59e0b'},{b:'DO',n:'Docker',bg:'#06b6d4'},{b:'SH',n:'Unix Shell',bg:'#10b981'},{b:'AG',n:'Agile',bg:'#6366f1'},{b:'SD',n:'System Design',bg:'#8b5cf6'},{b:'CR',n:'Code Reviews',bg:'#ef4444'},{b:'CI',n:'CI/CD',bg:'#3b82f6'},{b:'TR',n:'Training',bg:'#10b981'},{b:'PM',n:'PM2',bg:'#f59e0b'},{b:'SQ',n:'SonarQube',bg:'#ef4444'}]},
+];
+document.getElementById('SKCATS').innerHTML=SKCATS.map(g=>`<div class="sk-cat-row"><div class="sk-cat-left"><div class="sk-cat-label ${g.col}"><span>${g.icon}</span>${g.name.toUpperCase()}</div><div class="sk-cat-count">${g.skills.length} skills</div></div><div class="sk-cat-pills">${g.skills.map(s=>`<span class="sk-pill"><span class="sk-pill-b" style="background:${s.bg}">${s.b}</span>${s.n}</span>`).join('')}</div></div>`).join('');
+
+/* EXPERIENCE — collapsible like Aniket */
 const EXP=[
-  {role:'Senior Lead Engineer',date:'Jun 2023 – Present',cur:true,pts:['Architected AWS KMS encryption for S3 — <strong>100%</strong> unauthorized access eliminated, full regulatory compliance','Enhanced restoration system — <strong>70%</strong> reduction in manual recovery time','Migrated PostgreSQL RDS → Parquet/S3 — <strong>$50K+</strong> annual savings, 45% better queries, 60% DB cost cut','Built backup/export for Kintone, Asana, Notion — <strong>25%</strong> market expansion, 200+ enterprise customers','Mentored Japan engineering teams — <strong>90%+</strong> knowledge transfer, 60% faster onboarding via AI/GPT','Architected Unified Notification Platform (Email + In-App + Chat) with SSPM & SIEM — <strong>100% config-driven</strong> MDL 2.0 NestJS; E2E design, development & verification via Claude AI','Migrated legacy SharePoint restore to UB Graph Architecture (PHP) — <strong>fully config-driven</strong>, zero hardcoded logic; all legacy test cases verified with Claude AI & AI Agents']},
-  {role:'Lead Software Engineer',date:'Aug 2021 – May 2023',cur:false,pts:['Re-architected SharePoint & Teams to Graph-based framework — <strong>50%</strong> code reduction, 40% faster integration','Created real-time sync with Docker, ECS & SQS — <strong>90%</strong> sync delay reduction','Led MS SQL → PostgreSQL migration — <strong>30%</strong> performance boost, reduced operational costs']},
-  {role:'Senior Software Engineer',date:'Aug 2019 – Jul 2021',cur:false,pts:['Improved backup/export solution for Teams channels, conversations & attachments','Optimized restore functionality — <strong>40%</strong> reduction in restore/export time','Implemented backup system with <strong>100%</strong> data accuracy for millions of archived emails']},
-  {role:'Software Engineer',date:'Feb 2019 – Jul 2019',cur:false,pts:['Built AWS SQS + O365 API scanning system — <strong>70%</strong> faster security incident response','Enhanced S3 data migration — <strong>60%</strong> reduction in handling time & costs','Developed Graph API & REST API backup solution — <strong>75%</strong> faster recovery times']},
-  {role:'Graduate Trainee Engineer',date:'Jun 2018 – Jan 2019',cur:false,pts:['Delivered comprehensive training for O365 OneDrive and Outlook security scanning','Improved team competency by <strong>30%</strong>']},
+  {role:'Senior Lead Engineer',date:'Jun 2023 – Present',loc:'Hyderabad, India',cur:true,pts:['Architected AWS KMS encryption for S3 — <strong>100%</strong> unauthorized access eliminated, full regulatory compliance','Enhanced restoration system — <strong>70%</strong> reduction in manual recovery time','Migrated PostgreSQL RDS → Parquet/S3 — <strong>$50K+</strong> annual savings, 45% better queries, 60% DB cost cut','Built backup/export for Kintone, Asana, Notion — <strong>25%</strong> market expansion, 200+ enterprise customers','Mentored Japan engineering teams — <strong>90%+</strong> knowledge transfer, 60% faster onboarding via AI/GPT','Architected Unified Notification Platform (Email + In-App + Chat) with SSPM & SIEM — <strong>100% config-driven</strong> MDL 2.0 NestJS; E2E verification via Claude AI','Migrated legacy SharePoint restore to UB Graph Architecture (PHP) — <strong>fully config-driven</strong>; all legacy cases verified with Claude AI & AI Agents']},
+  {role:'Lead Software Engineer',date:'Aug 2021 – May 2023',loc:'Hyderabad, India',cur:false,pts:['Re-architected SharePoint & Teams to Graph-based framework — <strong>50%</strong> code reduction, 40% faster integration','Created real-time sync with Docker, ECS & SQS — <strong>90%</strong> sync delay reduction','Led MS SQL → PostgreSQL migration — <strong>30%</strong> performance boost']},
+  {role:'Senior Software Engineer',date:'Aug 2019 – Jul 2021',loc:'Hyderabad, India',cur:false,pts:['Improved backup/export solution for Teams channels, conversations & attachments','Optimized restore functionality — <strong>40%</strong> reduction in restore/export time','Implemented backup system with <strong>100%</strong> data accuracy for millions of archived emails']},
+  {role:'Software Engineer',date:'Feb 2019 – Jul 2019',loc:'Hyderabad, India',cur:false,pts:['Built AWS SQS + O365 API scanning system — <strong>70%</strong> faster security incident response','Enhanced S3 data migration — <strong>60%</strong> reduction in handling time & costs','Developed Graph API & REST API backup solution — <strong>75%</strong> faster recovery times']},
+  {role:'Graduate Trainee Engineer',date:'Jun 2018 – Jan 2019',loc:'Hyderabad, India',cur:false,pts:['Delivered comprehensive training for O365 OneDrive and Outlook security scanning','Improved team competency by <strong>30%</strong>']},
 ];
-document.getElementById('tlroles').innerHTML=EXP.map(e=>`<div class="tlr"><div class="tlr-top"><div class="tlr-title">${e.role}</div><span class="tlr-badge${e.cur?' cur':''}">${e.cur?'Current':e.date.split('–')[1].trim()}</span></div><div class="tlr-date">${e.date} · Hyderabad, India</div><ul class="tlr-list">${e.pts.map(p=>`<li>${p}</li>`).join('')}</ul></div>`).join('');
+document.getElementById('EXPROLES').innerHTML=EXP.map((e,i)=>`<div class="tl-role"><div class="tl-role-head" onclick="EXPtoggle(${i},this)"><div class="tl-role-left"><h4>${e.role}<span class="tl-badge ${e.cur?'cur':'old'}">${e.cur?'Current':e.date.split('–')[1].trim()}</span></h4><div class="tl-role-meta"><span>📅 ${e.date}</span><span>📍 ${e.loc}</span></div></div><span class="tl-chevron${i===0?' open':''}">▼</span></div><div class="tl-role-body${i===0?' open':''}"><ul class="tl-role-list">${e.pts.map(p=>`<li>${p}</li>`).join('')}</ul></div></div>`).join('');
+function EXPtoggle(i,head){const body=head.nextElementSibling,chev=head.querySelector('.tl-chevron');body.classList.toggle('open');chev.classList.toggle('open')}
 
-// SEARCH
+/* SEARCH */
 const SP=['About','Projects','Skills','Experience','Education & Certifications','Contact','AWS KMS Encryption','PostgreSQL Migration','Disaster Recovery','Japanese Platforms','SharePoint Graph Framework','Real-Time Sync','Email Backup','Security Scanner','Unified Notification Platform','SharePoint UB Graph Migration'];
-function so(){document.getElementById('sov').classList.add('on');setTimeout(()=>document.getElementById('sinp').focus(),80);ds('')}
-function sc(){document.getElementById('sov').classList.remove('on');document.getElementById('sinp').value=''}
-function ds(q){const r=document.getElementById('sres');const items=q?SP.filter(p=>p.toLowerCase().includes(q.toLowerCase())):SP.slice(0,8);r.innerHTML=items.map(p=>`<div class="sri" onclick="sg('${p}')"><div class="sri-ic">→</div>${p}</div>`).join('')||'<div class="sri">No results</div>'}
-function sg(p){sc();const m={About:'#about',Projects:'#projects',Skills:'#skills',Experience:'#experience','Education & Certifications':'#education',Contact:'#contact'};document.querySelector(m[p]||'#projects')?.scrollIntoView({behavior:'smooth'})}
-document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();so()}if(e.key==='Escape'){sc();pc()}});
+function SO(){document.getElementById('SOV').classList.add('on');setTimeout(()=>document.getElementById('SINP').focus(),80);SS('')}
+function SC(){document.getElementById('SOV').classList.remove('on');document.getElementById('SINP').value=''}
+function SS(q){const items=q?SP.filter(p=>p.toLowerCase().includes(q.toLowerCase())):SP.slice(0,8);document.getElementById('SRES').innerHTML=items.map(p=>`<div class="sri" onclick="SG('${p}')"><div class="sri-ic">→</div>${p}</div>`).join('')||'<div class="sri">No results</div>'}
+function SG(p){SC();const m={About:'#about',Projects:'#projects',Skills:'#skills',Experience:'#experience','Education & Certifications':'#education',Contact:'#contact'};document.querySelector(m[p]||'#projects')?.scrollIntoView({behavior:'smooth'})}
+document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();SO()}if(e.key==='Escape'){SC();PCLOSE()}});
 
-// AI CONTEXT
-const CTX=`You are Aditya Gedam's personal AI portfolio assistant. Be concise, professional, and friendly. Answer only based on:
+/* AI */
+const AI_CTX=`You are Aditya Gedam's personal AI portfolio assistant. Be concise, professional, friendly. Answer only from:
 Name: Aditya Gedam | Senior Lead Engineer, SysCloud Technologies | Hyderabad, India
 Contact: gedamaditya@gmail.com | +91-9751136721 | linkedin.com/in/aditya-gedam-8260442b
 Education: M.Tech CSE, NIT Tiruchirappalli (2016-2018)
 Certifications: AWS for Beginners (Great Learning), Unix-Linux Shell Scripting Workshop
-SKILLS: PHP, Python, TypeScript, JavaScript, C/C++, NestJS, REST APIs, Microservices, MDL 2.0, Config-Driven Architecture, AWS S3/Lambda/SQS/Athena/CloudWatch/ELB/RDS/KMS/ECS, PostgreSQL, MS SQL, DynamoDB, Docker, Microsoft Graph, GCP, Unix Shell Scripting, Claude AI, AI Agents
-EXPERIENCE (7+ years at SysCloud):
-Senior Lead Engineer (Jun 2023–Present): KMS encryption (100% unauthorized access reduction), restoration system (70% time reduction), PostgreSQL→Parquet/S3 ($50K+ savings, 45% query boost, 60% DB cost cut), Kintone/Asana/Notion integrations (25% market expansion, 200+ enterprise clients), Japan team mentoring (90%+ knowledge transfer, AI/GPT), Unified Notification Platform (Email+InApp+Chat channels, SSPM+SIEM, MDL 2.0 NestJS config-driven, Claude AI verified), SharePoint UB Graph Architecture Migration (PHP, config-driven, Claude AI+Agents test verification, legacy eliminated)
-Lead SE (Aug 2021–May 2023): SharePoint/Teams Graph (50% code cut, 40% faster), Docker/ECS/SQS sync (90% delay cut), MS SQL→PostgreSQL (30% boost)
-Senior SE (Aug 2019–Jul 2021): Teams backup, 40% restore time reduction, 100% email accuracy
-SE (Feb–Jul 2019): SQS+O365 scanner (70% faster), S3 migration (60% cut), Graph API backup (75% faster)
-Trainee (Jun 2018–Jan 2019): O365 training, 30% competency boost
-Goal: Transitioning to Technical Architect — system design, technical strategy, broader engineering impact`;
+Skills: PHP, Python, TypeScript, JavaScript, NestJS, REST APIs, Microservices, MDL 2.0, Config-Driven Architecture, AWS S3/Lambda/SQS/Athena/CloudWatch/ELB/RDS/KMS/ECS, PostgreSQL, MS SQL, DynamoDB, Docker, Microsoft Graph, GCP, Unix Shell, Claude AI, AI Agents
+Experience (7+ years at SysCloud): Senior Lead (Jun 2023–Present): KMS (100% access reduction), restoration (70% cut), PostgreSQL→Parquet/S3 ($50K+, 45% boost, 60% cost cut), Kintone/Asana/Notion (25% expansion, 200+ clients), Japan mentoring (90%+ transfer), Notification Platform (Email+InApp+Chat, SSPM+SIEM, MDL 2.0, Claude AI verified), SharePoint UB Graph (PHP, config-driven, Claude AI+Agents verified); Lead SE: SharePoint/Teams Graph (50% cut, 40% faster), Docker/ECS/SQS (90% sync cut), MS SQL→PostgreSQL (30% boost); Senior SE: Teams backup, 40% restore cut, 100% accuracy; SE: SQS+O365 (70% faster), S3 (60% cut), Graph (75% faster); Trainee: O365 training, 30% boost. Goal: Technical Architect`;
+const CME=document.getElementById('CMSGS'),CIE=document.getElementById('CINP');
+async function AI_send(){const t=CIE.value.trim();if(!t)return;CIE.value='';AI_add(t,'user');const ty=AI_add('Typing...','bot typing');try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,system:AI_CTX,messages:[{role:'user',content:t}]})});const d=await r.json();ty.remove();AI_add(d.content?.[0]?.text||'Sorry.','bot')}catch{ty.remove();AI_add('Network error.','bot')}}
+function AI_add(t,c){const d=document.createElement('div');d.className='msg '+c;d.textContent=t;CME.appendChild(d);CME.scrollTop=9999;return d}
+function AI_ask(q){CIE.value=q;AI_send()}
+CIE.addEventListener('keydown',e=>{if(e.key==='Enter')AI_send()});
+document.getElementById('CSND').addEventListener('click',AI_send);
 
-// INLINE CHAT
-const cb=document.getElementById('chatBody'),cinp=document.getElementById('cinp');
-async function snd(){const t=cinp.value.trim();if(!t)return;cinp.value='';am(t,'user');const ty=am('Typing...','bot typing');try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,system:CTX,messages:[{role:'user',content:t}]})});const d=await r.json();ty.remove();am(d.content?.[0]?.text||'Sorry.','bot')}catch{ty.remove();am('Network error.','bot')}}
-function am(t,c){const d=document.createElement('div');d.className='cmsg '+c;d.textContent=t;cb.appendChild(d);cb.scrollTop=9999;return d}
-function qa(q){cinp.value=q;snd()}
-cinp.addEventListener('keydown',e=>{if(e.key==='Enter')snd()});
-document.getElementById('csend').addEventListener('click',snd);
+/* BOT */
+let Bopen=false;
+function BT(){Bopen=!Bopen;document.getElementById('BPANEL').classList.toggle('on',Bopen);document.getElementById('BLBL').style.display=Bopen?'none':'flex'}
+setTimeout(()=>{const l=document.getElementById('BLBL');l.style.transition='opacity .5s';l.style.opacity='0';setTimeout(()=>l.style.display='none',500)},4000);
+const BME=document.getElementById('BMSGS'),BIE=document.getElementById('BINP');
+async function B_send(){const t=BIE.value.trim();if(!t)return;BIE.value='';B_add(t,'user');const ty=B_add('Typing...','bot typing');try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:400,system:AI_CTX,messages:[{role:'user',content:t}]})});const d=await r.json();ty.remove();B_add(d.content?.[0]?.text||'Sorry.','bot')}catch{ty.remove();B_add('Network error.','bot')}}
+function B_add(t,c){const d=document.createElement('div');d.className='bm '+c;d.textContent=t;BME.appendChild(d);BME.scrollTop=9999;return d}
+function BA(q){if(!Bopen)BT();BIE.value=q;B_send()}
+BIE.addEventListener('keydown',e=>{if(e.key==='Enter')B_send()});
+document.getElementById('BSND').addEventListener('click',B_send);
 
-// FLOATING BOT
-let bo=false;
-function tb(){bo=!bo;document.getElementById('cpanel').classList.toggle('on',bo);document.getElementById('blbl').style.display=bo?'none':'flex'}
-setTimeout(()=>{const l=document.getElementById('blbl');l.style.opacity='0';setTimeout(()=>l.style.display='none',500)},4000);
-const bpm=document.getElementById('cpmsgs'),bpi=document.getElementById('bpinp');
-async function bs(){const t=bpi.value.trim();if(!t)return;bpi.value='';ba(t,'user');const ty=ba('Typing...','bot typing');try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:400,system:CTX,messages:[{role:'user',content:t}]})});const d=await r.json();ty.remove();ba(d.content?.[0]?.text||'Sorry.','bot')}catch{ty.remove();ba('Network error.','bot')}}
-function ba(t,c){const d=document.createElement('div');d.className='bm '+c;d.textContent=t;bpm.appendChild(d);bpm.scrollTop=9999;return d}
-function bq(q){if(!bo)tb();bpi.value=q;bs()}
-bpi.addEventListener('keydown',e=>{if(e.key==='Enter')bs()});
-document.getElementById('bpsend').addEventListener('click',bs);
-
-// COPY EMAIL
+/* COPY EMAIL */
 function copyEmail(){navigator.clipboard.writeText('gedamaditya@gmail.com').then(()=>{const t=document.getElementById('toast');t.style.opacity='1';t.style.transform='translateX(-50%) translateY(0)';setTimeout(()=>{t.style.opacity='0';t.style.transform='translateX(-50%) translateY(8px)'},2000)})}
 </script>
 </body>
